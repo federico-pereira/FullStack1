@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="add81521-4378-4ef7-ad44-34407bb32850" name="Changes" comment="user class" />
+    <list default="true" id="add81521-4378-4ef7-ad44-34407bb32850" name="Changes" comment="user class">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/controller/CursoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/controller/CursoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/model/Alumno.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/model/Alumno.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/model/Curso.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/model/Curso.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/repositoy/CursoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/repositoy/CursoRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/service/CursoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/service/CursoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/service/CursoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/service/CursoService.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -37,10 +45,10 @@
     &quot;accountId&quot;: &quot;7be6c480-b790-4448-9073-16cf795c76e8&quot;
   }
 }</component>
-  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
-  <component name="KubernetesApiProvider"><![CDATA[{
-  "isMigrated": true
-}]]></component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
 }</component>
@@ -52,26 +60,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "HTTP Request.generated-requests | #2.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "Spring Boot.ProyectApplication.executor": "Run",
-    "git-widget-placeholder": "fede-branch",
-    "last_opened_file_path": "D:/martin git",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;HTTP Request.generated-requests | #2.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;Spring Boot.ProyectApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;fede-branch&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/martin git&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="ProyectApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="proyect" />

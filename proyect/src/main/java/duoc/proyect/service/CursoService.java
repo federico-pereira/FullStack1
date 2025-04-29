@@ -6,21 +6,44 @@ import duoc.proyect.repositoy.CursoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.io.StringReader;
+
 @Service
 public class CursoService {
 
     @Autowired
     CursoRepository cursoRepository;
 
-    public String saveCurso(Alumno alumno) {
-        return cursoRepository.addAlumno(alumno);
+    //Cursos
+
+    public String saveCurso(Curso curso) {
+        return cursoRepository.addCurso(curso);
     }
 
     public String getAllCursos() {
-        return cursoRepository.getAlumnos();
+        return cursoRepository.getCursos();
     }
 
     public String getCursoById(int id) {
-        return cursoRepository.getAlumnos();
+        return cursoRepository.getCursoById(id);
     }
+
+    public String deleteCurso(int id) {
+        return cursoRepository.deleteCurso(id);
+    }
+
+    public String updateCurso(Curso curso) {
+        return cursoRepository.updateCurso(curso);
+    }
+
+    // Alumnos
+
+    public String addAlumno(Alumno alumno) {
+        return cursoRepository.addAlumno(alumno);
+    }
+
+    public String deleteAlumno(int id) {
+        return cursoRepository.deleteAlumno(id);
+    }
+
 }
