@@ -14,7 +14,7 @@ import java.util.List;
 @NoArgsConstructor
 
 public class Curso {
-    private String Id;
+    private int Id;
     private String Name;
     private List listaCurso;
 
