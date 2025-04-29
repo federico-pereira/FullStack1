@@ -38,6 +38,8 @@ public class CursoService {
 
     // Alumnos
 
+    /*
+
     public String addAlumno(Alumno alumno) {
         return cursoRepository.addAlumno(alumno);
     }
@@ -46,4 +48,5 @@ public class CursoService {
         return cursoRepository.deleteAlumno(id);
     }
 
+     */
 }
