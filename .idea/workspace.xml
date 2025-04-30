@@ -4,9 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="add81521-4378-4ef7-ad44-34407bb32850" name="Changes" comment="correcion clase curso + lista de alumnos">
+    <list default="true" id="add81521-4378-4ef7-ad44-34407bb32850" name="Changes" comment="clase contenido">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/controller/CursoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/controller/CursoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/repositoy/CursoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/repositoy/CursoRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/service/CursoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/service/CursoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/controller/CursoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/controller/CursoController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/repositoy/CursoRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/repositoy/CursoRepository.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/service/CursoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/service/CursoService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -107,7 +111,8 @@
       <workItem from="1745442245077" duration="24000" />
       <workItem from="1745442279102" duration="13000" />
       <workItem from="1745895262225" duration="1575000" />
-      <workItem from="1745970721910" duration="3556000" />
+      <workItem from="1745970721910" duration="4456000" />
+      <workItem from="1746025125969" duration="1462000" />
     </task>
     <task id="LOCAL-00001" summary="user class">
       <option name="closed" value="true" />
@@ -133,7 +138,15 @@
       <option name="project" value="LOCAL" />
       <updated>1745892056628</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="clase contenido">
+      <option name="closed" value="true" />
+      <created>1745981901347</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1745981901347</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -142,6 +155,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="user class" />
     <MESSAGE value="correcion clase curso + lista de alumnos" />
-    <option name="LAST_COMMIT_MESSAGE" value="correcion clase curso + lista de alumnos" />
+    <MESSAGE value="clase contenido" />
+    <option name="LAST_COMMIT_MESSAGE" value="clase contenido" />
   </component>
 </project>

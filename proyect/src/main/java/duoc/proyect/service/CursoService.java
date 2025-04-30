@@ -36,17 +36,17 @@ public class CursoService {
         return cursoRepository.updateCurso(curso);
     }
 
+
     // Alumnos
-
-    /*
-
-    public String addAlumno(Alumno alumno) {
-        return cursoRepository.addAlumno(alumno);
+    public String getAlumnos(int idCurso) {
+        return cursoRepository.getAlumnos(idCurso);
     }
 
-    public String deleteAlumno(int id) {
-        return cursoRepository.deleteAlumno(id);
+    public String addAlumno(int idCurso,Alumno alumno) {
+        return cursoRepository.addAlumno(idCurso,alumno);
     }
 
-     */
+    public String deleteAlumno(int id, int idCurso) {
+        return cursoRepository.deleteAlumno(idCurso,id);
+    }
 }
