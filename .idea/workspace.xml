@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="add81521-4378-4ef7-ad44-34407bb32850" name="Changes" comment="correcion clase curso + lista de alumnos" />
+    <list default="true" id="add81521-4378-4ef7-ad44-34407bb32850" name="Changes" comment="correcion clase curso + lista de alumnos">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/controller/CursoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/controller/CursoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/service/CursoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/service/CursoService.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -33,8 +37,8 @@
 }</component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/federico-pereira/FullStack1&quot;,
-    &quot;accountId&quot;: &quot;7be6c480-b790-4448-9073-16cf795c76e8&quot;
+    &quot;url&quot;: &quot;https://github.com/federico-pereira/FullStack1.git&quot;,
+    &quot;accountId&quot;: &quot;f71cb643-2c65-4960-a6c4-8aeccdb6af53&quot;
   }
 }</component>
   <component name="KubernetesApiPersistence">{}</component>
@@ -102,6 +106,8 @@
       <workItem from="1745442059904" duration="165000" />
       <workItem from="1745442245077" duration="24000" />
       <workItem from="1745442279102" duration="13000" />
+      <workItem from="1745895262225" duration="1575000" />
+      <workItem from="1745970721910" duration="3556000" />
     </task>
     <task id="LOCAL-00001" summary="user class">
       <option name="closed" value="true" />
@@ -119,7 +125,15 @@
       <option name="project" value="LOCAL" />
       <updated>1745891955593</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="correcion clase curso + lista de alumnos">
+      <option name="closed" value="true" />
+      <created>1745892056628</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1745892056628</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

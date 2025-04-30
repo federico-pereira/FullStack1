@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@RequestMapping("/api/v1/cursos")
 public class CursoController {
 
     @Autowired
@@ -29,7 +30,7 @@ public class CursoController {
         return cursoService.getCursoById(id);
     }
 
-    @DeleteMapping
+    @DeleteMapping("/cursos/{id}")
     public String deleteCurso(@PathVariable int id) {
         return cursoService.deleteCurso(id);
     }
