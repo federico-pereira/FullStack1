@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.StringReader;
+import java.util.List;
 
 @Service
 public class CursoService {
@@ -20,11 +21,11 @@ public class CursoService {
         return cursoRepository.addCurso(curso);
     }
 
-    public String getAllCursos() {
-        return cursoRepository.getCursos();
+    public List<Curso> getAllCursos() {
+        return cursoRepository.getAllCursos();
     }
 
-    public String getCursoById(int id) {
+    public Curso getCursoById(int id) {
         return cursoRepository.getCursoById(id);
     }
 
@@ -38,6 +39,9 @@ public class CursoService {
 
 
     // Alumnos
+
+    /*
+
     public String getAlumnos(int idCurso) {
         return cursoRepository.getAlumnos(idCurso);
     }
@@ -49,4 +53,6 @@ public class CursoService {
     public String deleteAlumno(int id, int idCurso) {
         return cursoRepository.deleteAlumno(idCurso,id);
     }
+
+     */
 }

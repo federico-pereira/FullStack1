@@ -3,14 +3,23 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
+  <component name="BookmarksViewState">
+    <option name="groupLineBookmarks" value="false" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="add81521-4378-4ef7-ad44-34407bb32850" name="Changes" comment="clase contenido">
+    <list default="true" id="add81521-4378-4ef7-ad44-34407bb32850" name="Changes" comment="Funciones de alumno en clase curso">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/controller/ContenidoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/controller/ContenidoController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/controller/CursoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/controller/CursoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/repositoy/ContenidoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/repositoy/ContenidoRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/repositoy/CursoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/repositoy/CursoRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/service/ContenidoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/service/ContenidoService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/service/CursoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/service/CursoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/controller/ContenidoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/controller/ContenidoController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/controller/CursoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/controller/CursoController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/repositoy/ContenidoRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/repositoy/ContenidoRepository.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/repositoy/CursoRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/repositoy/CursoRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/service/ContenidoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/service/ContenidoService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/service/CursoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/service/CursoService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -112,7 +121,7 @@
       <workItem from="1745442279102" duration="13000" />
       <workItem from="1745895262225" duration="1575000" />
       <workItem from="1745970721910" duration="4456000" />
-      <workItem from="1746025125969" duration="1462000" />
+      <workItem from="1746025125969" duration="4439000" />
     </task>
     <task id="LOCAL-00001" summary="user class">
       <option name="closed" value="true" />
@@ -146,7 +155,15 @@
       <option name="project" value="LOCAL" />
       <updated>1745981901347</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Funciones de alumno en clase curso">
+      <option name="closed" value="true" />
+      <created>1746026660085</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1746026660085</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -156,6 +173,7 @@
     <MESSAGE value="user class" />
     <MESSAGE value="correcion clase curso + lista de alumnos" />
     <MESSAGE value="clase contenido" />
-    <option name="LAST_COMMIT_MESSAGE" value="clase contenido" />
+    <MESSAGE value="Funciones de alumno en clase curso" />
+    <option name="LAST_COMMIT_MESSAGE" value="Funciones de alumno en clase curso" />
   </component>
 </project>

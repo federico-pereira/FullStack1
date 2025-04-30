@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/v1/contenido")
+@RequestMapping("/api/v1/contenidos")
 public class ContenidoController {
 
     @Autowired
@@ -20,7 +20,7 @@ public class ContenidoController {
     }
 
     @PostMapping
-    public Contenido addContenido(@RequestBody Contenido contenido) {
+    public String addContenido(@RequestBody Contenido contenido) {
         return contenidoService.saveContenido(contenido);
     }
 
@@ -35,8 +35,7 @@ public class ContenidoController {
     }
 
     @PatchMapping("/{id}")
-    //using id later
-    public Contenido updateContenido(@PathVariable String id, @RequestBody Contenido contenido) {
+    public String updateContenido(@RequestBody Contenido contenido) {
         return contenidoService.updateContenido(contenido);
     }
 }
