@@ -6,6 +6,8 @@ import duoc.proyect.service.CursoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/v1/cursos")
 public class CursoController {
@@ -16,7 +18,7 @@ public class CursoController {
     // Cursos
 
     @GetMapping
-    public String getCurso() {
+    public List<Curso> getAllCursos() {
         return cursoService.getAllCursos();
     }
 
@@ -26,7 +28,7 @@ public class CursoController {
     }
 
     @GetMapping("/{id}")
-    public String getCursos(@PathVariable int id) {
+    public Curso getCursoById(@PathVariable int id) {
         return cursoService.getCursoById(id);
     }
 
@@ -42,6 +44,8 @@ public class CursoController {
 
     //Alumo
 
+    /*
+
     @GetMapping("/{idCurso}/alumnos")
     public String getAlumnos(@PathVariable int idCurso) {
         return cursoService.getAlumnos(idCurso);
@@ -56,5 +60,7 @@ public class CursoController {
     public String addAlumno(@PathVariable int idCurso, @RequestBody Alumno alumno) {
         return cursoService.addAlumno(idCurso,alumno);
     }
+
+     */
 
 }

@@ -24,35 +24,26 @@ public class CursoRepository {
 
     }
 
-    public String getCursos() {
-        String output = "";
-        for (Curso curso : cursos) {
-            output += "ID Curso: "+curso.getId() + "\n";
-            output += "Nombre Curso: "+curso.getName() + "\n";
-            output += "Lista Curso: "+curso.getListaCurso() + "\n";
-        }
-        if(output.isEmpty()){
-            return "No se encontraron cursos";
-        }else {
-            return output;
+    public List<Curso> getAllCursos() {
+        if (cursos.isEmpty()){
+            return null;
+        }else{
+            return cursos;
         }
     }
 
-    public String getCursoById(int id) {
+    public Curso getCursoById(int id) {
         for (Curso curso : cursos) {
             if (curso.getId() == id) {
-                String output = "ID Curso: "+curso.getId() + "\n";
-                output += "Nombre Curso: "+curso.getName() + "\n";
-                output += "Lista Curso: "+curso.getListaCurso() + "\n";
-                return output;
+                return curso;
             }
         }
-        return "No se encontro el curso";
+        return null;
     }
 
     public String addCurso(Curso curso) {
         cursos.add(curso);
-        return "Curso agregado";
+        return "Curso agregado \n" + curso.toString();
     }
 
     public String updateCurso(Curso curso) {
@@ -61,20 +52,24 @@ public class CursoRepository {
                 c.setId(curso.getId());
                 c.setName(curso.getName());
                 c.setListaCurso(curso.getListaCurso());
-                break;
+                return "Curso actualizado \n"+c.toString();
             }
         }
-        return "Curso actualizado";
+        return "Curso no encontrado";
     }
 
     public String deleteCurso(int id) {
         for (Curso c : cursos) {
             if (c.getId() == id) {}
             cursos.remove(c);
-            return "curso eliminado";
+            return "curso eliminado \n" + c.toString();
         }
         return "curso no encontrado";
     }
+
+    //Alumnos
+
+    /*
 
     public String getAlumnos(int idCurso) {
         for (Curso c : cursos) {
@@ -118,4 +113,6 @@ public class CursoRepository {
         }
         return "No se enconto al alumno";
     }
+
+     */
 }

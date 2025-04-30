@@ -21,11 +21,11 @@ public class ContenidoService {
         return contenidoRepository.getContenidoById(id);
     }
 
-    public Contenido saveContenido(Contenido contenido) {
+    public String saveContenido(Contenido contenido) {
         return contenidoRepository.addContenido(contenido);
     }
 
-    public Contenido updateContenido(Contenido contenido) {
+    public String updateContenido(Contenido contenido) {
         return contenidoRepository.addContenido(contenido);
     }
 

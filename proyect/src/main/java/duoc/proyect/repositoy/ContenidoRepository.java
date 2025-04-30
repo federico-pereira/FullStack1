@@ -31,16 +31,16 @@ public class ContenidoRepository {
         return null;
     }
 
-    public Contenido addContenido(Contenido contenido) {
+    public String addContenido(Contenido contenido) {
         contenidos.add(contenido);
-        return contenido;
+        return "contenido agregado" + contenido.toString();
     }
 
     public String deleteContenido(String id) {
-        for (Contenido contenido : contenidos) {
-            if (contenido.getId().equals(id)) {
-                contenidos.remove(contenido);
-                return contenido + "removed";
+        for (Contenido c : contenidos) {
+            if (c.getId().equals(id)) {
+                contenidos.remove(c);
+                return "conenido eliminado \n" +c.toString();
             }
         }
         return "Contenido not found";
