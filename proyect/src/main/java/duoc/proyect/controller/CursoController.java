@@ -15,22 +15,22 @@ public class CursoController {
 
     // Cursos
 
-    @GetMapping("/cursos")
+    @GetMapping
     public String getCurso() {
         return cursoService.getAllCursos();
     }
 
-    @PostMapping("/cursos")
+    @PostMapping
     public String addCurso(@RequestBody Curso curso) {
         return cursoService.saveCurso(curso);
     }
 
-    @GetMapping("/cursos/{id}")
+    @GetMapping("/{id}")
     public String getCursos(@PathVariable int id) {
         return cursoService.getCursoById(id);
     }
 
-    @DeleteMapping("/cursos/{id}")
+    @DeleteMapping("/{id}")
     public String deleteCurso(@PathVariable int id) {
         return cursoService.deleteCurso(id);
     }
@@ -42,15 +42,19 @@ public class CursoController {
 
     //Alumo
 
-    /*
-    @DeleteMapping
-    public String deleteAlumno(@PathVariable int id) {
-        return cursoService.deleteAlumno(id);
+    @GetMapping("/{idCurso}/alumnos")
+    public String getAlumnos(@PathVariable int idCurso) {
+        return cursoService.getAlumnos(idCurso);
     }
 
-    @PatchMapping
-    public String addAlumno(@RequestBody Alumno alumno) {
-        return cursoService.addAlumno(alumno);
+    @DeleteMapping("/{idCurso}/alumnos/{id}")
+    public String deleteAlumno(@PathVariable int idCurso, @PathVariable int id) {
+        return cursoService.deleteAlumno(idCurso,id);
     }
-     */
+
+    @PostMapping("/{idCurso}/alumnos")
+    public String addAlumno(@PathVariable int idCurso, @RequestBody Alumno alumno) {
+        return cursoService.addAlumno(idCurso,alumno);
+    }
+
 }

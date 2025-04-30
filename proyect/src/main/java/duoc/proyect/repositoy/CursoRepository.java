@@ -76,44 +76,46 @@ public class CursoRepository {
         return "curso no encontrado";
     }
 
-    public String getAlumnos() {
-        String output = "";
-        for (Alumno a : alumnos) {
-            output += "ID Alumno: "+a.getId() + "\n";
-            output += "Nombre Alumno: "+a.getName() + "\n";
-            output += "Email Alumno: "+a.getEmail() + "\n";
-        }
-        if(output.isEmpty()){
-            return "No se encontraron cursos";
-        }else{
-            return output;
-        }
-    }
-
-    public String addAlumno(Alumno a) {
-        alumnos.add(a);
-        return "Alumno agregado";
-    }
-
-    public String updateAlumno(Alumno a) {
-        for (Alumno a1 : alumnos) {
-            if (a1.getId() == a.getId()) {
-                a1.setId(a.getId());
-                a1.setName(a.getName());
-                a1.setEmail(a.getEmail());
-                break;
+    public String getAlumnos(int idCurso) {
+        for (Curso c : cursos) {
+            if (idCurso==c.getId()) {
+                String output = "";
+                for (Alumno a : alumnos) {
+                    output += "ID Alumno: "+a.getId() + "\n";
+                    output += "Nombre Alumno: "+a.getName() + "\n";
+                    output += "Email Alumno: "+a.getEmail() + "\n";
+                }if(output.isEmpty()){
+                    return "Curso sin alumnos";
+                }else{
+                    return output;
+                }
             }
         }
-        return "Alumno actualizado";
+        return "Curso no encontrado";
     }
 
-    public String deleteAlumno(int id) {
-        for (Alumno a : alumnos) {
-            if (a.getId() == id) {}
-            alumnos.remove(a);
-            return "Alumno eliminado";
+
+    public String addAlumno(int idCurso,Alumno a) {
+        for (Curso c : cursos) {
+            if (idCurso==c.getId()) {
+                alumnos.add(a);
+                return "Alumno agregado";
+            }
+        }
+        return "Alumno no encontrado";
+    }
+
+
+    public String deleteAlumno(int idCurso,int id) {
+        for (Curso c : cursos) {
+            if (idCurso==c.getId()) {
+                for (Alumno a : alumnos) {
+                    if (a.getId() == id) {}
+                    alumnos.remove(a);
+                    return "Alumno eliminado";
+                }
+            }
         }
         return "No se enconto al alumno";
-
     }
 }
