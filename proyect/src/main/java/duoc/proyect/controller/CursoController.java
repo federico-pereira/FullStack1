@@ -37,14 +37,12 @@ public class CursoController {
         return cursoService.deleteCurso(id);
     }
 
-    @PatchMapping
+    @PutMapping
     public String updateCurso(@RequestBody Curso curso) {
         return cursoService.updateCurso(curso);
     }
 
     //Alumo
-
-    /*
 
     @GetMapping("/{idCurso}/alumnos")
     public String getAlumnos(@PathVariable int idCurso) {
@@ -60,7 +58,5 @@ public class CursoController {
     public String addAlumno(@PathVariable int idCurso, @RequestBody Alumno alumno) {
         return cursoService.addAlumno(idCurso,alumno);
     }
-
-     */
 
 }

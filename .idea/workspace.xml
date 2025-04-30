@@ -9,18 +9,12 @@
   <component name="ChangeListManager">
     <list default="true" id="add81521-4378-4ef7-ad44-34407bb32850" name="Changes" comment="Funciones de alumno en clase curso">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/controller/AlumnoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/controller/AlumnoController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/controller/ContenidoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/controller/ContenidoController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/controller/CursoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/controller/CursoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/repositoy/ContenidoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/repositoy/ContenidoRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/model/Curso.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/model/Curso.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/repositoy/CursoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/repositoy/CursoRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/service/ContenidoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/service/ContenidoService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/service/CursoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/service/CursoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/controller/ContenidoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/controller/ContenidoController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/controller/CursoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/controller/CursoController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/repositoy/ContenidoRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/repositoy/ContenidoRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/repositoy/CursoRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/repositoy/CursoRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/service/ContenidoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/service/ContenidoService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/service/CursoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/service/CursoService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,12 +42,12 @@
     &quot;assignee&quot;: &quot;federico-pereira&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/federico-pereira/FullStack1.git&quot;,
-    &quot;accountId&quot;: &quot;f71cb643-2c65-4960-a6c4-8aeccdb6af53&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/federico-pereira/FullStack1.git",
+    "accountId": "ffe7f94c-3304-4f92-8dfa-c5c9011e3ade"
   }
-}</component>
+}]]></component>
   <component name="KubernetesApiPersistence">{}</component>
   <component name="KubernetesApiProvider">{
   &quot;isMigrated&quot;: true
@@ -72,26 +66,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;HTTP Request.generated-requests | #2.executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;Spring Boot.ProyectApplication.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;fede-branch&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/martin git&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "HTTP Request.generated-requests | #2.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "Spring Boot.ProyectApplication.executor": "Run",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "D:/martin git",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="ProyectApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="proyect" />
@@ -122,6 +119,7 @@
       <workItem from="1745895262225" duration="1575000" />
       <workItem from="1745970721910" duration="4456000" />
       <workItem from="1746025125969" duration="4439000" />
+      <workItem from="1746044393370" duration="2780000" />
     </task>
     <task id="LOCAL-00001" summary="user class">
       <option name="closed" value="true" />

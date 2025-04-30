@@ -34,7 +34,7 @@ public class AlumnoController {
         return alumnoService.deleteAlumno(id);
     }
 
-    @PatchMapping("/{id}")
+    @PutMapping("/{id}")
     public String updateAlumno(@RequestBody Alumno alumno) {
         return alumnoService.updateAlumno(alumno);
     }

@@ -15,6 +15,11 @@ public class CursoService {
     @Autowired
     CursoRepository cursoRepository;
 
+    @Autowired
+    AlumnoService alumnoService;
+
+    @Autowired
+    CursoService cursoService;
     //Cursos
 
     public String saveCurso(Curso curso) {
@@ -40,19 +45,25 @@ public class CursoService {
 
     // Alumnos
 
-    /*
-
     public String getAlumnos(int idCurso) {
         return cursoRepository.getAlumnos(idCurso);
     }
 
     public String addAlumno(int idCurso,Alumno alumno) {
-        return cursoRepository.addAlumno(idCurso,alumno);
+        if (alumnoService.getAllAlumnos().contains(alumno)) {
+            return cursoRepository.addAlumno(idCurso,alumno);
+        }else{
+            return "Alumno no encontrado";
+        }
     }
 
     public String deleteAlumno(int id, int idCurso) {
         return cursoRepository.deleteAlumno(idCurso,id);
     }
 
-     */
+    // Contenido
+
+    public String getContenido(int idCurso) {
+        return cursoRepository.getContenidos(idCurso);
+    }
 }
