@@ -16,6 +16,6 @@ import java.util.List;
 public class Curso {
     private int Id;
     private String Name;
-    private List listaCurso;
-
+    private List<Alumno> listaCurso;
+    private List<Contenido> listaContenido;
 }

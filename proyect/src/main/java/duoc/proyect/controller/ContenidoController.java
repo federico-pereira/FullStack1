@@ -34,7 +34,7 @@ public class ContenidoController {
         return contenidoService.deleteContenido(id);
     }
 
-    @PatchMapping("/{id}")
+    @PutMapping("/{id}")
     public String updateContenido(@RequestBody Contenido contenido) {
         return contenidoService.updateContenido(contenido);
     }
