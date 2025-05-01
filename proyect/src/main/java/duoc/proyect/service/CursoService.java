@@ -19,7 +19,7 @@ public class CursoService {
     AlumnoService alumnoService;
 
     @Autowired
-    CursoService cursoService;
+    ContenidoService contenidoService;
     //Cursos
 
     public String saveCurso(Curso curso) {
@@ -66,4 +66,5 @@ public class CursoService {
     public String getContenido(int idCurso) {
         return cursoRepository.getContenidos(idCurso);
     }
+
 }

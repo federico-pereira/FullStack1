@@ -3,18 +3,16 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
-  <component name="BookmarksViewState">
-    <option name="groupLineBookmarks" value="false" />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="add81521-4378-4ef7-ad44-34407bb32850" name="Changes" comment="Funciones de alumno en clase curso">
+    <list default="true" id="94816420-cdd8-4d1e-838a-645d2ae55f93" name="Changes" comment="Clase alumno">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/controller/AlumnoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/controller/AlumnoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/controller/ContenidoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/controller/ContenidoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/controller/CursoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/controller/CursoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/model/Curso.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/model/Curso.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/repositoy/CursoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/repositoy/CursoRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/service/CursoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/service/CursoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/controller/AlumnoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/controller/AlumnoController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/controller/ContenidoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/controller/ContenidoController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/controller/CursoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/controller/CursoController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/model/Curso.class" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/model/Curso.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/repositoy/CursoRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/repositoy/CursoRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/service/CursoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/service/CursoService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,11 +27,6 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="main" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -42,19 +35,12 @@
     &quot;assignee&quot;: &quot;federico-pereira&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/federico-pereira/FullStack1.git",
-    "accountId": "ffe7f94c-3304-4f92-8dfa-c5c9011e3ade"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/federico-pereira/FullStack1&quot;,
+    &quot;accountId&quot;: &quot;6cfffba6-9641-44bd-823f-8b4f8a120d61&quot;
   }
-}]]></component>
-  <component name="KubernetesApiPersistence">{}</component>
-  <component name="KubernetesApiProvider">{
-  &quot;isMigrated&quot;: true
 }</component>
-  <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
-  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
 }</component>
@@ -68,8 +54,6 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "HTTP Request.generated-requests | #2.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
@@ -78,15 +62,10 @@
     "RunOnceActivity.git.unshallow": "true",
     "Spring Boot.ProyectApplication.executor": "Run",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "D:/martin git",
     "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "vue.rearranger.settings.migration": "true"
+    "node.js.selected.package.tslint": "(autodetect)"
   }
 }]]></component>
   <component name="RunManager">
@@ -98,80 +77,14 @@
       </method>
     </configuration>
   </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.23774.435" />
-        <option value="bundled-js-predefined-d6986cc7102b-f27c65a3e318-JavaScript-IU-251.23774.435" />
-      </set>
-    </attachedChunks>
-  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="add81521-4378-4ef7-ad44-34407bb32850" name="Changes" comment="user class" />
+      <changelist id="94816420-cdd8-4d1e-838a-645d2ae55f93" name="Changes" comment="" />
       <created>1745440098661</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1745440098661</updated>
-      <workItem from="1745442059904" duration="165000" />
-      <workItem from="1745442245077" duration="24000" />
-      <workItem from="1745442279102" duration="13000" />
-      <workItem from="1745895262225" duration="1575000" />
-      <workItem from="1745970721910" duration="4456000" />
-      <workItem from="1746025125969" duration="4439000" />
-      <workItem from="1746044393370" duration="2780000" />
     </task>
-    <task id="LOCAL-00001" summary="user class">
-      <option name="closed" value="true" />
-      <created>1745872680496</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1745872680496</updated>
-    </task>
-    <task id="LOCAL-00002" summary="correcion clase curso + lista de alumnos">
-      <option name="closed" value="true" />
-      <created>1745891955593</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1745891955593</updated>
-    </task>
-    <task id="LOCAL-00003" summary="correcion clase curso + lista de alumnos">
-      <option name="closed" value="true" />
-      <created>1745892056628</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1745892056628</updated>
-    </task>
-    <task id="LOCAL-00004" summary="clase contenido">
-      <option name="closed" value="true" />
-      <created>1745981901347</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1745981901347</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Funciones de alumno en clase curso">
-      <option name="closed" value="true" />
-      <created>1746026660085</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1746026660085</updated>
-    </task>
-    <option name="localTasksCounter" value="6" />
     <servers />
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="user class" />
-    <MESSAGE value="correcion clase curso + lista de alumnos" />
-    <MESSAGE value="clase contenido" />
-    <MESSAGE value="Funciones de alumno en clase curso" />
-    <option name="LAST_COMMIT_MESSAGE" value="Funciones de alumno en clase curso" />
   </component>
 </project>
