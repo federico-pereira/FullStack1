@@ -63,7 +63,7 @@
 		<version>19.8.0.0</version>
 	</dependency>
 	<dependency>
-		<groupId>com.oracle.database.security</groupId>
+		<groupId>com.oracle.database.security</groupId>z
 		<artifactId>oraclepki</artifactId>
 		<version>19.8.0.0</version>
 	</dependency>
@@ -77,4 +77,5 @@
 		<artifactId>osdt_cert</artifactId>
 		<version>19.8.0.0</version>
 	</dependency>
+
 </project>
