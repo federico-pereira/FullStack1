@@ -5,14 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="94816420-cdd8-4d1e-838a-645d2ae55f93" name="Changes" comment="Clase alumno">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_28-04-2025_19_52__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29-04-2025_23_01__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]/shelved.patch" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]/shelved.patch" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/service/CursoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/service/CursoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/controller/AlumnoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/controller/AlumnoController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/controller/ContenidoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/controller/ContenidoController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/controller/CursoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/controller/CursoController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/model/Curso.class" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/model/Curso.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/repositoy/CursoRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/repositoy/CursoRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/service/CursoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/service/CursoService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyect/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/controller/ProfesorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/controller/ProfesorController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/model/Profesor.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/model/Profesor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/repositoy/ProfesorRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/repositoy/ProfesorRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/service/ProfesorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/service/ProfesorService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +29,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -35,12 +42,12 @@
     &quot;assignee&quot;: &quot;federico-pereira&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/federico-pereira/FullStack1&quot;,
-    &quot;accountId&quot;: &quot;6cfffba6-9641-44bd-823f-8b4f8a120d61&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/federico-pereira/FullStack1.git",
+    "accountId": "74934804-0cbf-4438-bd77-c139951ae2f0"
   }
-}</component>
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
 }</component>
@@ -61,11 +68,13 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "Spring Boot.ProyectApplication.executor": "Run",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "fede-branch",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)"
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RunManager">
@@ -77,6 +86,14 @@
       </method>
     </configuration>
   </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.25410.109" />
+        <option value="bundled-js-predefined-d6986cc7102b-6a121458b545-JavaScript-IU-251.25410.109" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="94816420-cdd8-4d1e-838a-645d2ae55f93" name="Changes" comment="" />
@@ -84,7 +101,11 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1745440098661</updated>
+      <workItem from="1746648923270" duration="2729000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
 </project>
