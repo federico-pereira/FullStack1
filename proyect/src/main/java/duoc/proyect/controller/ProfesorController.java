@@ -15,12 +15,12 @@ public class ProfesorController {
     ProfesorService profesorService;
 
     @GetMapping
-    public List<Profesor> getProfesors() {
-        return profesorService.getAllProfesors();
+    public String getProfesors() {
+        return profesorService.getProfesores();
     }
 
     @GetMapping("/{id}")
-    public Profesor getProfesor(@PathVariable int id) {
+    public String getProfesor(@PathVariable int id) {
         return profesorService.getProfesorById(id);
     }
 
@@ -35,7 +35,7 @@ public class ProfesorController {
     }
 
     @PutMapping("/{id}")
-    public String updateProfesor(@RequestBody Profesor Profesor) {
-        return profesorService.updateProfesor(Profesor);
+    public String updateProfesor(@RequestBody Profesor profesor,@PathVariable int id) {
+        return profesorService.updateProfesor(profesor,id);
     }
 }
