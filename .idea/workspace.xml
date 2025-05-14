@@ -40,12 +40,15 @@
     &quot;assignee&quot;: &quot;federico-pereira&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/federico-pereira/FullStack1.git",
-    "accountId": "c6e34e6f-d6ed-40d1-a557-184361fc05fb"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/federico-pereira/FullStack1.git&quot;,
+    &quot;accountId&quot;: &quot;c6e34e6f-d6ed-40d1-a557-184361fc05fb&quot;
   }
-}]]></component>
+}</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
 }</component>
@@ -76,11 +79,17 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "ml.llm.LLMConfigurable",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
     "DatabaseDriversLRU": [
       "oracle"
+    ],
+    "GitStage.ChangesTree.GroupingKeys": [
+      "directory",
+      "module",
+      "repository"
     ]
   }
 }]]></component>
@@ -108,11 +117,33 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1745440098661</updated>
-      <workItem from="1746987168521" duration="3140000" />
+      <workItem from="1746987168521" duration="3249000" />
+      <workItem from="1747240009583" duration="873000" />
     </task>
+    <task id="LOCAL-00001" summary="media conexion de bbd oracle">
+      <option name="closed" value="true" />
+      <created>1746991011085</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1746991011085</updated>
+    </task>
+    <task id="LOCAL-00002" summary="media conexion de bbd oracle">
+      <option name="closed" value="true" />
+      <created>1746991044959</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1746991044959</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="media conexion de bbd oracle" />
+    <option name="LAST_COMMIT_MESSAGE" value="media conexion de bbd oracle" />
   </component>
 </project>
