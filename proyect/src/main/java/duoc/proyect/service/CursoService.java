@@ -63,6 +63,7 @@ public class CursoService {
 
     // Contenido
 
+    // Sin terminar
     public String getContenido(int idCurso) {
         return cursoRepository.getContenidos(idCurso);
     }
