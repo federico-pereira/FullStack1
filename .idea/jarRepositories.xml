@@ -16,5 +16,10 @@
       <option name="name" value="JBoss Community repository" />
       <option name="url" value="https://repository.jboss.org/nexus/content/repositories/public/" />
     </remote-repository>
+    <remote-repository>
+      <option name="id" value="oracle-maven" />
+      <option name="name" value="Oracle Maven Repository" />
+      <option name="url" value="https://download.oracle.com/maven/" />
+    </remote-repository>
   </component>
 </project>
