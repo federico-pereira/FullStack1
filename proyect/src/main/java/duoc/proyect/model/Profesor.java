@@ -1,11 +1,11 @@
 package duoc.proyect.model;
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.*;
 
-@Data
 @Entity
-@DiscriminatorValue("PROFESOR")
+@PrimaryKeyJoinColumn(name = "id")      // mapea PK→FK con USUARIO(id)
+@Data
 public class Profesor extends Usuario {
-
+    // hereda id, rut, name, lastName, mail de Usuario
 }
