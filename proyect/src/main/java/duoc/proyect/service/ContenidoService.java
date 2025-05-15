@@ -13,23 +13,43 @@ public class ContenidoService {
     @Autowired
     private ContenidoRepository contenidoRepository;
 
-    public List<Contenido> getAllContenido() {
-        return contenidoRepository.getContenidos();
+    public String getContenidos() {
+        String output = "";
+        for (Contenido contenido : contenidoRepository.findAll()) {
+            output += contenido.toString() + "\n";
+        }
+        if (contenidoRepository.findAll().isEmpty()) {
+            return "No hay contenidos";
+        }
+        return output;
     }
 
-    public Contenido getContenidoById(String id) {
-        return contenidoRepository.getContenidoById(id);
+    public String getContenidoById(int id) {
+        if (contenidoRepository.existsById(id)){
+            for (Contenido contenido : contenidoRepository.findAll()) {
+                if (contenido.getId() == id) {
+                    return contenido.toString();
+                }
+            }
+        }
+        return "Contenido no encontrado";
     }
 
-    public String saveContenido(Contenido contenido) {
-        return contenidoRepository.addContenido(contenido);
+    public String addContenido(Contenido contenido) {
+        contenidoRepository.save(contenido);
+        return "Contenido agregado";
     }
 
     public String updateContenido(Contenido contenido) {
-        return contenidoRepository.addContenido(contenido);
+        contenidoRepository.save(contenido);
+        return "Contenido actualizado";
     }
 
-    public String deleteContenido(String id) {
-        return contenidoRepository.deleteContenido(id);
+    public String deleteContenido(int id) {
+        if (contenidoRepository.existsById(id)) {
+            contenidoRepository.deleteById(id);
+            return "Contenido eliminado";
+        }
+        return "Contenido no encontrado";
     }
 }

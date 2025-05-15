@@ -53,7 +53,7 @@ public class ProfesorService {
             for(Profesor profesor : profesorRepository.findAll()){
                 if(profesor.getId() == id){
                     profesor.setName(newProfesor.getName());
-                    profesor.setEmail(newProfesor.getEmail());
+                    profesor.setMail(newProfesor.getMail());
                     profesorRepository.save(profesor);
                 }
             }
