@@ -1,15 +1,15 @@
 package duoc.proyect.model;
 
-import lombok.AllArgsConstructor;
+import jakarta.persistence.*;
 import lombok.Data;
-import lombok.NoArgsConstructor;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
-
-public class Alumno {
-    private int Id;
-    private String Name;
-    private String Email;
+@Entity
+@DiscriminatorValue("ALUMNO")
+public class Alumno extends Usuario {
+    @ManyToMany(mappedBy = "listaCurso")
+    private List<Curso> cursos = new ArrayList<>();
 }

@@ -15,12 +15,12 @@ public class AlumnoController {
     AlumnoService alumnoService;
 
     @GetMapping
-    public List<Alumno> getAlumnos() {
-        return alumnoService.getAllAlumnos();
+    public String getAlumnos() {
+        return alumnoService.getAlumnos();
     }
 
     @GetMapping("/{id}")
-    public Alumno getAlumno(@PathVariable int id) {
+    public String getAlumno(@PathVariable int id) {
         return alumnoService.getAlumnoById(id);
     }
 
@@ -35,7 +35,7 @@ public class AlumnoController {
     }
 
     @PutMapping("/{id}")
-    public String updateAlumno(@RequestBody Alumno alumno) {
-        return alumnoService.updateAlumno(alumno);
+    public String updateAlumno(@RequestBody Alumno alumno, @PathVariable int id) {
+        return alumnoService.updateAlumno(alumno,id);
     }
 }
