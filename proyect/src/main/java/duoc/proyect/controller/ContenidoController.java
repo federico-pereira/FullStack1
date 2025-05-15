@@ -3,6 +3,7 @@ package duoc.proyect.controller;
 import duoc.proyect.model.Contenido;
 import duoc.proyect.service.ContenidoService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -15,25 +16,25 @@ public class ContenidoController {
     private ContenidoService contenidoService;
 
     @GetMapping
-    public String getContenido() {
+    public ResponseEntity<List<Contenido>> getContenido() {
         return contenidoService.getContenidos();
     }
 
     @PostMapping
-    public String addContenido(@RequestBody Contenido contenido) {
+    public ResponseEntity<String> addContenido(@RequestBody Contenido contenido) {
         return contenidoService.addContenido(contenido);
     }
 
     @GetMapping("/{id}")
-    public String getContenidoId(@PathVariable int id) {return contenidoService.getContenidoById(id);}
+    public ResponseEntity<Object> getContenidoId(@PathVariable int id) {return contenidoService.getContenidoById(id);}
 
     @DeleteMapping("/{id}")
-    public String deleteContenido(@PathVariable int id) {
+    public ResponseEntity<String> deleteContenido(@PathVariable int id) {
         return contenidoService.deleteContenido(id);
     }
 
     @PutMapping("/{id}")
-    public String updateContenido(@RequestBody Contenido contenido) {
-        return contenidoService.updateContenido(contenido);
+    public ResponseEntity<String> updateContenido(@RequestBody Contenido contenido,@PathVariable int id) {
+        return contenidoService.updateContenido(id,contenido);
     }
 }

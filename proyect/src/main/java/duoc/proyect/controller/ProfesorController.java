@@ -3,6 +3,7 @@ package duoc.proyect.controller;
 import duoc.proyect.model.Profesor;
 import duoc.proyect.service.ProfesorService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -15,27 +16,27 @@ public class ProfesorController {
     ProfesorService profesorService;
 
     @GetMapping
-    public String getProfesors() {
+    public ResponseEntity<List<Profesor>> getProfesors() {
         return profesorService.getProfesores();
     }
 
     @GetMapping("/{id}")
-    public String getProfesor(@PathVariable int id) {
+    public ResponseEntity<String> getProfesor(@PathVariable int id) {
         return profesorService.getProfesorById(id);
     }
 
     @PostMapping
-    public String createProfesor(@RequestBody Profesor Profesor) {
+    public ResponseEntity<String> createProfesor(@RequestBody Profesor Profesor) {
         return profesorService.addProfesor(Profesor);
     }
 
     @DeleteMapping("/{id}")
-    public String deleteProfesor(@PathVariable int id) {
+    public ResponseEntity<String> deleteProfesor(@PathVariable int id) {
         return profesorService.deleteProfesor(id);
     }
 
     @PutMapping("/{id}")
-    public String updateProfesor(@RequestBody Profesor profesor,@PathVariable int id) {
+    public ResponseEntity<String> updateProfesor(@RequestBody Profesor profesor, @PathVariable int id) {
         return profesorService.updateProfesor(profesor,id);
     }
 }
