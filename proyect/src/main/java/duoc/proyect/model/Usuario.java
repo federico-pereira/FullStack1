@@ -1,20 +1,26 @@
 package duoc.proyect.model;
 
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.experimental.SuperBuilder;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@SuperBuilder
 
+@Entity
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "tipo_usuario")
 public class Usuario {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String rut;
-    private String nombre;
-    private String apellidos;
-    private String correo;
 
+    @Column(unique=true)
+    private String rut;
+    private String name;
+    private String lastName;
+    private String mail;
 }
+

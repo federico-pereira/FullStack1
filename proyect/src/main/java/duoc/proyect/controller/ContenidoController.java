@@ -15,22 +15,20 @@ public class ContenidoController {
     private ContenidoService contenidoService;
 
     @GetMapping
-    public List<Contenido> getContenido() {
-        return contenidoService.getAllContenido();
+    public String getContenido() {
+        return contenidoService.getContenidos();
     }
 
     @PostMapping
     public String addContenido(@RequestBody Contenido contenido) {
-        return contenidoService.saveContenido(contenido);
+        return contenidoService.addContenido(contenido);
     }
 
     @GetMapping("/{id}")
-    public Contenido getContenidoId(@PathVariable String id) {
-        return contenidoService.getContenidoById(id);
-    }
+    public String getContenidoId(@PathVariable int id) {return contenidoService.getContenidoById(id);}
 
     @DeleteMapping("/{id}")
-    public String deleteContenido(@PathVariable String id) {
+    public String deleteContenido(@PathVariable int id) {
         return contenidoService.deleteContenido(id);
     }
 
