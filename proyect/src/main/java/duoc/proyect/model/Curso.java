@@ -20,8 +20,8 @@ public class Curso {
     private String name;
 
     // Relación N-1: un Profesor puede tener muchos Cursos
-    @ManyToOne(optional = false)
-    @JoinColumn(name = "profesor_id", nullable = false)
+    @ManyToOne(optional = true)
+    @JoinColumn(name = "profesor_id", nullable = true)
     private Profesor profesor;
 
     // Relación M-M con Alumno

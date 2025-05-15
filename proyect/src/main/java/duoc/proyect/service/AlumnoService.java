@@ -1,67 +1,65 @@
 package duoc.proyect.service;
 
 import duoc.proyect.model.Alumno;
-import duoc.proyect.model.Alumno;
-import duoc.proyect.repositoy.AlumnoRepository;
 import duoc.proyect.repositoy.AlumnoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class AlumnoService {
 
     @Autowired
-    AlumnoRepository alumnoRepository;
+    private AlumnoRepository alumnoRepository;
 
-    public String getAlumnos(){
-        String output = "";
-        for(Alumno alumno : alumnoRepository.findAll()){
-            output += alumno.toString() + "\n";
+    public ResponseEntity<List<Alumno>> getAlumnos() {
+        List<Alumno> alumnos = alumnoRepository.findAll();
+        if (alumnos.isEmpty()) {
+            return ResponseEntity.status(HttpStatus.NO_CONTENT).body(null);
         }
-        if(output.isEmpty()){
-            return "No hay Alumnoes.";
-        }else {
-            return output;
-        }
+        return ResponseEntity.ok(alumnos);
     }
 
-    public String addAlumno(Alumno alumno){
+    public ResponseEntity<String> addAlumno(Alumno alumno) {
         alumnoRepository.save(alumno);
-        return "Alumno agregado";
+        return ResponseEntity.status(HttpStatus.CREATED)
+                .body("Alumno agregado: " + alumno.toString());
     }
 
-    public String getAlumnoById(int id){
-        for (Alumno alumno : alumnoRepository.findAll()) {
-            if (alumno.getId() == id) {
-                return alumno.toString();
-            }
+    public ResponseEntity<Object> getAlumnoById(int id) {
+        Optional<Alumno> alumnoOpt = alumnoRepository.findById(id);
+        if (alumnoOpt.isPresent()) {
+            return ResponseEntity.ok(alumnoOpt.get());
         }
-        return "Alumno no encontrado";
+        return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                .body("Alumno con id " + id + " no encontrado");
     }
 
-    public String deleteAlumno(int id){
-        if(alumnoRepository.existsById(id)){
+    public ResponseEntity<String> deleteAlumno(int id) {
+        if (alumnoRepository.existsById(id)) {
             alumnoRepository.deleteById(id);
-            return "Alumno eliminado";
-        }else {
-            return "Alumno no encontrado";
+            return ResponseEntity.ok("Alumno eliminado con id: " + id);
         }
+        return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                .body("Alumno con id " + id + " no encontrado");
     }
 
-    public String updateAlumno(Alumno newAlumno, int id){
-        if(alumnoRepository.existsById(id)){
-            for(Alumno alumno : alumnoRepository.findAll()){
-                if(alumno.getId() == id){
-                    alumno.setName(newAlumno.getName());
-                    alumno.setMail(newAlumno.getMail());
-                    alumnoRepository.save(alumno);
-                }
-            }
-            return "Alumno actualizado "+newAlumno.toString();
-        }else{
-            return "Alumno no encontrado";
+    public ResponseEntity<String> updateAlumno(int id, Alumno newAlumno) {
+        Optional<Alumno> alumnoOpt = alumnoRepository.findById(id);
+        if (alumnoOpt.isPresent()) {
+            Alumno alumno = alumnoOpt.get();
+            alumno.setName(newAlumno.getName());
+            alumno.setMail(newAlumno.getMail());
+            alumno.setCursos(newAlumno.getCursos());
+            // Puedes agregar más campos a actualizar si quieres
+            alumnoRepository.save(alumno);
+            return ResponseEntity.ok("Alumno actualizado: " + alumno.toString());
         }
+        return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                .body("Alumno con id " + id + " no encontrado");
     }
 }

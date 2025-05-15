@@ -3,6 +3,7 @@ package duoc.proyect.controller;
 import duoc.proyect.model.Alumno;
 import duoc.proyect.service.AlumnoService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -15,27 +16,27 @@ public class AlumnoController {
     AlumnoService alumnoService;
 
     @GetMapping
-    public String getAlumnos() {
+    public ResponseEntity<List<Alumno>> getAlumnos() {
         return alumnoService.getAlumnos();
     }
 
     @GetMapping("/{id}")
-    public String getAlumno(@PathVariable int id) {
+    public ResponseEntity<Object> getAlumno(@PathVariable int id) {
         return alumnoService.getAlumnoById(id);
     }
 
     @PostMapping
-    public String createAlumno(@RequestBody Alumno alumno) {
+    public ResponseEntity<String> createAlumno(@RequestBody Alumno alumno) {
         return alumnoService.addAlumno(alumno);
     }
 
     @DeleteMapping("/{id}")
-    public String deleteAlumno(@PathVariable int id) {
+    public ResponseEntity<String> deleteAlumno(@PathVariable int id) {
         return alumnoService.deleteAlumno(id);
     }
 
     @PutMapping("/{id}")
-    public String updateAlumno(@RequestBody Alumno alumno, @PathVariable int id) {
-        return alumnoService.updateAlumno(alumno,id);
+    public ResponseEntity<String> updateAlumno(@RequestBody Alumno alumno, @PathVariable int id) {
+        return alumnoService.updateAlumno(id,alumno);
     }
 }
