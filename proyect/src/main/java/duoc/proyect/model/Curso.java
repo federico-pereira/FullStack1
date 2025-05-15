@@ -13,14 +13,19 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Curso {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     private String name;
 
-    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    // Relación N-1: un Profesor puede tener muchos Cursos
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "profesor_id", nullable = false)
+    private Profesor profesor;
+
+    // Relación M-M con Alumno
+    @ManyToMany(cascade = { CascadeType.PERSIST, CascadeType.MERGE })
     @JoinTable(
             name = "curso_alumno",
             joinColumns = @JoinColumn(name = "curso_id"),
@@ -28,7 +33,8 @@ public class Curso {
     )
     private List<Alumno> listaCurso = new ArrayList<>();
 
-    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    // Relación M-M con Contenido
+    @ManyToMany(cascade = { CascadeType.PERSIST, CascadeType.MERGE })
     @JoinTable(
             name = "curso_contenido",
             joinColumns = @JoinColumn(name = "curso_id"),
@@ -36,7 +42,7 @@ public class Curso {
     )
     private List<Contenido> listaContenido = new ArrayList<>();
 
-    // Métodos para manejar la relación Many-to-Many con Alumno
+    // Helpers para sincronizar ambas patas de la relación
     public void addAlumno(Alumno alumno) {
         listaCurso.add(alumno);
         alumno.getCursos().add(this);
@@ -47,7 +53,6 @@ public class Curso {
         alumno.getCursos().remove(this);
     }
 
-    // Métodos para manejar la relación Many-to-Many con Contenido
     public void addContenido(Contenido contenido) {
         listaContenido.add(contenido);
         contenido.getCursos().add(this);
@@ -58,4 +63,3 @@ public class Curso {
         contenido.getCursos().remove(this);
     }
 }
-

@@ -1,14 +1,15 @@
 package duoc.proyect.model;
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.*;
+import java.util.*;
 
-import java.util.ArrayList;
-import java.util.List;
-
-@Data
+@ToString(callSuper = true)
 @Entity
-@DiscriminatorValue("ALUMNO")
+@PrimaryKeyJoinColumn(name = "id")      // mapea PK→FK con USUARIO(id)
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Alumno extends Usuario {
     @ManyToMany(mappedBy = "listaCurso")
     private List<Curso> cursos = new ArrayList<>();
