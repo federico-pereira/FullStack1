@@ -4,6 +4,7 @@ import duoc.proyect.model.Alumno;
 import duoc.proyect.model.Contenido;
 import duoc.proyect.model.Curso;
 import duoc.proyect.repositoy.AlumnoRepository;
+import duoc.proyect.repositoy.ContenidoRepository;
 import duoc.proyect.repositoy.CursoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -11,6 +12,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 
 @Service
@@ -23,7 +25,7 @@ public class CursoService {
     AlumnoRepository alumnoRepository;
 
     @Autowired
-    ContenidoService contenidoService;
+    ContenidoRepository contenidoRepository;
 
     // Cursos
 
@@ -35,18 +37,20 @@ public class CursoService {
         return ResponseEntity.ok(cursos);
     }
 
-    public ResponseEntity<String> addCurso(Curso curso) {
-        if (curso.getId() != 0 && cursoRepository.existsById(curso.getId())) {
-            return ResponseEntity.status(HttpStatus.CONFLICT).body("El curso ya existe");
+    public ResponseEntity<Object> addCurso(Curso curso) {
+        if (!cursoRepository.existsById(curso.getId())) {
+            cursoRepository.save(curso);
+            return ResponseEntity.status(HttpStatus.CREATED).body("Curso creado\n"+curso);
         }
-        cursoRepository.save(curso);
-        return ResponseEntity.status(HttpStatus.CREATED).body("Curso guardado");
+        return ResponseEntity.status(HttpStatus.CONFLICT).body("Curso ya existente");
     }
 
     public ResponseEntity<Curso> getCursoById(int id) {
         Optional<Curso> curso = cursoRepository.findById(id);
-        return curso.map(ResponseEntity::ok)
-                .orElseGet(() -> ResponseEntity.status(HttpStatus.NOT_FOUND).build());
+        if (curso.isPresent()) {
+            return ResponseEntity.ok(curso.get());
+        }
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
     }
 
     public ResponseEntity<String> deleteCurso(int id) {
@@ -127,23 +131,37 @@ public class CursoService {
     }
 
     public ResponseEntity<String> addContenido(int idCurso, Contenido contenido) {
+        // Verificar si el contenido existe en el sistema
+        if (!contenidoRepository.existsById(contenido.getId())) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Contenido no encontrado en el sistema");
+        }
+
+        // Buscar el curso
         Optional<Curso> cursoOpt = cursoRepository.findById(idCurso);
         if (cursoOpt.isEmpty()) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Curso no encontrado");
         }
         Curso curso = cursoOpt.get();
+
+        // Agregar el contenido al curso
         curso.addContenido(contenido);
-        contenidoService.addContenido(contenido);
+
+        // Persistir la relación
         cursoRepository.save(curso);
-        return ResponseEntity.ok("Contenido agregado al curso: " + curso.getName() + " id: " + curso.getId());
+
+        return ResponseEntity.ok("Contenido con id: " + contenido.getId() + " agregado al curso: " + curso.getName() + " id: " + curso.getId());
     }
 
+
     public ResponseEntity<String> deleteContenido(int idContenido, int idCurso) {
+        // Buscar el curso
         Optional<Curso> cursoOpt = cursoRepository.findById(idCurso);
         if (cursoOpt.isEmpty()) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Curso no encontrado en el sistema");
         }
         Curso curso = cursoOpt.get();
+
+        // Buscar el contenido en la lista del curso
         Optional<Contenido> contenidoOpt = curso.getListaContenido().stream()
                 .filter(c -> c.getId() == idContenido)
                 .findFirst();
@@ -152,8 +170,13 @@ public class CursoService {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Contenido no encontrado en el curso");
         }
 
+        // Eliminar el contenido del curso
         curso.removeContenido(contenidoOpt.get());
+
+        // Persistir los cambios
         cursoRepository.save(curso);
+
         return ResponseEntity.ok("Contenido con id: " + idContenido + " eliminado del curso: " + curso.getName() + " id: " + curso.getId());
     }
+
 }
