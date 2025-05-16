@@ -25,7 +25,7 @@ public class CursoController {
     }
 
     @PostMapping
-    public ResponseEntity<String> addCurso(@RequestBody Curso curso) {
+    public ResponseEntity<Object> addCurso(@RequestBody Curso curso) {
         return cursoService.addCurso(curso);
     }
 
