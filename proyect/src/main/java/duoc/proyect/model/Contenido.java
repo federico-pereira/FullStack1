@@ -14,11 +14,11 @@ import java.util.List;
 @NoArgsConstructor
 @Entity
 @EqualsAndHashCode
+
 public class Contenido {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-
     private String titulo;
     private String descripcion;
 

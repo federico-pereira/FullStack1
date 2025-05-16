@@ -1,0 +1,22 @@
+Index: .idea/jarRepositories.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"RemoteRepositoriesConfiguration\">\r\n    <remote-repository>\r\n      <option name=\"id\" value=\"central\" />\r\n      <option name=\"name\" value=\"Central Repository\" />\r\n      <option name=\"url\" value=\"https://repo.maven.apache.org/maven2\" />\r\n    </remote-repository>\r\n    <remote-repository>\r\n      <option name=\"id\" value=\"central\" />\r\n      <option name=\"name\" value=\"Maven Central repository\" />\r\n      <option name=\"url\" value=\"https://repo1.maven.org/maven2\" />\r\n    </remote-repository>\r\n    <remote-repository>\r\n      <option name=\"id\" value=\"jboss.community\" />\r\n      <option name=\"name\" value=\"JBoss Community repository\" />\r\n      <option name=\"url\" value=\"https://repository.jboss.org/nexus/content/repositories/public/\" />\r\n    </remote-repository>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/jarRepositories.xml b/.idea/jarRepositories.xml
+--- a/.idea/jarRepositories.xml	(revision 627c80669e7e0a92c77e151290011f5d916b6cfc)
++++ b/.idea/jarRepositories.xml	(date 1747426860588)
+@@ -16,5 +16,10 @@
+       <option name="name" value="JBoss Community repository" />
+       <option name="url" value="https://repository.jboss.org/nexus/content/repositories/public/" />
+     </remote-repository>
++    <remote-repository>
++      <option name="id" value="oracle-maven" />
++      <option name="name" value="Oracle Maven Repository" />
++      <option name="url" value="https://download.oracle.com/maven/" />
++    </remote-repository>
+   </component>
+ </project>
+\ No newline at end of file
