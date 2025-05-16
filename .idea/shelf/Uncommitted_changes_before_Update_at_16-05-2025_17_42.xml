@@ -1,0 +1,34 @@
+<changelist name="Uncommitted_changes_before_Update_at_16-05-2025_17_42" date="1747431775574" recycled="false" toDelete="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16-05-2025_17_42/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 16-05-2025 17:42" />
+  <binary>
+    <option name="BEFORE_PATH" value="proyect/target/classes/duoc/proyect/controller/ContenidoController.class" />
+    <option name="AFTER_PATH" value="proyect/target/classes/duoc/proyect/controller/ContenidoController.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16-05-2025_17_42/ContenidoController.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="proyect/target/classes/duoc/proyect/model/Curso.class" />
+    <option name="AFTER_PATH" value="proyect/target/classes/duoc/proyect/model/Curso.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16-05-2025_17_42/Curso.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="proyect/target/classes/duoc/proyect/repositoy/CursoRepository.class" />
+    <option name="AFTER_PATH" value="proyect/target/classes/duoc/proyect/repositoy/CursoRepository.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16-05-2025_17_42/CursoRepository.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="proyect/target/classes/duoc/proyect/controller/AlumnoController.class" />
+    <option name="AFTER_PATH" value="proyect/target/classes/duoc/proyect/controller/AlumnoController.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16-05-2025_17_42/AlumnoController.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="proyect/target/classes/duoc/proyect/service/CursoService.class" />
+    <option name="AFTER_PATH" value="proyect/target/classes/duoc/proyect/service/CursoService.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16-05-2025_17_42/CursoService.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="proyect/target/classes/duoc/proyect/controller/CursoController.class" />
+    <option name="AFTER_PATH" value="proyect/target/classes/duoc/proyect/controller/CursoController.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16-05-2025_17_42/CursoController.class" />
+  </binary>
+</changelist>

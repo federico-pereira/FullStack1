@@ -16,7 +16,6 @@ public class Curso {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-
     private String name;
 
     // Relación N-1: un Profesor puede tener muchos Cursos
