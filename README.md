@@ -17,7 +17,7 @@ Sistema académico full stack desarrollado como proyecto semestral (semestre 3) 
 
 ## About
 
-FullStack1 es un sistema académico que expone una API REST para gestionar alumnos, profesores, cursos y contenidos, incluyendo la asignación de alumnos a cursos y la asociación de contenidos con cursos. ([github.com](https://github.com/federico-pereira/FullStack1/tree/martin-branch))
+FullStack1 es un sistema académico que expone una API REST para gestionar alumnos, profesores, cursos y contenidos, incluyendo la asignación de alumnos a cursos y la asociación de contenidos con cursos.
 
 ## Technologies
 
