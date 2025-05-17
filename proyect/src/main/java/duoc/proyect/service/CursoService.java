@@ -12,7 +12,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Objects;
 import java.util.Optional;
 
 @Service
@@ -47,10 +46,8 @@ public class CursoService {
 
     public ResponseEntity<Curso> getCursoById(int id) {
         Optional<Curso> curso = cursoRepository.findById(id);
-        if (curso.isPresent()) {
-            return ResponseEntity.ok(curso.get());
-        }
-        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        // if curso is not empty
+        return curso.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.status(HttpStatus.NOT_FOUND).body(null));
     }
 
     public ResponseEntity<String> deleteCurso(int id) {
@@ -62,6 +59,8 @@ public class CursoService {
     }
 
     public ResponseEntity<String> updateCurso(Curso curso,int id) {
+        // hacemos un setId a curso para coordinar las id (curso se crea con id automatica)
+        curso.setId(id);
         if (cursoRepository.existsById(id)) {
             cursoRepository.save(curso);
             return ResponseEntity.ok("Curso actualizado con id: " + curso);
@@ -82,6 +81,8 @@ public class CursoService {
         }
         return ResponseEntity.ok(lista);
     }
+
+    // CORREGIR FUNCION, NECESITA AGREGAR POR ID ALUMNO (DE LA FORMA ACTUAL LAS ID SON DISTINTAS)
 
     public ResponseEntity<String> addAlumno(int idCurso, Alumno alumno) {
         if (!alumnoRepository.existsById(alumno.getId())) {
