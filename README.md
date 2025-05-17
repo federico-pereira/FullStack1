@@ -21,12 +21,12 @@ FullStack1 es un sistema académico que expone una API REST para gestionar alumn
 
 ## Technologies
 
-* **Java 11+**: Lenguaje principal del backend en Spring Boot. ([github.com](https://github.com/federico-pereira/FullStack1/tree/martin-branch))
-* **Spring Boot**: Framework para crear aplicaciones web y APIs REST. ([github.com](https://github.com/federico-pereira/FullStack1/tree/martin-branch))
-* **Spring Data JPA**: Gestión y persistencia de datos en base de datos SQL mediante entidades y repositorios. ([github.com](https://github.com/federico-pereira/FullStack1/tree/martin-branch))
-* **Lombok**: Reducción de código repetitivo (getters/setters, constructores). ([github.com](https://github.com/federico-pereira/FullStack1/tree/martin-branch))
-* **Maven**: Gestión de dependencias y construcción del proyecto. ([github.com](https://github.com/federico-pereira/FullStack1/tree/martin-branch))
-* **Base de datos relacional (Oracle)** utilizada a través de JPA. ([github.com](https://github.com/federico-pereira/FullStack1/tree/martin-branch))
+* **Java 11+**: Lenguaje principal del backend en Spring Boot. 
+* **Spring Boot**: Framework para crear aplicaciones web y APIs REST. 
+* **Spring Data JPA**: Gestión y persistencia de datos en base de datos SQL mediante entidades y repositorios. 
+* **Lombok**: Reducción de código repetitivo (getters/setters, constructores). 
+* **Maven**: Gestión de dependencias y construcción del proyecto. 
+* **Base de datos relacional (Oracle)** utilizada a través de JPA. 
 
 ## Prerequisites
 
@@ -112,7 +112,7 @@ FullStack1/
 * `DELETE /{idCurso}/alumnos/{id}` : Elimina un alumno de un curso
 * `GET /{idCurso}/contenidos` : Lista los contenidos de un curso
 * `POST /{idCurso}/contenidos` : Agrega contenido a un curso
-* `DELETE /{idCurso}/contenidos/{id}` : Elimina contenido de un curso ([github.com](https://github.com/federico-pereira/FullStack1/tree/martin-branch))
+* `DELETE /{idCurso}/contenidos/{id}` : Elimina contenido de un curso 
 
 ### ContenidoController (`/api/v1/contenidos`)
 
@@ -132,7 +132,7 @@ FullStack1/
 ## Authors
 
 * Federico Pereira
-* Martín González ([github.com](https://github.com/federico-pereira/FullStack1/tree/martin-branch))
+* Martín González 
 
 ## License
 
