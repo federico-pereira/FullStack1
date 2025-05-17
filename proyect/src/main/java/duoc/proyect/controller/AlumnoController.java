@@ -26,7 +26,7 @@ public class AlumnoController {
     }
 
     @PostMapping
-    public ResponseEntity<String> createAlumno(@RequestBody Alumno alumno) {
+    public ResponseEntity<String> addAlumno(@RequestBody Alumno alumno) {
         return alumnoService.addAlumno(alumno);
     }
 

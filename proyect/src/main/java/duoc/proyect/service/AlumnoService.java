@@ -14,7 +14,7 @@ import java.util.Optional;
 public class AlumnoService {
 
     @Autowired
-    private AlumnoRepository alumnoRepository;
+    AlumnoRepository alumnoRepository;
 
     public ResponseEntity<List<Alumno>> getAlumnos() {
         List<Alumno> alumnos = alumnoRepository.findAll();
@@ -27,7 +27,7 @@ public class AlumnoService {
     public ResponseEntity<String> addAlumno(Alumno alumno) {
         alumnoRepository.save(alumno);
         return ResponseEntity.status(HttpStatus.CREATED)
-                .body("Alumno agregado: " + alumno.toString());
+                .body("Alumno agregado: " + alumno);
     }
 
     public ResponseEntity<Object> getAlumnoById(int id) {
