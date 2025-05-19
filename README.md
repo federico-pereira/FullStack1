@@ -9,8 +9,8 @@ Este repositorio contiene el proyecto semestral de la asignatura Full Stack del 
 ## Tecnologías
 
 * **Backend:** Java 17, Spring Boot, Spring Data JPA, Hibernate, Lombok
-* **Base de datos:** H2 (por defecto) / MySQL (configurable en `application.properties`)
-* **Frontend:** \[Indicar framework/librería: Angular, React, Vue.js o Thymeleaf]
+* **Base de datos:** Oracle Bd (configurable en `application.properties`)
+* **Frontend:** \[Indicar framework/librería: React
 * **Gestión de dependencias:** Maven
 * **Control de versiones:** Git
 
