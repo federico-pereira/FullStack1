@@ -85,14 +85,24 @@ A continuación, para cada recurso se muestra un ejemplo de:
 * **POST** `/api/profesores`
 
 ```json
-{ "nombre": "Juan", "departamento": "Matemáticas", "email": "juan@duoc.cl" }
+{
+  "rut": "11.111.111-1",
+  "name": "Juan",
+  "lastName": "Pérez",
+  "mail": "juan.perez@duoc.cl",
+}
 ```
 
 * **PUT** `/api/profesores/{id}`
 
-```json
-{ "nombre": "Juan Carlos", "departamento": "Física", "email": "jcarlos@duoc.cl" }
-```
+````json
+{
+  "rut": "11.111.111-1",
+  "name": "Juan Carlos",
+  "lastName": "Pérez Gómez",
+  "mail": "jcarlos.perez@duoc.cl",
+}
+````
 
 ---
 
@@ -123,15 +133,21 @@ A continuación, para cada recurso se muestra un ejemplo de:
 * **POST** `/api/evaluaciones`
 
 ```json
-{ "titulo": "Examen Parcial", "fecha": "2025-06-01", "contenidoId": 3 }
+{
+  "titulo": "Examen Parcial",
+}
 ```
 
 * **PUT** `/api/evaluaciones/{id}`
 
 ```json
-{ "titulo": "Examen Final", "fecha": "2025-12-15", "contenidoId": 3 }
+{
+  "titulo": "Examen Final",
+}
 ```
-
+* **GET** `/api/evaluaciones/{id}/cursos`
+* **DELETE** `/api/evaluaciones/{id}/cursos/{idCurso}`
+* **POST** `/api/evaluaciones/{id}/cursos/{idCurso}`
 ---
 
 ### Soportes
