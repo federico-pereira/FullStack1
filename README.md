@@ -1,22 +1,5 @@
 # FullStack1
 
-Sistema académico full stack desarrollado como proyecto semestral (semestre 3) que permite gestionar entidades típicas de un entorno educativo: alumnos, profesores, cursos y contenidos. Permite realizar operaciones CRUD y gestionar las relaciones entre estas entidades.
-
-## Tabla de contenidos
-
-* [About](#about)
-* [Technologies](#technologies)
-* [Prerequisites](#prerequisites)
-* [Installation](#installation)
-* [Configuration](#configuration)
-* [Project Structure](#project-structure)
-* [API Reference](#api-reference)
-* [Contributing](#contributing)
-* [Authors](#authors)
-* [License](#license)
-
-# FullStack1
-
 Proyecto semestral de desarrollo Full Stack – Semestre 3
 
 ## Descripción
@@ -82,33 +65,166 @@ Este repositorio contiene el proyecto semestral de la asignatura Full Stack del 
 * API REST disponible en: `http://localhost:8080/api`
 * Interfaz web en: `http://localhost:4200`
 
-### Ejemplos de POST
+### Endpoints disponibles
 
-**Crear usuario**
-Endpoint: `POST /api/usuarios`
-Body JSON:
+A continuación, para cada recurso se muestra un ejemplo de:
+
+* **GET** lista
+* **GET** por id
+* **DELETE** por id
+* **POST**
+* **PUT**
+
+---
+
+### Profesores
+
+* **GET** `/api/profesores`
+* **GET** `/api/profesores/{id}`
+* **DELETE** `/api/profesores/{id}`
+* **POST** `/api/profesores`
 
 ```json
-{
-  "rut": "33.333.333-3",
-  "name": "Fede",
-  "lastName": "Pereira",
-  "mail": "Fede.Pereira@duoc.cl"
-}
+{ "nombre": "Juan", "departamento": "Matemáticas", "email": "juan@duoc.cl" }
 ```
 
-**Asignar ticket a soporte (path variable)**
-Endpoint: `POST /api/soportes/1/tickets/5`
-Body JSON: (no aplica)
-
-**Asignar ticket a soporte (body JSON)**
-Endpoint: `POST /api/soportes/1/tickets`
-Body JSON:
+* **PUT** `/api/profesores/{id}`
 
 ```json
-{
-  "id": 5
-}
+{ "nombre": "Juan Carlos", "departamento": "Física", "email": "jcarlos@duoc.cl" }
+```
+
+---
+
+### Contenidos
+
+* **GET** `/api/contenidos`
+* **GET** `/api/contenidos/{id}`
+* **DELETE** `/api/contenidos/{id}`
+* **POST** `/api/contenidos`
+
+```json
+{ "titulo": "Álgebra Lineal", "descripcion": "Fundamentos de espacios vectoriales" }
+```
+
+* **PUT** `/api/contenidos/{id}`
+
+```json
+{ "titulo": "Cálculo I", "descripcion": "Límites y derivadas" }
+```
+
+---
+
+### Evaluaciones
+
+* **GET** `/api/evaluaciones`
+* **GET** `/api/evaluaciones/{id}`
+* **DELETE** `/api/evaluaciones/{id}`
+* **POST** `/api/evaluaciones`
+
+```json
+{ "titulo": "Examen Parcial", "fecha": "2025-06-01", "contenidoId": 3 }
+```
+
+* **PUT** `/api/evaluaciones/{id}`
+
+```json
+{ "titulo": "Examen Final", "fecha": "2025-12-15", "contenidoId": 3 }
+```
+
+---
+
+### Soportes
+
+* **GET** `/api/soportes`
+* **GET** `/api/soportes/{id}`
+* **DELETE** `/api/soportes/{id}`
+* **POST** `/api/soportes`
+
+```json
+{ "rut": "22.222.222-2", "name": "Luis", "lastName": "Ramírez", "mail": "luis@example.com", "departamento": "TI" }
+```
+
+* **PUT** `/api/soportes/{id}`
+
+```json
+{ "departamento": "Atención al Cliente" }
+```
+
+---
+
+### Tickets
+
+* **GET** `/api/tickets`
+* **GET** `/api/tickets/{id}`
+* **DELETE** `/api/tickets/{id}`
+* **POST** `/api/tickets`
+
+```json
+{ "asunto": "Error 500", "descripcion": "Falla en servidor", "prioridad": "ALTA" }
+```
+
+* **PUT** `/api/tickets/{id}`
+
+```json
+{ "prioridad": "MEDIA", "estado": "EN_PROGRESO" }
+```
+
+---
+
+### Alumnos
+
+* **GET** `/api/alumnos`
+* **GET** `/api/alumnos/{id}`
+* **DELETE** `/api/alumnos/{id}`
+* **POST** `/api/alumnos`
+
+```json
+{ "nombre": "María", "curso": "Ingeniería" }
+```
+
+* **PUT** `/api/alumnos/{id}`
+
+```json
+{ "curso": "Arquitectura" }
+```
+
+---
+
+### Matrículas
+
+* **GET** `/api/matriculas`
+* **GET** `/api/matriculas/{id}`
+* **DELETE** `/api/matriculas/{id}`
+* **POST** `/api/matriculas`
+
+```json
+{ "matricula": "2025-01" }
+```
+
+* **PUT** `/api/matriculas/{id}`
+
+```json
+{ "matricula": "2025-02" }
+```
+
+---
+
+### Cupones de descuento
+
+* **GET** `/api/cupones`
+* **GET** `/api/cupones/{id}`
+* **DELETE** `/api/cupones/{id}`
+* **POST** `/api/cupones`
+
+```json
+{ "codigo": "PROMO10", "descuento": 10 }
+```
+
+* **PUT** `/api/cupones/{id}`
+
+```json
+{ "descuento": 15 }
 ```
 
 ## Contribuciones
@@ -127,5 +243,4 @@ Este proyecto está bajo la licencia MIT. Ver [LICENSE](LICENSE) para más infor
 ## Contacto
 
 Federico Pereira – [federico.pereira@duoc.cl](mailto:federico.pereira@duoc.cl)
-Martin Gonzalez – [mi.gonzalezmu@duocuc.cl](mailto:mi.gonzalezmu@duocuc.cl)
 Repositorio: [https://github.com/federico-pereira/FullStack1](https://github.com/federico-pereira/FullStack1)
