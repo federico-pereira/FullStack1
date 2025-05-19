@@ -4,12 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="94816420-cdd8-4d1e-838a-645d2ae55f93" name="Changes" comment="Nueva clase Evaluacion,&#10;falta corregir el post con listas de otros objetos&#10;en evaluacion, clases y creo q contenidos (revisar todos)">
+    <list default="true" id="94816420-cdd8-4d1e-838a-645d2ae55f93" name="Changes" comment="Matricula y cupon + mejoras a funciones de post y get">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/controller/AlumnoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/controller/AlumnoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/controller/CursoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/controller/CursoController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/service/AlumnoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/service/AlumnoService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/service/CursoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/service/CursoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/controller/AlumnoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/controller/AlumnoController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/controller/CursoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/controller/CursoController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/service/AlumnoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/service/AlumnoService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/service/CursoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/service/CursoService.class" afterDir="false" />
     </list>
@@ -112,7 +112,8 @@
       <workItem from="1747409274253" duration="12123000" />
       <workItem from="1747491775385" duration="4822000" />
       <workItem from="1747502000241" duration="1417000" />
-      <workItem from="1747516264428" duration="3926000" />
+      <workItem from="1747516264428" duration="4559000" />
+      <workItem from="1747596850040" duration="11319000" />
     </task>
     <task id="LOCAL-00001" summary="Clase alumno">
       <option name="closed" value="true" />
@@ -146,7 +147,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747419994292</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Creacion clases ticket y soporte">
+      <option name="closed" value="true" />
+      <created>1747520478110</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1747520478110</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -169,6 +178,8 @@
     <MESSAGE value="herencia de clase usuario mejorada con supertipo" />
     <MESSAGE value="Correccion a las funciones, cambio de output a corrrespondiente, entre otros" />
     <MESSAGE value="Nueva clase Evaluacion,&#10;falta corregir el post con listas de otros objetos&#10;en evaluacion, clases y creo q contenidos (revisar todos)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Nueva clase Evaluacion,&#10;falta corregir el post con listas de otros objetos&#10;en evaluacion, clases y creo q contenidos (revisar todos)" />
+    <MESSAGE value="Creacion clases ticket y soporte" />
+    <MESSAGE value="Matricula y cupon + mejoras a funciones de post y get" />
+    <option name="LAST_COMMIT_MESSAGE" value="Matricula y cupon + mejoras a funciones de post y get" />
   </component>
 </project>

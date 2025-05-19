@@ -19,7 +19,7 @@ public class AlumnoService {
     public ResponseEntity<List<Alumno>> getAlumnos() {
         List<Alumno> alumnos = alumnoRepository.findAll();
         if (alumnos.isEmpty()) {
-            return ResponseEntity.status(HttpStatus.NO_CONTENT).body(null);
+            new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
         return ResponseEntity.ok(alumnos);
     }
@@ -35,8 +35,7 @@ public class AlumnoService {
         if (alumnoOpt.isPresent()) {
             return ResponseEntity.ok(alumnoOpt.get());
         }
-        return ResponseEntity.status(HttpStatus.NOT_FOUND)
-                .body("Alumno con id " + id + " no encontrado");
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
     public ResponseEntity<String> deleteAlumno(int id) {
@@ -59,7 +58,6 @@ public class AlumnoService {
             alumnoRepository.save(alumno);
             return ResponseEntity.ok("Alumno actualizado: " + alumno.toString());
         }
-        return ResponseEntity.status(HttpStatus.NOT_FOUND)
-                .body("Alumno con id " + id + " no encontrado");
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 }
