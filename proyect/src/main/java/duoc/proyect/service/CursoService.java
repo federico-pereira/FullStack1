@@ -37,17 +37,16 @@ public class CursoService {
     }
 
     public ResponseEntity<Object> addCurso(Curso curso) {
-        if (!cursoRepository.existsById(curso.getId())) {
-            cursoRepository.save(curso);
-            return ResponseEntity.status(HttpStatus.CREATED).body("Curso creado\n"+curso);
-        }
-        return ResponseEntity.status(HttpStatus.CONFLICT).body("Curso ya existente");
+        cursoRepository.save(curso);
+        return ResponseEntity.status(HttpStatus.CREATED).body(curso);
     }
 
-    public ResponseEntity<Curso> getCursoById(int id) {
-        Optional<Curso> curso = cursoRepository.findById(id);
-        // if curso is not empty
-        return curso.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.status(HttpStatus.NOT_FOUND).body(null));
+    public ResponseEntity<Object> getCursoById(int id) {
+        if (cursoRepository.existsById(id)) {
+            Curso curso = cursoRepository.findById(id).get();
+            return ResponseEntity.status(HttpStatus.OK).body(curso);
+        }
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).body("Curso no encontrado");
     }
 
     public ResponseEntity<String> deleteCurso(int id) {
@@ -55,7 +54,7 @@ public class CursoService {
             cursoRepository.deleteById(id);
             return ResponseEntity.ok("Curso eliminado con id: " + id);
         }
-        return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Curso no encontrado");
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).body("Curso no encontrado");
     }
 
     public ResponseEntity<String> updateCurso(Curso curso,int id) {
@@ -65,7 +64,7 @@ public class CursoService {
             cursoRepository.save(curso);
             return ResponseEntity.ok("Curso actualizado con id: " + curso);
         }
-        return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Curso no encontrado");
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).body("Curso no encontrado");
     }
 
     // Alumnos
@@ -73,7 +72,7 @@ public class CursoService {
     public ResponseEntity<List<Alumno>> getAlumnos(int idCurso) {
         Optional<Curso> cursoOpt = cursoRepository.findById(idCurso);
         if (cursoOpt.isEmpty()) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+            return ResponseEntity.status(HttpStatus.NO_CONTENT).body(null);
         }
         List<Alumno> lista = cursoOpt.get().getListaCurso();
         if (lista == null || lista.isEmpty()) {
@@ -86,11 +85,11 @@ public class CursoService {
 
     public ResponseEntity<String> addAlumno(int idCurso, Alumno alumno) {
         if (!alumnoRepository.existsById(alumno.getId())) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Alumno no encontrado en el sistema");
+            return ResponseEntity.status(HttpStatus.NO_CONTENT).body("Alumno no encontrado en el sistema");
         }
         Optional<Curso> cursoOpt = cursoRepository.findById(idCurso);
         if (cursoOpt.isEmpty()) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Curso no encontrado");
+            return ResponseEntity.status(HttpStatus.NO_CONTENT).body("Curso no encontrado");
         }
         Curso curso = cursoOpt.get();
         curso.addAlumno(alumno);
@@ -101,7 +100,7 @@ public class CursoService {
     public ResponseEntity<String> deleteAlumno(int idAlumno, int idCurso) {
         Optional<Curso> cursoOpt = cursoRepository.findById(idCurso);
         if (cursoOpt.isEmpty()) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Curso no encontrado");
+            return ResponseEntity.status(HttpStatus.NO_CONTENT).body("Curso no encontrado");
         }
         Curso curso = cursoOpt.get();
         Optional<Alumno> alumnoOpt = curso.getListaCurso().stream()
@@ -109,7 +108,7 @@ public class CursoService {
                 .findFirst();
 
         if (alumnoOpt.isEmpty()) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Alumno no encontrado en el curso");
+            return ResponseEntity.status(HttpStatus.NO_CONTENT).body("Alumno no encontrado en el curso");
         }
 
         curso.removeAlumno(alumnoOpt.get());
@@ -122,7 +121,7 @@ public class CursoService {
     public ResponseEntity<List<Contenido>> getContenidos(int idCurso) {
         Optional<Curso> cursoOpt = cursoRepository.findById(idCurso);
         if (cursoOpt.isEmpty()) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+            return ResponseEntity.status(HttpStatus.NO_CONTENT).body(null);
         }
         List<Contenido> lista = cursoOpt.get().getListaContenido();
         if (lista == null || lista.isEmpty()) {
@@ -134,13 +133,13 @@ public class CursoService {
     public ResponseEntity<String> addContenido(int idCurso, Contenido contenido) {
         // Verificar si el contenido existe en el sistema
         if (!contenidoRepository.existsById(contenido.getId())) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Contenido no encontrado en el sistema");
+            return ResponseEntity.status(HttpStatus.NO_CONTENT).body("Contenido no encontrado en el sistema");
         }
 
         // Buscar el curso
         Optional<Curso> cursoOpt = cursoRepository.findById(idCurso);
         if (cursoOpt.isEmpty()) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Curso no encontrado");
+            return ResponseEntity.status(HttpStatus.NO_CONTENT).body("Curso no encontrado");
         }
         Curso curso = cursoOpt.get();
 
@@ -158,7 +157,7 @@ public class CursoService {
         // Buscar el curso
         Optional<Curso> cursoOpt = cursoRepository.findById(idCurso);
         if (cursoOpt.isEmpty()) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Curso no encontrado en el sistema");
+            return ResponseEntity.status(HttpStatus.NO_CONTENT).body("Curso no encontrado en el sistema");
         }
         Curso curso = cursoOpt.get();
 
@@ -168,7 +167,7 @@ public class CursoService {
                 .findFirst();
 
         if (contenidoOpt.isEmpty()) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Contenido no encontrado en el curso");
+            return ResponseEntity.status(HttpStatus.NO_CONTENT).body("Contenido no encontrado en el curso");
         }
 
         // Eliminar el contenido del curso
