@@ -21,10 +21,10 @@ public class CursoService {
     CursoRepository cursoRepository;
 
     @Autowired
-    AlumnoRepository alumnoRepository;
+    AlumnoService alumnoService;
 
     @Autowired
-    ContenidoRepository contenidoRepository;
+    ContenidoService contenidoService;
 
     // Cursos
 
@@ -38,7 +38,7 @@ public class CursoService {
 
     public ResponseEntity<Object> addCurso(Curso curso) {
         cursoRepository.save(curso);
-        return ResponseEntity.status(HttpStatus.CREATED).body(curso);
+        return ResponseEntity.status(HttpStatus.CREATED).body(null);
     }
 
     public ResponseEntity<Object> getCursoById(int id) {
@@ -83,17 +83,22 @@ public class CursoService {
 
     // CORREGIR FUNCION, NECESITA AGREGAR POR ID ALUMNO (DE LA FORMA ACTUAL LAS ID SON DISTINTAS)
 
-    public ResponseEntity<String> addAlumno(int idCurso, Alumno alumno) {
-        if (!alumnoRepository.existsById(alumno.getId())) {
+    public ResponseEntity<String> addAlumno(int idCurso, int idAlumno) {
+        if (alumnoService.getAlumnoById(idAlumno) == null) {
             return ResponseEntity.status(HttpStatus.NO_CONTENT).body("Alumno no encontrado en el sistema");
         }
         Optional<Curso> cursoOpt = cursoRepository.findById(idCurso);
         if (cursoOpt.isEmpty()) {
             return ResponseEntity.status(HttpStatus.NO_CONTENT).body("Curso no encontrado");
         }
+
         Curso curso = cursoOpt.get();
-        curso.addAlumno(alumno);
+        Alumno alumno = (Alumno) alumnoService.getAlumnoById(idAlumno).getBody();
+        List<Alumno> lista = curso.getListaCurso();
+        lista.add(alumno);
+        curso.setListaCurso(lista);
         cursoRepository.save(curso);  // persistir la asociación
+
         return ResponseEntity.ok("Alumno " + alumno.toString() + " agregado al curso: " + curso.getName() + " id: " + curso.getId());
     }
 
@@ -103,15 +108,14 @@ public class CursoService {
             return ResponseEntity.status(HttpStatus.NO_CONTENT).body("Curso no encontrado");
         }
         Curso curso = cursoOpt.get();
-        Optional<Alumno> alumnoOpt = curso.getListaCurso().stream()
-                .filter(a -> a.getId() == idAlumno)
-                .findFirst();
+        Alumno alumno = (Alumno) alumnoService.getAlumnoById(idAlumno).getBody();
 
-        if (alumnoOpt.isEmpty()) {
+        if (!curso.getListaCurso().contains(alumno)) {
             return ResponseEntity.status(HttpStatus.NO_CONTENT).body("Alumno no encontrado en el curso");
         }
-
-        curso.removeAlumno(alumnoOpt.get());
+        List<Alumno> lista = curso.getListaCurso();
+        lista.remove(alumno);
+        curso.setListaCurso(lista);
         cursoRepository.save(curso);
         return ResponseEntity.ok("Alumno eliminado del curso: " + curso.getName() + " id: " + curso.getId());
     }
@@ -130,9 +134,9 @@ public class CursoService {
         return ResponseEntity.ok(lista);
     }
 
-    public ResponseEntity<String> addContenido(int idCurso, Contenido contenido) {
+    public ResponseEntity<String> addContenido(int idCurso, int idContenido) {
         // Verificar si el contenido existe en el sistema
-        if (!contenidoRepository.existsById(contenido.getId())) {
+        if (contenidoService.getContenidoById(idContenido)==null) {
             return ResponseEntity.status(HttpStatus.NO_CONTENT).body("Contenido no encontrado en el sistema");
         }
 
@@ -144,7 +148,10 @@ public class CursoService {
         Curso curso = cursoOpt.get();
 
         // Agregar el contenido al curso
-        curso.addContenido(contenido);
+        Contenido contenido = (Contenido) contenidoService.getContenidoById(idContenido).getBody();
+        List<Contenido> lista = curso.getListaContenido();
+        lista.add(contenido);
+        curso.setListaContenido(lista);
 
         // Persistir la relación
         cursoRepository.save(curso);
@@ -160,18 +167,15 @@ public class CursoService {
             return ResponseEntity.status(HttpStatus.NO_CONTENT).body("Curso no encontrado en el sistema");
         }
         Curso curso = cursoOpt.get();
-
-        // Buscar el contenido en la lista del curso
-        Optional<Contenido> contenidoOpt = curso.getListaContenido().stream()
-                .filter(c -> c.getId() == idContenido)
-                .findFirst();
-
-        if (contenidoOpt.isEmpty()) {
-            return ResponseEntity.status(HttpStatus.NO_CONTENT).body("Contenido no encontrado en el curso");
+        Contenido contenidoTemp = (Contenido) contenidoService.getContenidoById(idContenido).getBody();
+        if (!curso.getListaContenido().contains(contenidoTemp)){
+            return ResponseEntity.status(HttpStatus.NO_CONTENT).body("Contenido no encontrado en la lista de contenidos del curso");
         }
 
         // Eliminar el contenido del curso
-        curso.removeContenido(contenidoOpt.get());
+        List<Contenido> lista = curso.getListaContenido();
+        lista.remove(contenidoTemp);
+        curso.setListaContenido(lista);
 
         // Persistir los cambios
         cursoRepository.save(curso);

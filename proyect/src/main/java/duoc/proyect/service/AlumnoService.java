@@ -53,7 +53,6 @@ public class AlumnoService {
             Alumno alumno = alumnoOpt.get();
             alumno.setName(newAlumno.getName());
             alumno.setMail(newAlumno.getMail());
-            alumno.setCursos(newAlumno.getCursos());
             // Puedes agregar más campos a actualizar si quieres
             alumnoRepository.save(alumno);
             return ResponseEntity.ok("Alumno actualizado: " + alumno.toString());

@@ -58,7 +58,7 @@ public class CursoController {
 
     @PostMapping("/{idCurso}/alumnos")
     public ResponseEntity<String> addAlumno(@PathVariable int idCurso, @RequestBody Alumno alumno) {
-        return cursoService.addAlumno(idCurso,alumno);
+        return cursoService.addAlumno(idCurso,alumno.getId());
     }
 
     //Contenido
@@ -73,6 +73,6 @@ public class CursoController {
 
     @PostMapping("/{idCruso}")
     public ResponseEntity<String> addContenido(@PathVariable int idCurso, @RequestBody Contenido contenido) {
-        return cursoService.addContenido(idCurso,contenido);
+        return cursoService.addContenido(idCurso,contenido.getId());
     }
 }

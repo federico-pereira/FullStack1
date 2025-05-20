@@ -8,9 +8,5 @@ import java.util.*;
 @Entity
 @PrimaryKeyJoinColumn(name = "id")      // mapea PK→FK con USUARIO(id)
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
 public class Alumno extends Usuario {
-    @ManyToMany(mappedBy = "listaCurso")
-    private List<Curso> cursos = new ArrayList<>();
 }
