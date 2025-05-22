@@ -1,16 +1,16 @@
 # FullStack1
 
-Proyecto semestral de desarrollo Full Stack – Semestre 3
+Proyecto semestral de desarrollo Full Stack
 
 ## Descripción
 
-Este repositorio contiene el proyecto semestral de la asignatura Full Stack del tercer semestre. La aplicación permite gestionar usuarios y tickets de soporte, exponiendo una API REST en el backend y una interfaz web en el frontend.
+Este repositorio contiene el proyecto semestral de la asignatura Full Stack. La aplicación permite gestionar un sistema de clases con contenido, alumno, profesores, entre otros, exponiendo una API REST en el backend.
 
 ## Tecnologías
 
 * **Backend:** Java 17, Spring Boot, Spring Data JPA, Hibernate, Lombok
 * **Base de datos:** Oracle Bd (configurable en `application.properties`)
-* **Frontend:** \[Indicar framework/librería: React
+* **Frontend:** No existente
 * **Gestión de dependencias:** Maven
 * **Control de versiones:** Git
 
@@ -22,6 +22,10 @@ Este repositorio contiene el proyecto semestral de la asignatura Full Stack del 
  ┃ ┣ 📂src
  ┃ ┃ ┣ 📂main
  ┃ ┃ ┃ ┣ 📂java/duoc/proyect
+ ┃ ┃ ┃ ┃ ┣ 📂controller
+ ┃ ┃ ┃ ┃ ┣ 📂model
+ ┃ ┃ ┃ ┃ ┣ 📂repository
+ ┃ ┃ ┃ ┃ ┣ 📂service
  ┃ ┃ ┃ ┗ 📂resources
  ┃ ┃ ┗ 📂test
  ┃ ┗ 📜pom.xml
@@ -32,38 +36,10 @@ Este repositorio contiene el proyecto semestral de la asignatura Full Stack del 
 
 * Java 17 o superior
 * Maven 3.6+
-* (Opcional) Docker y Docker Compose para contenerizar la aplicación
-
-## Instalación y ejecución
-
-1. Clonar el repositorio:
-
-   ```bash
-   git clone https://github.com/federico-pereira/FullStack1.git
-   ```
-2. Ubicarse en la carpeta del backend:
-
-   ```bash
-   cd FullStack1/proyect
-   ```
-3. Construir y arrancar el servidor Spring Boot:
-
-   ```bash
-   mvn clean install
-   mvn spring-boot:run
-   ```
-4. (Si dispone de frontend separado) Entrar a la carpeta `frontend`, instalar dependencias y levantar el servidor:
-
-   ```bash
-   cd frontend
-   npm install
-   npm start
-   ```
 
 ## Uso
 
-* API REST disponible en: `http://localhost:8080/api`
-* Interfaz web en: `http://localhost:4200`
+* API REST disponible en: `http://localhost:8080/api/v1`
 
 ### Endpoints disponibles
 
@@ -77,12 +53,12 @@ A continuación, para cada recurso se muestra un ejemplo de:
 
 ---
 
-### Profesores
+### Alumnos
 
-* **GET** `/api/profesores`
-* **GET** `/api/profesores/{id}`
-* **DELETE** `/api/profesores/{id}`
-* **POST** `/api/profesores`
+* **GET** `/api/alumnos`
+* **GET** `/api/alumnos/{id}`
+* **DELETE** `/api/alumnos/{id}`
+* **POST** `/api/alumnos`
 
 ```json
 {
@@ -110,11 +86,13 @@ A continuación, para cada recurso se muestra un ejemplo de:
 
 * **GET** `/api/contenidos`
 * **GET** `/api/contenidos/{id}`
-* **DELETE** `/api/contenidos/{id}`
+* **DELETE** `/api/contenidos/{id}` (error si esta relacionado a un curso)
 * **POST** `/api/contenidos`
 
 ```json
-{ "titulo": "Álgebra Lineal", "descripcion": "Fundamentos de espacios vectoriales" }
+{ "titulo": "Álgebra Lineal",
+  "descripcion": "Fundamentos de espacios vectoriales"
+}
 ```
 
 * **PUT** `/api/contenidos/{id}`
@@ -125,24 +103,24 @@ A continuación, para cada recurso se muestra un ejemplo de:
 
 ---
 
-### Evaluaciones
+### CuponesDescuento
 
-* **GET** `/api/evaluaciones`
-* **GET** `/api/evaluaciones/{id}`
-* **DELETE** `/api/evaluaciones/{id}`
-* **POST** `/api/evaluaciones`
+* **GET** `/api/cupones`
+* **GET** `/api/cupones/{id}`
+* **DELETE** `/api/cupones/{id}`
+* **POST** `/api/cupones`
 
 ```json
 {
-  "titulo": "Examen Parcial",
+ "descuento": 15
 }
 ```
 
-* **PUT** `/api/evaluaciones/{id}`
+* **PUT** `/api/cupones/{id}`
 
 ```json
 {
-  "titulo": "Examen Final",
+ "descuento": 10
 }
 ```
 * **GET** `/api/evaluaciones/{id}/cursos`
