@@ -38,22 +38,15 @@ public class SoporteService {
     }
 
     public ResponseEntity<Object> addSoporte(Soporte soporte) {
-        return new ResponseEntity<>(soporteRepository.save(soporte), HttpStatus.CREATED);
+        soporteRepository.save(soporte);
+        return new ResponseEntity<>(soporte, HttpStatus.CREATED);
     }
 
     public ResponseEntity<Object> updateSoporte(int id,Soporte soporte) {
-        Optional<Soporte> soporteOptional = soporteRepository.findById(id);
-        if (soporteOptional.isPresent()) {
-            Soporte soporteUpdate = soporteOptional.get();
-            soporteUpdate.setName(soporte.getName());
-            soporteUpdate.setLastName(soporte.getLastName());
-            soporteUpdate.setRut(soporte.getRut());
-            soporteUpdate.setDepartamento(soporte.getDepartamento());
-            soporteUpdate.setRut(soporte.getRut());
-            soporteUpdate.setTicketsAsignados(soporte.getTicketsAsignados());
-            soporteUpdate.setMail(soporte.getMail());
-            soporteRepository.save(soporteUpdate);
-            return ResponseEntity.status(HttpStatus.OK).body("Soporte actualizado: " + soporteUpdate);
+        if (soporteRepository.existsById(id)) {
+            soporte.setId(id);
+            soporteRepository.save(soporte);
+            return ResponseEntity.status(HttpStatus.OK).body("Soporte actualizado: " + soporte);
         }
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Soporte con id " + id + " no encontrado");
     }

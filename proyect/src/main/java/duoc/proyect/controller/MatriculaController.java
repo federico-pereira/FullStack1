@@ -50,9 +50,9 @@ public class MatriculaController {
         return matriculaService.getAlumno(id);
     }
 
-    @PostMapping("/{id}/alumno/{idAlumno}")
-    public ResponseEntity<Object> addAlumno(@PathVariable int id, @PathVariable int idAlumno) {
-        return matriculaService.addAlumno(id,idAlumno);
+    @PostMapping("/{id}/alumno")
+    public ResponseEntity<Object> addAlumno(@PathVariable int id, @RequestBody Alumno alumno) {
+        return matriculaService.addAlumno(id,alumno.getId());
     }
 
     @DeleteMapping("/{id}/alumno")

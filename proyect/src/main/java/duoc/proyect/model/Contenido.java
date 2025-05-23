@@ -21,7 +21,4 @@ public class Contenido {
 
     private String titulo;
     private String descripcion;
-
-    @ManyToMany(mappedBy = "listaContenido")
-    private List<Curso> cursos = new ArrayList<>();
 }

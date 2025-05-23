@@ -29,10 +29,10 @@ public class ProfesorService {
         return ResponseEntity.status(HttpStatus.CREATED).body("Profesor agregado");
     }
 
-    public ResponseEntity<String> getProfesorById(int id) {
+    public ResponseEntity<Object> getProfesorById(int id) {
         Optional<Profesor> profesor = profesorRepository.findById(id);
         if (profesor.isPresent()) {
-            return ResponseEntity.ok(profesor.get().toString());
+            return ResponseEntity.ok(profesor);
         } else {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Profesor no encontrado");
         }

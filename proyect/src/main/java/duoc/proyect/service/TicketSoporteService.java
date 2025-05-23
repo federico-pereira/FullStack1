@@ -52,13 +52,9 @@ public class TicketSoporteService {
     }
 
     public ResponseEntity<String> updateTicket(int id, TicketSoporte newTicket) {
-        Optional<TicketSoporte> ticket = ticketSoporteRepository.findById(id);
-        if (ticket.isPresent()) {
-            TicketSoporte oldTicket = ticket.get();
-            oldTicket.setTema(newTicket.getTema());
-            oldTicket.setDescripcion(newTicket.getDescripcion());
-            oldTicket.setReclamante(newTicket.getReclamante());
-            ticketSoporteRepository.save(oldTicket);
+        if (ticketSoporteRepository.existsById(id)) {
+            newTicket.setId(id);
+            ticketSoporteRepository.save(newTicket);
             return ResponseEntity.ok("Ticket actualizado correctamente");
         }
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Ticket con id "+ id + " no encontrado");
