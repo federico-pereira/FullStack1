@@ -40,6 +40,11 @@ Este repositorio contiene el proyecto semestral de la asignatura Full Stack. La 
 ## Uso
 
 * API REST disponible en: `http://localhost:8080/api/v1`
+* application.properties
+para cambiar la locacion de la walet --> spring.datasource.url=jdbc:oracle:thin:@fspdb_high?TNS_ADMIN=C:/
+y las credenciales
+spring.datasource.username=ADMIN
+spring.datasource.password=FullStack-001
 
 ### Endpoints disponibles
 
