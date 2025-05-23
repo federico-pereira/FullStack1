@@ -2,7 +2,7 @@ package duoc.proyect.service;
 
 import duoc.proyect.model.Soporte;
 import duoc.proyect.model.TicketSoporte;
-import duoc.proyect.repositoy.SoporteRepository;
+import duoc.proyect.repository.SoporteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

@@ -1,7 +1,7 @@
 package duoc.proyect.service;
 
 import duoc.proyect.model.Contenido;
-import duoc.proyect.repositoy.ContenidoRepository;
+import duoc.proyect.repository.ContenidoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

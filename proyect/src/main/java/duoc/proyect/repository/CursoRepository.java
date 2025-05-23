@@ -1,4 +1,4 @@
-package duoc.proyect.repositoy;
+package duoc.proyect.repository;
 
 import duoc.proyect.model.Curso;
 import org.springframework.data.jpa.repository.JpaRepository;

@@ -1,7 +1,7 @@
 package duoc.proyect.service;
 
 import duoc.proyect.model.Profesor;
-import duoc.proyect.repositoy.ProfesorRepository;
+import duoc.proyect.repository.ProfesorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

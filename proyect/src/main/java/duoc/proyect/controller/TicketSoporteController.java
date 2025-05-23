@@ -1,7 +1,6 @@
 package duoc.proyect.controller;
 
 import duoc.proyect.model.TicketSoporte;
-import duoc.proyect.repositoy.TicketSoporteRepository;
 import duoc.proyect.service.TicketSoporteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
