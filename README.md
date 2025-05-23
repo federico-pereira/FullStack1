@@ -362,7 +362,7 @@ A continuación, para cada recurso se muestra un ejemplo de:
 Se aceptan pull requests:
 
 1. Hacer fork del repositorio
-2. Crear nueva rama: `git checkout -b feature/nombre-feature`
+2. Crear nueva rama:
 3. Realizar cambios y commits claros
 4. Abrir Pull Request describiendo la funcionalidad o corrección
 
