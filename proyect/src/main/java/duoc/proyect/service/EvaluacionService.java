@@ -2,8 +2,8 @@ package duoc.proyect.service;
 
 import duoc.proyect.model.Curso;
 import duoc.proyect.model.Evaluacion;
-import duoc.proyect.repositoy.CursoRepository;
-import duoc.proyect.repositoy.EvaluacionRepository;
+import duoc.proyect.repository.CursoRepository;
+import duoc.proyect.repository.EvaluacionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

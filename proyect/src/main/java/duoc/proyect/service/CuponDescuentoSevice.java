@@ -1,7 +1,7 @@
 package duoc.proyect.service;
 
 import duoc.proyect.model.CuponDescuento;
-import duoc.proyect.repositoy.CuponDescuentoRepository;
+import duoc.proyect.repository.CuponDescuentoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

@@ -3,7 +3,7 @@ package duoc.proyect.service;
 import duoc.proyect.model.Alumno;
 import duoc.proyect.model.CuponDescuento;
 import duoc.proyect.model.Matricula;
-import duoc.proyect.repositoy.MatriculaRepository;
+import duoc.proyect.repository.MatriculaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

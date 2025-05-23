@@ -1,8 +1,7 @@
 package duoc.proyect.service;
 
 import duoc.proyect.model.TicketSoporte;
-import duoc.proyect.repositoy.TicketSoporteRepository;
-import org.apache.coyote.Response;
+import duoc.proyect.repository.TicketSoporteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
