@@ -49,9 +49,9 @@ public class SoporteController {
     }
 
     //CORREGIR GENERACION AUTOMATICA DE ID PARA LA REQUEST
-    @PostMapping("/{idSoporte}/tickets/{idTicket}")
-    public ResponseEntity<String> addTicket(@PathVariable int idSoporte, @PathVariable int idTicket) {
-        return soporteService.addTicketSoporte(idSoporte,idTicket);
+    @PostMapping("/{idSoporte}/tickets")
+    public ResponseEntity<String> addTicket(@PathVariable int idSoporte, @RequestBody TicketSoporte ticketSoporte) {
+        return soporteService.addTicketSoporte(idSoporte,ticketSoporte.getId());
     }
 
     @DeleteMapping("/{idSoporte}/tickets/{idTicket}")

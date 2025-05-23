@@ -50,9 +50,9 @@ public class EvaluacionController {
         return evaluacionService.getCursos(id);
     }
 
-    @PostMapping("/{id}/cursos/{idCurso}")
-    public ResponseEntity<Object> addCurso(@PathVariable int id, @PathVariable int idCurso) {
-        return evaluacionService.addCurso(id, idCurso);
+    @PostMapping("/{id}/cursos")
+    public ResponseEntity<Object> addCurso(@PathVariable int id, @RequestBody Curso curso) {
+        return evaluacionService.addCurso(id, curso.getId());
     }
 
     @DeleteMapping("/{idEvaluacion}/cursos/{idCurso}")

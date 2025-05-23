@@ -53,7 +53,7 @@ public class CursoController {
 
     @DeleteMapping("/{idCurso}/alumnos/{id}")
     public ResponseEntity<String> deleteAlumno(@PathVariable int idCurso, @PathVariable int id) {
-        return cursoService.deleteAlumno(idCurso,id);
+        return cursoService.deleteAlumno(id,idCurso);
     }
 
     @PostMapping("/{idCurso}/alumnos")
@@ -63,15 +63,15 @@ public class CursoController {
 
     //Contenido
 
-    @GetMapping("/{idCruso}/contenidos")
+    @GetMapping("/{idCurso}/contenidos")
     public ResponseEntity<List<Contenido>> getContenidos(@PathVariable int idCurso) {return cursoService.getContenidos(idCurso);}
 
-    @DeleteMapping("/{idCruso}/contenidos/{id}")
+    @DeleteMapping("/{idCurso}/contenidos/{id}")
     public ResponseEntity<String> deleteContenido(@PathVariable int idCurso, @PathVariable int id) {
-        return cursoService.deleteContenido(idCurso,id);
+        return cursoService.deleteContenido(id,idCurso);
     }
 
-    @PostMapping("/{idCruso}")
+    @PostMapping("/{idCurso}/contenidos")
     public ResponseEntity<String> addContenido(@PathVariable int idCurso, @RequestBody Contenido contenido) {
         return cursoService.addContenido(idCurso,contenido.getId());
     }
