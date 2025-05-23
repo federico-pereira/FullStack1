@@ -305,9 +305,9 @@ A continuación, para cada recurso se muestra un ejemplo de:
 {
         "rut": "test",
         "name": "test",
-        "lastName": test,
-        "mail": test,
-        "departamento": test
+        "lastName": "test",
+        "mail": "test",
+        "departamento": "test"
 }
 ```
 * **PUT** `/api/soportes/{id}`
@@ -316,9 +316,9 @@ A continuación, para cada recurso se muestra un ejemplo de:
 {
         "rut": "test",
         "name": "test",
-        "lastName": test,
-        "mail": test,
-        "departamento": test
+        "lastName": "test",
+        "mail": "test",
+        "departamento": "test"
 }
 ```
 #### /soportes/{idSoporte}/tickets
