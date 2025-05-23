@@ -91,7 +91,7 @@ A continuación, para cada recurso se muestra un ejemplo de:
 
 * **GET** `/api/contenidos`
 * **GET** `/api/contenidos/{id}`
-* **DELETE** `/api/contenidos/{id}` (error si esta relacionado a un curso)
+* **DELETE** `/api/contenidos/{id}` (error si esta relacionado a un curso, eliminar de curso antes)
 * **POST** `/api/contenidos`
 
 ```json
