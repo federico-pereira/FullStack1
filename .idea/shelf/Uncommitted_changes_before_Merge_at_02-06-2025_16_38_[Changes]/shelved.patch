@@ -1,0 +1,336 @@
+Index: proyect/src/main/java/duoc/proyect/controller/SoporteController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package duoc.proyect.controller;\r\n\r\nimport duoc.proyect.model.Soporte;\r\nimport duoc.proyect.model.TicketSoporte;\r\nimport duoc.proyect.service.SoporteService;\r\nimport org.springframework.beans.factory.annotation.Autowired;\r\nimport org.springframework.http.ResponseEntity;\r\nimport org.springframework.web.bind.annotation.*;\r\n\r\nimport java.util.List;\r\n\r\n@RestController\r\n@RequestMapping(\"/api/v1/soportes\")\r\npublic class SoporteController {\r\n\r\n    @Autowired\r\n    private SoporteService soporteService;\r\n\r\n    @GetMapping\r\n    public ResponseEntity<List<Soporte>> getSoportes() {\r\n        return soporteService.getSoportes();\r\n    }\r\n\r\n    @PostMapping\r\n    public ResponseEntity<Object> createSoporte(@RequestBody Soporte soporte) {\r\n        return soporteService.addSoporte(soporte);\r\n    }\r\n\r\n    @GetMapping(\"/{id}\")\r\n    public ResponseEntity<Object> getSoporteById(@PathVariable int id) {\r\n        return soporteService.getSoporteById(id);\r\n    }\r\n\r\n    @DeleteMapping(\"/{id}\")\r\n    public ResponseEntity<Object> deleteSoporteById(@PathVariable int id) {\r\n        return  soporteService.deleteSoporte(id);\r\n    }\r\n\r\n    @PutMapping(\"/{id}\")\r\n    public ResponseEntity<Object> updateSoporte(@PathVariable int id, @RequestBody Soporte soporte) {\r\n        return soporteService.updateSoporte(id, soporte);\r\n    }\r\n\r\n    //Tickets\r\n\r\n    @GetMapping(\"/{id}/tickets\")\r\n    public ResponseEntity<List<TicketSoporte>> getTicketsBySoporteId(@PathVariable int id) {\r\n        return soporteService.getTicketsSoportes(id);\r\n    }\r\n\r\n    //CORREGIR GENERACION AUTOMATICA DE ID PARA LA REQUEST\r\n    @PostMapping(\"/{idSoporte}/tickets\")\r\n    public ResponseEntity<String> addTicket(@PathVariable int idSoporte, @RequestBody TicketSoporte ticketSoporte) {\r\n        return soporteService.addTicketSoporte(idSoporte,ticketSoporte.getId());\r\n    }\r\n\r\n    @DeleteMapping(\"/{idSoporte}/tickets/{idTicket}\")\r\n    public ResponseEntity<String> deleteTicket(@PathVariable int idSoporte, @PathVariable int idTicket) {\r\n        return soporteService.deleteTicketSoporte(idSoporte,idTicket);\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/proyect/src/main/java/duoc/proyect/controller/SoporteController.java b/proyect/src/main/java/duoc/proyect/controller/SoporteController.java
+--- a/proyect/src/main/java/duoc/proyect/controller/SoporteController.java	(revision d2e4a43cdee0f8450ce0084d5ab95f75ebf752f2)
++++ b/proyect/src/main/java/duoc/proyect/controller/SoporteController.java	(date 1748896692748)
+@@ -11,7 +11,7 @@
+ 
+ @RestController
+ @RequestMapping("/api/v1/soportes")
+-public class SoporteController {
++public class    SoporteController {
+ 
+     @Autowired
+     private SoporteService soporteService;
+Index: proyect/src/main/resources/application.properties
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>spring.application.name=FSPDB\r\nspring.datasource.url=jdbc:oracle:thin:@fspdb_high?TNS_ADMIN=C:/Users/feder/Downloads/Wallet_FSPDB\r\nspring.datasource.driver-class-name=oracle.jdbc.OracleDriver\r\nspring.datasource.username=ADMIN\r\nspring.datasource.password=FullStack-001\r\n\r\n# Logs en DEBUG (opcional, para verificar que coge bien el wallet)\r\nlogging.level.org.hibernate=DEBUG\r\nlogging.level.com.zaxxer.hikari=DEBUG\r\nlogging.level.java.sql=DEBUG\r\n\r\nspring.jpa.hibernate.ddl-auto=update\r\n\r\nspring.profiles.active=test
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>ISO-8859-1
+===================================================================
+diff --git a/proyect/src/main/resources/application.properties b/proyect/src/main/resources/application.properties
+--- a/proyect/src/main/resources/application.properties	(revision d2e4a43cdee0f8450ce0084d5ab95f75ebf752f2)
++++ b/proyect/src/main/resources/application.properties	(date 1748896692755)
+@@ -1,5 +1,5 @@
+ spring.application.name=FSPDB
+-spring.datasource.url=jdbc:oracle:thin:@fspdb_high?TNS_ADMIN=C:/Users/feder/Downloads/Wallet_FSPDB
++spring.datasource.url=jdbc:oracle:thin:@fspdb_high?TNS_ADMIN=D:/Wallet_FSPDB
+ spring.datasource.driver-class-name=oracle.jdbc.OracleDriver
+ spring.datasource.username=ADMIN
+ spring.datasource.password=FullStack-001
+@@ -11,4 +11,10 @@
+ 
+ spring.jpa.hibernate.ddl-auto=update
+ 
+-spring.profiles.active=test
+\ No newline at end of file
++spring.profiles.active=test
++
++#Configuraciones Swagger y ApiDoc
++
++spiringdoc.api-docs.enabled=true
++springdoc.swagger-ui.enabled=true
++springdoc.swagger-ui.path=/doc/swagger-ui.html
+\ No newline at end of file
+Index: proyect/pom.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project xmlns=\"http://maven.apache.org/POM/4.0.0\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\r\n\txsi:schemaLocation=\"http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd\">\r\n\t<modelVersion>4.0.0</modelVersion>\r\n\t<parent>\r\n\t\t<groupId>org.springframework.boot</groupId>\r\n\t\t<artifactId>spring-boot-starter-parent</artifactId>\r\n\t\t<version>3.4.4</version>\r\n\t\t<relativePath/> <!-- lookup parent from repository -->\r\n\t</parent>\r\n\t<groupId>duoc</groupId>\r\n\t<artifactId>proyect</artifactId>\r\n\t<version>0.0.1-SNAPSHOT</version>\r\n\t<name>proyect</name>\r\n\t<description>fullstack proyect</description>\r\n\t<url/>\r\n\t<licenses>\r\n\t\t<license/>\r\n\t</licenses>\r\n\t<developers>\r\n\t\t<developer/>\r\n\t</developers>\r\n\t<scm>\r\n\t\t<connection/>\r\n\t\t<developerConnection/>\r\n\t\t<tag/>\r\n\t\t<url/>\r\n\t</scm>\r\n\t<properties>\r\n\t\t<java.version>17</java.version>\r\n\t\t<spring-ai.version>1.0.0-M8</spring-ai.version>\r\n\t</properties>\r\n\t<dependencyManagement>\r\n\t\t<dependencies>\r\n\t\t\t<dependency>\r\n\t\t\t\t<groupId>org.springframework.ai</groupId>\r\n\t\t\t\t<artifactId>spring-ai-bom</artifactId>\r\n\t\t\t\t<version>${spring-ai.version}</version>\r\n\t\t\t\t<type>pom</type>\r\n\t\t\t\t<scope>import</scope>\r\n\t\t\t</dependency>\r\n\t\t\t<dependency>\r\n\t\t\t\t<groupId>com.oracle.database.jdbc</groupId>\r\n\t\t\t\t<artifactId>ojdbc-bom</artifactId>\r\n\t\t\t\t<version>23.5.0.24.07</version>\r\n\t\t\t\t<type>pom</type>\r\n\t\t\t\t<scope>import</scope>\r\n\t\t\t</dependency>\r\n\t\t</dependencies>\r\n\t</dependencyManagement>\r\n\t<repositories>\r\n\t\t<repository>\r\n\t\t\t<id>oracle-maven</id>\r\n\t\t\t<name>Oracle Maven Repository</name>\r\n\t\t\t<url>https://repo1.maven.org/maven2/</url>\r\n\t\t</repository>\r\n\t</repositories>\r\n\t<dependencies>\r\n\t\t<dependency>\r\n\t\t\t<groupId>net.datafaker</groupId>\r\n\t\t\t<artifactId>datafaker</artifactId>\r\n\t\t\t<version>2.4.3</version>\r\n\t\t</dependency>\r\n\t\t<dependency>\r\n\t\t\t<groupId>org.springframework.boot</groupId>\r\n\t\t\t<artifactId>spring-boot-starter-web</artifactId>\r\n\t\t</dependency>\r\n\t\t<dependency>\r\n\t\t\t<groupId>com.oracle.database.jdbc</groupId>\r\n\t\t\t<artifactId>ojdbc11</artifactId>\r\n\t\t</dependency>\r\n\t\t<dependency>\r\n\t\t\t<groupId>com.oracle.database.security</groupId>\r\n\t\t\t<artifactId>oraclepki</artifactId>\r\n\t\t</dependency>\r\n\t\t<dependency>\r\n\t\t\t<groupId>org.springframework.boot</groupId>\r\n\t\t\t<artifactId>spring-boot-starter-test</artifactId>\r\n\t\t\t<scope>test</scope>\r\n\t\t</dependency>\r\n\t\t<dependency>\r\n\t\t\t<groupId>org.projectlombok</groupId>\r\n\t\t\t<artifactId>lombok</artifactId>\r\n\t\t\t<scope>annotationProcessor</scope>\r\n\t\t</dependency>\r\n\t\t<dependency>\r\n\t\t\t<groupId>com.oracle.database.jdbc</groupId>\r\n\t\t\t<artifactId>ojdbc11</artifactId>\r\n\t\t\t<scope>runtime</scope>\r\n\t\t</dependency>\r\n\t\t<dependency>\r\n\t\t\t<groupId>org.springframework.boot</groupId>\r\n\t\t\t<artifactId>spring-boot-starter-data-jpa</artifactId>\r\n\t\t</dependency>\r\n\t</dependencies>\r\n\r\n\t<build>\r\n\t\t<plugins>\r\n\t\t\t<plugin>\r\n\t\t\t\t<groupId>org.springframework.boot</groupId>\r\n\t\t\t\t<artifactId>spring-boot-maven-plugin</artifactId>\r\n\t\t\t</plugin>\r\n\t\t</plugins>\r\n\t</build>\r\n\r\n</project>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/proyect/pom.xml b/proyect/pom.xml
+--- a/proyect/pom.xml	(revision d2e4a43cdee0f8450ce0084d5ab95f75ebf752f2)
++++ b/proyect/pom.xml	(date 1748896692744)
+@@ -57,6 +57,11 @@
+ 	</repositories>
+ 	<dependencies>
+ 		<dependency>
++			<groupId>org.springdoc</groupId>
++			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
++			<version>2.8.8</version>
++		</dependency>
++		<dependency>
+ 			<groupId>net.datafaker</groupId>
+ 			<artifactId>datafaker</artifactId>
+ 			<version>2.4.3</version>
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"94816420-cdd8-4d1e-838a-645d2ae55f93\" name=\"Changes\" comment=\"cambio nombre carpeta repository\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/dataSources.local.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/dataSources.local.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/dataSources.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/dataSources.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/modules.xml\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Interface\" />\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"main\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitHubPullRequestSearchHistory\">{\r\n  &quot;lastFilter&quot;: {\r\n    &quot;state&quot;: &quot;OPEN&quot;,\r\n    &quot;assignee&quot;: &quot;federico-pereira&quot;\r\n  }\r\n}</component>\r\n  <component name=\"GithubPullRequestsUISettings\"><![CDATA[{\r\n  \"selectedUrlAndAccountId\": {\r\n    \"url\": \"https://github.com/federico-pereira/FullStack1.git\",\r\n    \"accountId\": \"52e5aa36-c857-4feb-b959-dd57ca82a6f5\"\r\n  },\r\n  \"recentNewPullRequestHead\": {\r\n    \"server\": {\r\n      \"useHttp\": false,\r\n      \"host\": \"github.com\",\r\n      \"port\": null,\r\n      \"suffix\": null\r\n    },\r\n    \"owner\": \"federico-pereira\",\r\n    \"repository\": \"FullStack1\"\r\n  }\r\n}]]></component>\r\n  <component name=\"MavenImportPreferences\">\r\n    <option name=\"explicitlyEnabledProfiles\" value=\"native,nativeTest\" />\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 3\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2w93ji4q5D7w5QPC5oJoH67TiBc\" />\r\n  <component name=\"ProjectLevelVcsManager\">\r\n    <ConfirmationsSetting value=\"1\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"JUnit.AlumnoTest.executor\": \"Run\",\r\n    \"JUnit.ProyectApplicationTests.executor\": \"Run\",\r\n    \"RequestMappingsPanelOrder0\": \"0\",\r\n    \"RequestMappingsPanelOrder1\": \"1\",\r\n    \"RequestMappingsPanelWidth0\": \"75\",\r\n    \"RequestMappingsPanelWidth1\": \"75\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"RunOnceActivity.git.unshallow\": \"true\",\r\n    \"Spring Boot.ProyectApplication.executor\": \"Run\",\r\n    \"git-widget-placeholder\": \"main\",\r\n    \"ignore.virus.scanning.warn.message\": \"true\",\r\n    \"last_opened_file_path\": \"C:/Users/CETECOM/IdeaProjects/FullStack1/proyect/src/main/resources\",\r\n    \"node.js.detected.package.eslint\": \"true\",\r\n    \"node.js.detected.package.tslint\": \"true\",\r\n    \"node.js.selected.package.eslint\": \"(autodetect)\",\r\n    \"node.js.selected.package.tslint\": \"(autodetect)\",\r\n    \"nodejs_package_manager_path\": \"npm\",\r\n    \"vue.rearranger.settings.migration\": \"true\"\r\n  },\r\n  \"keyToStringList\": {\r\n    \"DatabaseDriversLRU\": [\r\n      \"oracle\"\r\n    ]\r\n  }\r\n}]]></component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\CETECOM\\IdeaProjects\\FullStack1\\proyect\\src\\main\\resources\" />\r\n      <recent name=\"C:\\Users\\feder\\IdeaProjects\\FullStack1\\proyect\\src\\main\\resources\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\" selected=\"JUnit.AlumnoTest.findAllTest\">\r\n    <configuration name=\"AlumnoTest\" type=\"JUnit\" factoryName=\"JUnit\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"proyect\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"duoc.proyect.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <option name=\"PACKAGE_NAME\" value=\"duoc.proyect\" />\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"duoc.proyect.AlumnoTest\" />\r\n      <option name=\"TEST_OBJECT\" value=\"class\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"AlumnoTest.findAllTest\" type=\"JUnit\" factoryName=\"JUnit\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"proyect\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"duoc.proyect.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <option name=\"PACKAGE_NAME\" value=\"duoc.proyect\" />\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"duoc.proyect.AlumnoTest\" />\r\n      <option name=\"METHOD_NAME\" value=\"findAllTest\" />\r\n      <option name=\"TEST_OBJECT\" value=\"method\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"ProyectApplication\" type=\"SpringBootApplicationConfigurationType\" factoryName=\"Spring Boot\" nameIsGenerated=\"true\">\r\n      <module name=\"proyect\" />\r\n      <option name=\"SPRING_BOOT_MAIN_CLASS\" value=\"duoc.proyect.ProyectApplication\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"JUnit.AlumnoTest.findAllTest\" />\r\n        <item itemvalue=\"JUnit.AlumnoTest\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SharedIndexes\">\r\n    <attachedChunks>\r\n      <set>\r\n        <option value=\"bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.25410.129\" />\r\n        <option value=\"bundled-js-predefined-d6986cc7102b-6a121458b545-JavaScript-IU-251.25410.129\" />\r\n      </set>\r\n    </attachedChunks>\r\n  </component>\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"94816420-cdd8-4d1e-838a-645d2ae55f93\" name=\"Changes\" comment=\"\" />\r\n      <created>1745440098661</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1745440098661</updated>\r\n      <workItem from=\"1747248741857\" duration=\"1263000\" />\r\n      <workItem from=\"1747272547016\" duration=\"3781000\" />\r\n      <workItem from=\"1747319886387\" duration=\"3758000\" />\r\n      <workItem from=\"1747333845410\" duration=\"3973000\" />\r\n      <workItem from=\"1747342176887\" duration=\"11275000\" />\r\n      <workItem from=\"1747409274253\" duration=\"12123000\" />\r\n      <workItem from=\"1747491775385\" duration=\"4822000\" />\r\n      <workItem from=\"1747502000241\" duration=\"1417000\" />\r\n      <workItem from=\"1747516264428\" duration=\"4559000\" />\r\n      <workItem from=\"1747596850040\" duration=\"11572000\" />\r\n      <workItem from=\"1747691545069\" duration=\"3261000\" />\r\n      <workItem from=\"1747713389406\" duration=\"3685000\" />\r\n      <workItem from=\"1747970144032\" duration=\"75000\" />\r\n      <workItem from=\"1748312302344\" duration=\"3960000\" />\r\n      <workItem from=\"1748377189389\" duration=\"1769000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"Clase alumno\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1747323437664</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1747323437664</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"herencia de clase usuario mejorada con supertipo\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1747337655714</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1747337655714</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"Correccion a las funciones, cambio de output a corrrespondiente, entre otros\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1747350474667</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1747350474667</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"Nueva clase Evaluacion,&#10;falta corregir el post con listas de otros objetos&#10;en evaluacion, clases y creo q contenidos (revisar todos)\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1747419994292</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1747419994292</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"Creacion clases ticket y soporte\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1747520478110</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1747520478110</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00006\" summary=\"Matricula y cupon + mejoras a funciones de post y get\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1747623484438</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1747623484438</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00007\" summary=\"Matricula y cupon + mejoras a funciones de post y get\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1747623653725</created>\r\n      <option name=\"number\" value=\"00007\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1747623653725</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00008\" summary=\"last comit, arreglo todas las funciones + testeo general&#10;&#10;- falta detalle evaluacion y ticketsoporte\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1747962523550</created>\r\n      <option name=\"number\" value=\"00008\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1747962523550</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00009\" summary=\"cambio nombre carpeta repository\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1747962644192</created>\r\n      <option name=\"number\" value=\"00009\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00009\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1747962644192</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00010\" summary=\"cambio nombre carpeta repository\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1747962671591</created>\r\n      <option name=\"number\" value=\"00010\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00010\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1747962671591</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"11\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"conexion a la bd y creacion de tabla profesor\" />\r\n    <MESSAGE value=\"Clase alumno\" />\r\n    <MESSAGE value=\"herencia de clase usuario mejorada con supertipo\" />\r\n    <MESSAGE value=\"Correccion a las funciones, cambio de output a corrrespondiente, entre otros\" />\r\n    <MESSAGE value=\"Nueva clase Evaluacion,&#10;falta corregir el post con listas de otros objetos&#10;en evaluacion, clases y creo q contenidos (revisar todos)\" />\r\n    <MESSAGE value=\"Creacion clases ticket y soporte\" />\r\n    <MESSAGE value=\"Matricula y cupon + mejoras a funciones de post y get\" />\r\n    <MESSAGE value=\"last comit, arreglo todas las funciones + testeo general&#10;&#10;- falta detalle evaluacion y ticketsoporte\" />\r\n    <MESSAGE value=\"cambio nombre carpeta repository\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"cambio nombre carpeta repository\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 382ddf6e635edf2ce16242922d0dcfc33fce293a)
++++ b/.idea/workspace.xml	(date 1748896692740)
+@@ -5,10 +5,13 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="94816420-cdd8-4d1e-838a-645d2ae55f93" name="Changes" comment="cambio nombre carpeta repository">
+-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/proyect/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/pom.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/controller/SoporteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/controller/SoporteController.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/proyect/src/main/resources/application-dev.properties" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/src/main/resources/application-dev.properties" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/proyect/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/src/main/resources/application.properties" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/proyect/target/classes/application-dev.properties" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/target/classes/application-dev.properties" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/proyect/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/target/classes/application.properties" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -26,7 +29,7 @@
+   <component name="Git.Settings">
+     <option name="RECENT_BRANCH_BY_REPOSITORY">
+       <map>
+-        <entry key="$PROJECT_DIR$" value="main" />
++        <entry key="$PROJECT_DIR$" value="fede-branch" />
+       </map>
+     </option>
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+@@ -37,22 +40,22 @@
+     &quot;assignee&quot;: &quot;federico-pereira&quot;
+   }
+ }</component>
+-  <component name="GithubPullRequestsUISettings"><![CDATA[{
+-  "selectedUrlAndAccountId": {
+-    "url": "https://github.com/federico-pereira/FullStack1.git",
+-    "accountId": "52e5aa36-c857-4feb-b959-dd57ca82a6f5"
+-  },
+-  "recentNewPullRequestHead": {
+-    "server": {
+-      "useHttp": false,
+-      "host": "github.com",
+-      "port": null,
+-      "suffix": null
+-    },
+-    "owner": "federico-pereira",
+-    "repository": "FullStack1"
+-  }
+-}]]></component>
++  <component name="GithubPullRequestsUISettings">{
++  &quot;selectedUrlAndAccountId&quot;: {
++    &quot;url&quot;: &quot;https://github.com/federico-pereira/FullStack1.git&quot;,
++    &quot;accountId&quot;: &quot;f71cb643-2c65-4960-a6c4-8aeccdb6af53&quot;
++  },
++  &quot;recentNewPullRequestHead&quot;: {
++    &quot;server&quot;: {
++      &quot;useHttp&quot;: false,
++      &quot;host&quot;: &quot;github.com&quot;,
++      &quot;port&quot;: null,
++      &quot;suffix&quot;: null
++    },
++    &quot;owner&quot;: &quot;federico-pereira&quot;,
++    &quot;repository&quot;: &quot;FullStack1&quot;
++  }
++}</component>
+   <component name="MavenImportPreferences">
+     <option name="explicitlyEnabledProfiles" value="native,nativeTest" />
+   </component>
+@@ -67,71 +70,37 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent"><![CDATA[{
+-  "keyToString": {
+-    "JUnit.AlumnoTest.executor": "Run",
+-    "JUnit.ProyectApplicationTests.executor": "Run",
+-    "RequestMappingsPanelOrder0": "0",
+-    "RequestMappingsPanelOrder1": "1",
+-    "RequestMappingsPanelWidth0": "75",
+-    "RequestMappingsPanelWidth1": "75",
+-    "RunOnceActivity.ShowReadmeOnStart": "true",
+-    "RunOnceActivity.git.unshallow": "true",
+-    "Spring Boot.ProyectApplication.executor": "Run",
+-    "git-widget-placeholder": "main",
+-    "ignore.virus.scanning.warn.message": "true",
+-    "last_opened_file_path": "C:/Users/CETECOM/IdeaProjects/FullStack1/proyect/src/main/resources",
+-    "node.js.detected.package.eslint": "true",
+-    "node.js.detected.package.tslint": "true",
+-    "node.js.selected.package.eslint": "(autodetect)",
+-    "node.js.selected.package.tslint": "(autodetect)",
+-    "nodejs_package_manager_path": "npm",
+-    "vue.rearranger.settings.migration": "true"
++  <component name="PropertiesComponent">{
++  &quot;keyToString&quot;: {
++    &quot;JUnit.ProyectApplicationTests.executor&quot;: &quot;Run&quot;,
++    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
++    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
++    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
++    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
++    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
++    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
++    &quot;Spring Boot.ProyectApplication.executor&quot;: &quot;Run&quot;,
++    &quot;git-widget-placeholder&quot;: &quot;fede-branch&quot;,
++    &quot;last_opened_file_path&quot;: &quot;C:/Users/feder/IdeaProjects/FullStack1/proyect/src/main/resources&quot;,
++    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
++    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
++    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
++    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
++    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
++    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+   },
+-  "keyToStringList": {
+-    "DatabaseDriversLRU": [
+-      "oracle"
++  &quot;keyToStringList&quot;: {
++    &quot;DatabaseDriversLRU&quot;: [
++      &quot;oracle&quot;
+     ]
+   }
+-}]]></component>
++}</component>
+   <component name="RecentsManager">
+     <key name="CopyFile.RECENT_KEYS">
+-      <recent name="C:\Users\CETECOM\IdeaProjects\FullStack1\proyect\src\main\resources" />
+       <recent name="C:\Users\feder\IdeaProjects\FullStack1\proyect\src\main\resources" />
+     </key>
+   </component>
+-  <component name="RunManager" selected="JUnit.AlumnoTest.findAllTest">
+-    <configuration name="AlumnoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+-      <module name="proyect" />
+-      <extension name="coverage">
+-        <pattern>
+-          <option name="PATTERN" value="duoc.proyect.*" />
+-          <option name="ENABLED" value="true" />
+-        </pattern>
+-      </extension>
+-      <option name="PACKAGE_NAME" value="duoc.proyect" />
+-      <option name="MAIN_CLASS_NAME" value="duoc.proyect.AlumnoTest" />
+-      <option name="TEST_OBJECT" value="class" />
+-      <method v="2">
+-        <option name="Make" enabled="true" />
+-      </method>
+-    </configuration>
+-    <configuration name="AlumnoTest.findAllTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+-      <module name="proyect" />
+-      <extension name="coverage">
+-        <pattern>
+-          <option name="PATTERN" value="duoc.proyect.*" />
+-          <option name="ENABLED" value="true" />
+-        </pattern>
+-      </extension>
+-      <option name="PACKAGE_NAME" value="duoc.proyect" />
+-      <option name="MAIN_CLASS_NAME" value="duoc.proyect.AlumnoTest" />
+-      <option name="METHOD_NAME" value="findAllTest" />
+-      <option name="TEST_OBJECT" value="method" />
+-      <method v="2">
+-        <option name="Make" enabled="true" />
+-      </method>
+-    </configuration>
++  <component name="RunManager">
+     <configuration name="ProyectApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+       <module name="proyect" />
+       <option name="SPRING_BOOT_MAIN_CLASS" value="duoc.proyect.ProyectApplication" />
+@@ -139,18 +108,12 @@
+         <option name="Make" enabled="true" />
+       </method>
+     </configuration>
+-    <recent_temporary>
+-      <list>
+-        <item itemvalue="JUnit.AlumnoTest.findAllTest" />
+-        <item itemvalue="JUnit.AlumnoTest" />
+-      </list>
+-    </recent_temporary>
+   </component>
+   <component name="SharedIndexes">
+     <attachedChunks>
+       <set>
+-        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.25410.129" />
+-        <option value="bundled-js-predefined-d6986cc7102b-6a121458b545-JavaScript-IU-251.25410.129" />
++        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.23774.435" />
++        <option value="bundled-js-predefined-d6986cc7102b-f27c65a3e318-JavaScript-IU-251.23774.435" />
+       </set>
+     </attachedChunks>
+   </component>
+@@ -175,7 +138,6 @@
+       <workItem from="1747713389406" duration="3685000" />
+       <workItem from="1747970144032" duration="75000" />
+       <workItem from="1748312302344" duration="3960000" />
+-      <workItem from="1748377189389" duration="1769000" />
+     </task>
+     <task id="LOCAL-00001" summary="Clase alumno">
+       <option name="closed" value="true" />
+Index: proyect/target/classes/application-dev.properties
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>\r\nspring.datasource.url=jdbc:oracle:thin:@fullstacktestbd_high?TNS_ADMIN=D:/Wallet_FullStackTestBD\r\nspring.datasource.driver-class-name=oracle.jdbc.OracleDriver\r\nspring.datasource.username=ADMIN\r\nspring.datasource.password=FullStack-001\r\n\r\n# Logs en DEBUG (opcional, para verificar que coge bien el wallet)\r\nlogging.level.org.hibernate=DEBUG\r\nlogging.level.com.zaxxer.hikari=DEBUG\r\nlogging.level.java.sql=DEBUG\r\n\r\nspring.jpa.hibernate.ddl-auto=update\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>ISO-8859-1
+===================================================================
+diff --git a/proyect/target/classes/application-dev.properties b/proyect/target/classes/application-dev.properties
+--- a/proyect/target/classes/application-dev.properties	(revision d2e4a43cdee0f8450ce0084d5ab95f75ebf752f2)
++++ b/proyect/target/classes/application-dev.properties	(date 1748896692757)
+@@ -1,5 +1,5 @@
+ 
+-spring.datasource.url=jdbc:oracle:thin:@fullstacktestbd_high?TNS_ADMIN=D:/Wallet_FullStackTestBD
++spring.datasource.url=jdbc:oracle:thin:@fullstacktestbd_high?TNS_ADMIN=D:/Wallet_FSPDB
+ spring.datasource.driver-class-name=oracle.jdbc.OracleDriver
+ spring.datasource.username=ADMIN
+ spring.datasource.password=FullStack-001
+Index: proyect/src/main/resources/application-dev.properties
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>\r\nspring.datasource.url=jdbc:oracle:thin:@fullstacktestbd_high?TNS_ADMIN=D:/Wallet_FullStackTestBD\r\nspring.datasource.driver-class-name=oracle.jdbc.OracleDriver\r\nspring.datasource.username=ADMIN\r\nspring.datasource.password=FullStack-001\r\n\r\n# Logs en DEBUG (opcional, para verificar que coge bien el wallet)\r\nlogging.level.org.hibernate=DEBUG\r\nlogging.level.com.zaxxer.hikari=DEBUG\r\nlogging.level.java.sql=DEBUG\r\n\r\nspring.jpa.hibernate.ddl-auto=update\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>ISO-8859-1
+===================================================================
+diff --git a/proyect/src/main/resources/application-dev.properties b/proyect/src/main/resources/application-dev.properties
+--- a/proyect/src/main/resources/application-dev.properties	(revision d2e4a43cdee0f8450ce0084d5ab95f75ebf752f2)
++++ b/proyect/src/main/resources/application-dev.properties	(date 1748896692752)
+@@ -1,5 +1,5 @@
+ 
+-spring.datasource.url=jdbc:oracle:thin:@fullstacktestbd_high?TNS_ADMIN=D:/Wallet_FullStackTestBD
++spring.datasource.url=jdbc:oracle:thin:@fullstacktestbd_high?TNS_ADMIN=D:/Wallet_FSPDB
+ spring.datasource.driver-class-name=oracle.jdbc.OracleDriver
+ spring.datasource.username=ADMIN
+ spring.datasource.password=FullStack-001
+Index: proyect/target/classes/application.properties
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>spring.application.name=FSPDB\r\nspring.datasource.url=jdbc:oracle:thin:@fspdb_high?TNS_ADMIN=C:/Users/feder/Downloads/Wallet_FSPDB\r\nspring.datasource.driver-class-name=oracle.jdbc.OracleDriver\r\nspring.datasource.username=ADMIN\r\nspring.datasource.password=FullStack-001\r\n\r\n# Logs en DEBUG (opcional, para verificar que coge bien el wallet)\r\nlogging.level.org.hibernate=DEBUG\r\nlogging.level.com.zaxxer.hikari=DEBUG\r\nlogging.level.java.sql=DEBUG\r\n\r\nspring.jpa.hibernate.ddl-auto=update\r\n\r\nspring.profiles.active=dev
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>ISO-8859-1
+===================================================================
+diff --git a/proyect/target/classes/application.properties b/proyect/target/classes/application.properties
+--- a/proyect/target/classes/application.properties	(revision d2e4a43cdee0f8450ce0084d5ab95f75ebf752f2)
++++ b/proyect/target/classes/application.properties	(date 1748896692759)
+@@ -1,5 +1,5 @@
+ spring.application.name=FSPDB
+-spring.datasource.url=jdbc:oracle:thin:@fspdb_high?TNS_ADMIN=C:/Users/feder/Downloads/Wallet_FSPDB
++spring.datasource.url=jdbc:oracle:thin:@fspdb_high?TNS_ADMIN=D:/Wallet_FSPDB
+ spring.datasource.driver-class-name=oracle.jdbc.OracleDriver
+ spring.datasource.username=ADMIN
+ spring.datasource.password=FullStack-001
+@@ -11,4 +11,10 @@
+ 
+ spring.jpa.hibernate.ddl-auto=update
+ 
+-spring.profiles.active=dev
+\ No newline at end of file
++spring.profiles.active=test
++
++#Configuraciones Swagger y ApiDoc
++
++spiringdoc.api-docs.enabled=true
++springdoc.swagger-ui.enabled=true
++springdoc.swagger-ui.path=/doc/swagger-ui.html
+\ No newline at end of file
