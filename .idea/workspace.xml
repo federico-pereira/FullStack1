@@ -7,35 +7,23 @@
     <list default="true" id="94816420-cdd8-4d1e-838a-645d2ae55f93" name="Changes" comment="cambio nombre carpeta repository">
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/proyect/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/controller/MatriculaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/controller/MatriculaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/controller/AlumnoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/controller/AlumnoController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/proyect/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/proyect/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/controller/TicketSoporteController.class" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/controller/TicketSoporteController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/repositoy/AlumnoRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/repositoy/ContenidoRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/repositoy/CuponDescuentoRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/repositoy/CursoRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/repositoy/DetalleEvaluacionRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/repositoy/EvaluacionRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/repositoy/MatriculaRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/repositoy/ProfesorRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/repositoy/SoporteRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/repositoy/TicketSoporteRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/model/Curso.class" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/model/Curso.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/model/DetalleEvaluacion.class" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/model/DetalleEvaluacion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/model/Evaluacion.class" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/model/Evaluacion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/model/Matricula.class" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/model/Matricula.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/model/Soporte.class" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/model/Soporte.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/model/TicketSoporte.class" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/model/TicketSoporte.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/service/AlumnoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/service/AlumnoService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/service/ContenidoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/service/ContenidoService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/service/CuponDescuentoSevice.class" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/service/CuponDescuentoSevice.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/service/CursoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/service/CursoService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/service/DetalleEvaluacionService.class" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/service/DetalleEvaluacionService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/service/EvaluacionService.class" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/service/EvaluacionService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/service/MatriculaService.class" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/service/MatriculaService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/service/ProfesorService.class" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/service/ProfesorService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/service/SoporteService.class" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/service/SoporteService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/service/TicketSoporteService.class" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/service/TicketSoporteService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +41,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="fede-branch" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -67,7 +55,7 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/federico-pereira/FullStack1.git&quot;,
-    &quot;accountId&quot;: &quot;f71cb643-2c65-4960-a6c4-8aeccdb6af53&quot;
+    &quot;accountId&quot;: &quot;a5728ffa-c531-4163-bc58-1de759cc780c&quot;
   },
   &quot;recentNewPullRequestHead&quot;: {
     &quot;server&quot;: {
@@ -80,9 +68,6 @@
     &quot;repository&quot;: &quot;FullStack1&quot;
   }
 }</component>
-  <component name="MavenImportPreferences">
-    <option name="explicitlyEnabledProfiles" value="native,nativeTest" />
-  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
 }</component>
@@ -94,37 +79,55 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "JUnit.ProyectApplicationTests.executor": "Run",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "Spring Boot.ProyectApplication.executor": "Run",
-    "git-widget-placeholder": "fede-branch",
-    "last_opened_file_path": "C:/Users/feder/IdeaProjects/FullStack1/proyect/src/main/resources",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;JUnit.AlumnoTest.findAllTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ProyectApplicationTests.executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;Spring Boot.ProyectApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/feder/IdeaProjects/FullStack1/proyect/src/main/resources&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "oracle"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;oracle&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\feder\IdeaProjects\FullStack1\proyect\src\main\resources" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Spring Boot.ProyectApplication">
+    <configuration name="AlumnoTest.findAllTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="proyect" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="duoc.proyect.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="duoc.proyect" />
+      <option name="MAIN_CLASS_NAME" value="duoc.proyect.AlumnoTest" />
+      <option name="METHOD_NAME" value="findAllTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ProyectApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="proyect" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="duoc.proyect.ProyectApplication" />
@@ -132,14 +135,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.AlumnoTest.findAllTest" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.23774.435" />
-        <option value="bundled-js-predefined-d6986cc7102b-f27c65a3e318-JavaScript-IU-251.23774.435" />
+        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.25410.129" />
+        <option value="bundled-js-predefined-d6986cc7102b-6a121458b545-JavaScript-IU-251.25410.129" />
       </set>
     </attachedChunks>
+  </component>
+  <component name="StructureViewState">
+    <option name="selectedTab" value="Logical" />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -162,6 +173,13 @@
       <workItem from="1747713389406" duration="3685000" />
       <workItem from="1747970144032" duration="75000" />
       <workItem from="1748312302344" duration="3960000" />
+      <workItem from="1748372430252" duration="1151000" />
+      <workItem from="1748373633419" duration="23000" />
+      <workItem from="1748373669262" duration="4838000" />
+      <workItem from="1748535928007" duration="288000" />
+      <workItem from="1748552901061" duration="4261000" />
+      <workItem from="1748641840196" duration="169000" />
+      <workItem from="1748892648624" duration="1926000" />
     </task>
     <task id="LOCAL-00001" summary="Clase alumno">
       <option name="closed" value="true" />
@@ -254,7 +272,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
