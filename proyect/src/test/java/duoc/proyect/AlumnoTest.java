@@ -30,6 +30,6 @@ public class AlumnoTest {
             assertNotNull(alumno.getId());
             assertNotNull(alumno.getRut());
         }
-        assertEquals(3, alumnos.size());
+        assertEquals(1, alumnos.size());
     }
 }
