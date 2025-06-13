@@ -41,7 +41,7 @@ public class AlumnoController {
         return alumnoService.getAlumnoById(id);
     }
 
-    @Operation(summary = "Publicar un nuevo alumno", description = "Devuelve alumno como objeto")
+    @Operation(summary = "Publicar un nuevo alumno", description = "Agrega alumno como objeto")
     @PostMapping
     @ApiResponses(
             value = {
@@ -55,7 +55,7 @@ public class AlumnoController {
         return alumnoService.addAlumno(alumno);
     }
 
-    @Operation(summary = "Eliminar un alumno", description = "Devuelve mensaje de repueta + objeto de alumno")
+    @Operation(summary = "Eliminar un alumno", description = "Devuelve mensaje de respuesta + objeto de alumno")
     @DeleteMapping("/{id}")
     @ApiResponses(
             value = {
@@ -68,7 +68,7 @@ public class AlumnoController {
         return alumnoService.deleteAlumno(id);
     }
 
-    @Operation(summary = "Modificar un alumno", description = "Modifica un alumno")
+    @Operation(summary = "Modificar un alumno", description = "Actualiza un alumno")
     @PutMapping("/{id}")
     @ApiResponses(
             value = {
@@ -76,8 +76,8 @@ public class AlumnoController {
                     @ApiResponse(responseCode = "404", description = "Alumno no existe en sistema")
             }
     )
-    @Parameter(name ="id",description = "Id del alumno a buscar", required = true)
-    @Parameter(name = "rut", description = "Rut del alumno al agregar", required = true)
+    @Parameter(name ="id",description = "Id del alumno a modificar", required = false)
+    @Parameter(name = "rut", description = "Rut del alumno a modificar", required = true)
     public ResponseEntity<String> updateAlumno(@RequestBody Alumno alumno, @PathVariable int id) {
         return alumnoService.updateAlumno(id,alumno);
     }
