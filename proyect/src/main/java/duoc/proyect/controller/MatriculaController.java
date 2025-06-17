@@ -62,7 +62,7 @@ public class MatriculaController {
 
     //Cupon
 
-    @GetMapping("/{id}/cupon")
+        @GetMapping("/{id}/cupon")
     public ResponseEntity<Object> getCuponMatricula(@PathVariable int id) {
         return matriculaService.getCuponMatricula(id);
     }

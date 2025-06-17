@@ -24,10 +24,13 @@ public class AlumnoService {
         return ResponseEntity.ok(alumnos);
     }
 
-    public ResponseEntity<String> addAlumno(Alumno alumno) {
+    public ResponseEntity<Object> addAlumno(Alumno alumno) {
+        if (alumnoRepository.existsById(alumno.getId())) {
+            return new ResponseEntity<>(HttpStatus.CONFLICT);
+        }
         alumnoRepository.save(alumno);
         return ResponseEntity.status(HttpStatus.CREATED)
-                .body("Alumno agregado: " + alumno);
+                .body(alumno);
     }
 
     public ResponseEntity<Object> getAlumnoById(int id) {
@@ -38,10 +41,10 @@ public class AlumnoService {
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
-    public ResponseEntity<String> deleteAlumno(int id) {
+    public ResponseEntity<Object> deleteAlumno(int id) {
         if (alumnoRepository.existsById(id)) {
             alumnoRepository.deleteById(id);
-            return ResponseEntity.ok("Alumno eliminado con id: " + id);
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
         return ResponseEntity.status(HttpStatus.NOT_FOUND)
                 .body("Alumno con id " + id + " no encontrado");
@@ -57,6 +60,6 @@ public class AlumnoService {
             alumnoRepository.save(alumno);
             return ResponseEntity.ok("Alumno actualizado: " + alumno.toString());
         }
-        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 }

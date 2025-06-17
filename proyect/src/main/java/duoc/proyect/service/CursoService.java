@@ -35,6 +35,9 @@ public class CursoService {
     }
 
     public ResponseEntity<Object> addCurso(Curso curso) {
+        if (cursoRepository.existsById(curso.getId())) {
+            return ResponseEntity.status(HttpStatus.CONFLICT).body(null);
+        }
         cursoRepository.save(curso);
         return ResponseEntity.status(HttpStatus.CREATED).body(null);
     }
@@ -70,7 +73,7 @@ public class CursoService {
     public ResponseEntity<List<Alumno>> getAlumnos(int idCurso) {
         Optional<Curso> cursoOpt = cursoRepository.findById(idCurso);
         if (cursoOpt.isEmpty()) {
-            return ResponseEntity.status(HttpStatus.NO_CONTENT).body(null);
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         List<Alumno> lista = cursoOpt.get().getListaCurso();
         if (lista == null || lista.isEmpty()) {
@@ -83,7 +86,7 @@ public class CursoService {
 
     public ResponseEntity<String> addAlumno(int idCurso, int idAlumno) {
         if (alumnoService.getAlumnoById(idAlumno) == null) {
-            return ResponseEntity.status(HttpStatus.NO_CONTENT).body("Alumno no encontrado en el sistema");
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Alumno no encontrado en el sistema");
         }
         Optional<Curso> cursoOpt = cursoRepository.findById(idCurso);
         if (cursoOpt.isEmpty()) {
@@ -93,6 +96,9 @@ public class CursoService {
         Curso curso = cursoOpt.get();
         Alumno alumno = (Alumno) alumnoService.getAlumnoById(idAlumno).getBody();
         List<Alumno> lista = curso.getListaCurso();
+        if (lista.contains(alumno)) {
+            return ResponseEntity.status(HttpStatus.CONFLICT).body(null);
+        }
         lista.add(alumno);
         curso.setListaCurso(lista);
         cursoRepository.save(curso);  // persistir la asociación
@@ -103,13 +109,13 @@ public class CursoService {
     public ResponseEntity<String> deleteAlumno(int idAlumno, int idCurso) {
         Optional<Curso> cursoOpt = cursoRepository.findById(idCurso);
         if (cursoOpt.isEmpty()) {
-            return ResponseEntity.status(HttpStatus.NO_CONTENT).body("Curso no encontrado");
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Curso no encontrado");
         }
         Curso curso = cursoOpt.get();
         Alumno alumno = (Alumno) alumnoService.getAlumnoById(idAlumno).getBody();
 
         if (!curso.getListaCurso().contains(alumno)) {
-            return ResponseEntity.status(HttpStatus.NO_CONTENT).body("Alumno no encontrado en el curso");
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Alumno no encontrado en el curso");
         }
         List<Alumno> lista = curso.getListaCurso();
         lista.remove(alumno);

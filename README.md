@@ -60,10 +60,10 @@ A continuación, para cada recurso se muestra un ejemplo de:
 
 ### Alumnos
 
-* **GET** `/api/alumnos`
-* **GET** `/api/alumnos/{id}`
-* **DELETE** `/api/alumnos/{id}`
-* **POST** `/api/alumnos`
+* **GET** `/api/v1/alumnos`
+* **GET** `/api/v1/alumnos/{id}`
+* **DELETE** `/api/v1/alumnos/{id}`
+* **POST** `/api/v1/alumnos`
 
 ```json
 {
@@ -74,7 +74,7 @@ A continuación, para cada recurso se muestra un ejemplo de:
 }
 ```
 
-* **PUT** `/api/profesores/{id}`
+* **PUT** `/api/v1/alumnos/{id}`
 
 ````json
 {
@@ -89,10 +89,10 @@ A continuación, para cada recurso se muestra un ejemplo de:
 
 ### Contenidos
 
-* **GET** `/api/contenidos`
-* **GET** `/api/contenidos/{id}`
-* **DELETE** `/api/contenidos/{id}` (error si esta relacionado a un curso, eliminar de curso antes)
-* **POST** `/api/contenidos`
+* **GET** `/api/v1/contenidos`
+* **GET** `/api/v1/contenidos/{id}`
+* **DELETE** `/api/v1/contenidos/{id}` (error si esta relacionado a un curso, eliminar de curso antes)
+* **POST** `/api/v1/contenidos`
 
 ```json
 { "titulo": "Álgebra Lineal",
@@ -100,7 +100,7 @@ A continuación, para cada recurso se muestra un ejemplo de:
 }
 ```
 
-* **PUT** `/api/contenidos/{id}`
+* **PUT** `/api/v1/contenidos/{id}`
 
 ```json
 { "titulo": "Cálculo I", "descripcion": "Límites y derivadas" }
@@ -110,10 +110,10 @@ A continuación, para cada recurso se muestra un ejemplo de:
 
 ### CuponesDescuento
 
-* **GET** `/api/cupones`
-* **GET** `/api/cupones/{id}`
-* **DELETE** `/api/cupones/{id}`
-* **POST** `/api/cupones`
+* **GET** `/api/v1/cupones`
+* **GET** `/api/v1/cupones/{id}`
+* **DELETE** `/api/v1/cupones/{id}`
+* **POST** `/api/v1/cupones`
 
 ```json
 {
@@ -121,24 +121,24 @@ A continuación, para cada recurso se muestra un ejemplo de:
 }
 ```
 
-* **PUT** `/api/cupones/{id}`
+* **PUT** `/api/v1/cupones/{id}`
 
 ```json
 {
  "descuento": 10
 }
 ```
-* **GET** `/api/evaluaciones/{id}/cursos`
-* **DELETE** `/api/evaluaciones/{id}/cursos/{idCurso}`
-* **POST** `/api/evaluaciones/{id}/cursos/{idCurso}`
+* **GET** `/api/v1/evaluaciones/{id}/cursos`
+* **DELETE** `/api/v1/evaluaciones/{id}/cursos/{idCurso}`
+* **POST** `/api/v1/evaluaciones/{id}/cursos/{idCurso}`
 ---
 
 ### Cursos
 
-* **GET** `/api/cursos`
-* **GET** `/api/cursos/{id}`
-* **DELETE** `/api/cursos/{id}` (si era relacionado a una evaluacion tira error)
-* **POST** `/api/cursos`
+* **GET** `/api/v1/cursos`
+* **GET** `/api/v1/cursos/{id}`
+* **DELETE** `/api/v1/cursos/{id}` (si era relacionado a una evaluacion tira error)
+* **POST** `/api/v1/cursos`
 
 ```json
 {
@@ -149,7 +149,7 @@ A continuación, para cada recurso se muestra un ejemplo de:
 }
 ```
 
-* **PUT** `/api/cursos/{id}`
+* **PUT** `/api/v1/cursos/{id}`
 
 ```json
 {
@@ -160,9 +160,9 @@ A continuación, para cada recurso se muestra un ejemplo de:
 }
 ```
 #### /cursos/{idCurso}/alumnos
-* **GET** `/api/cursos/{idCurso}/alumnos`
-* **DELETE** `/api/cursos/{idCurso}/alumnos/{idAlumno}`
-* **POST** `/api/cursos/{idCurso}/alumnos`
+* **GET** `/api/v1/cursos/{idCurso}/alumnos`
+* **DELETE** `/api/v1/cursos/{idCurso}/alumnos/{idAlumno}`
+* **POST** `/api/v1/cursos/{idCurso}/alumnos`
 
 ```json
 {
@@ -171,9 +171,9 @@ A continuación, para cada recurso se muestra un ejemplo de:
 ```
 
 #### /cursos/{idCurso}/contenidos
-* **GET** `/api/cursos/{idCurso}/contenidos`
-* **DELETE** `/api/cursos/{idCurso}/contenidos/{idContenido}`
-* **POST** `/api/cursos/{idCurso}/contenidos`
+* **GET** `/api/v1/cursos/{idCurso}/contenidos`
+* **DELETE** `/api/v1/cursos/{idCurso}/contenidos/{idContenido}`
+* **POST** `/api/v1/cursos/{idCurso}/contenidos`
 
 ```json
 {
@@ -184,10 +184,10 @@ A continuación, para cada recurso se muestra un ejemplo de:
 
 ### Evaluaciones
 
-* **GET** `/api/evaluaciones`
-* **GET** `/api/evaluaciones/{id}`
-* **DELETE** `/api/evaluaciones/{id}` 
-* **POST** `/api/evaluaciones`
+* **GET** `/api/v1/evaluaciones`
+* **GET** `/api/v1/evaluaciones/{id}`
+* **DELETE** `/api/v1/evaluaciones/{id}` 
+* **POST** `/api/v1/evaluaciones`
 
 ```json
 {
@@ -198,7 +198,7 @@ A continuación, para cada recurso se muestra un ejemplo de:
 }
 ```
 
-* **PUT** `/api/cursos/{id}`
+* **PUT** `/api/v1/cursos/{id}`
 
 ```json
 {
@@ -210,9 +210,9 @@ A continuación, para cada recurso se muestra un ejemplo de:
 ```
 
 #### /evaluaciones/{idEvaluacion}/cursos
-* **GET** `/api/evaluaciones/{idEvaluacion}/cursos`
-* **DELETE** `/api/evaluaciones/{idEvaluacion}/cursos/{idCurso}`
-* **POST** `/api/evaluaciones/{idEvaluacion}/cursos`
+* **GET** `/api/v1/evaluaciones/{idEvaluacion}/cursos`
+* **DELETE** `/api/v1/evaluaciones/{idEvaluacion}/cursos/{idCurso}`
+* **POST** `/api/v1/evaluaciones/{idEvaluacion}/cursos`
 
 ```json
 {
@@ -223,10 +223,10 @@ A continuación, para cada recurso se muestra un ejemplo de:
 
 ### Matriculas
 
-* **GET** `/api/matriculas`
-* **GET** `/api/matriculas/{id}`
-* **DELETE** `/api/matriculas/{id}`
-* **POST** `/api/matriculas`
+* **GET** `/api/v1/matriculas`
+* **GET** `/api/v1/matriculas/{id}`
+* **DELETE** `/api/v1/matriculas/{id}`
+* **POST** `/api/v1/matriculas`
 
 ```json
 {
@@ -237,7 +237,7 @@ A continuación, para cada recurso se muestra un ejemplo de:
 }
 ```
 
-* **PUT** `/api/matriculas/{id}`
+* **PUT** `/api/v1/matriculas/{id}`
 
 ```json
 {
@@ -248,9 +248,9 @@ A continuación, para cada recurso se muestra un ejemplo de:
 }
 ```
 #### /matriculas/{idMatricula}/alumno
-* **GET** `/matriculas/{idMatricula}/alumno`
-* **DELETE** `/matriculas/{idMatricula}/alumno/{idAlumno}`
-* **POST** `/matriculas/{idMatricula}/alumno`
+* **GET** `api/v1/matriculas/{idMatricula}/alumno`
+* **DELETE** `api/v1/matriculas/{idMatricula}/alumno/{idAlumno}`
+* **POST** `api/v1/matriculas/{idMatricula}/alumno`
 
 ```json
 {
@@ -258,9 +258,9 @@ A continuación, para cada recurso se muestra un ejemplo de:
 }
 ```
 #### /matriculas/{idMatricula}/cupon
-* **GET** `/matriculas/{idMatricula}/cupon`
-* **DELETE** `/matriculas/{idMatricula}/cupon/{idCupon}`
-* **POST** `/matriculas/{idMatricula}/cupon`
+* **GET** `api/v1/matriculas/{idMatricula}/cupon`
+* **DELETE** `api/v1/matriculas/{idMatricula}/cupon/{idCupon}`
+* **POST** `api/v1/matriculas/{idMatricula}/cupon`
 
 ```json
 {
@@ -270,10 +270,10 @@ A continuación, para cada recurso se muestra un ejemplo de:
 ---
 ### Profesores
 
-* **GET** `/api/profesores`
-* **GET** `/api/profesores/{id}`
-* **DELETE** `/api/profesores/{id}`
-* **POST** `/api/profesores`
+* **GET** `/api/v1/profesores`
+* **GET** `/api/v1/profesores/{id}`
+* **DELETE** `/api/v1/profesores/{id}`
+* **POST** `/api/v1/profesores`
 
 ```json
 {
@@ -283,7 +283,7 @@ A continuación, para cada recurso se muestra un ejemplo de:
         "mail": "Manuel.jose@uch.cl"
 }
 ```
-* **PUT** `/api/profesores/{id}`
+* **PUT** `/api/v1/profesores/{id}`
 
 ```json
 {
@@ -296,10 +296,10 @@ A continuación, para cada recurso se muestra un ejemplo de:
 ---
 ### Soportes
 
-* **GET** `/api/soportes`
-* **GET** `/api/soportes/{id}`
-* **DELETE** `/api/soportes/{id}`
-* **POST** `/api/soportes`
+* **GET** `/api/v1/soportes`
+* **GET** `/api/v1/soportes/{id}`
+* **DELETE** `/api/v1/soportes/{id}`
+* **POST** `/api/v1/soportes`
 
 ```json
 {
@@ -310,7 +310,7 @@ A continuación, para cada recurso se muestra un ejemplo de:
         "departamento": "test"
 }
 ```
-* **PUT** `/api/soportes/{id}`
+* **PUT** `/api/v1/soportes/{id}`
 
 ```json
 {
@@ -322,9 +322,9 @@ A continuación, para cada recurso se muestra un ejemplo de:
 }
 ```
 #### /soportes/{idSoporte}/tickets
-* **GET** `/soportes/{idSoporte}/tickets`
-* **DELETE** `/soportes//{idSoporte}/tickets/{idTicket}`
-* **POST** `/soportes/{idSoporte}/tickets`
+* **GET** `api/v1/soportes/{idSoporte}/tickets`
+* **DELETE** `api/v1/soportes//{idSoporte}/tickets/{idTicket}`
+* **POST** `api/v1/soportes/{idSoporte}/tickets`
 
 ```json
 {
@@ -335,10 +335,10 @@ A continuación, para cada recurso se muestra un ejemplo de:
 ---
 ### Tickets soporte
 
-* **GET** `/api/tickets`
-* **GET** `/api/tickets/{id}`
-* **DELETE** `/api/tickets/{id}`
-* **POST** `/api/tickets`
+* **GET** `/api/v1/tickets`
+* **GET** `/api/v1/tickets/{id}`
+* **DELETE** `/api/v1/tickets/{id}`
+* **POST** `/api/v1/tickets`
 
 ```json
 {
@@ -347,7 +347,7 @@ A continuación, para cada recurso se muestra un ejemplo de:
 }
 ```
 
-* **PUT** `/api/tickets/{id}`
+* **PUT** `/api/v1/tickets/{id}`
 
 ```json
 {

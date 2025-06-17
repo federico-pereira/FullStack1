@@ -1,0 +1,211 @@
+Index: .idea/dataSources.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"DataSourceManagerImpl\" format=\"xml\" multifile-model=\"true\">\n    <data-source source=\"LOCAL\" name=\"oracle-service\" uuid=\"5816800d-23bb-4a73-a767-4381755489be\">\n      <driver-ref>oracle.19</driver-ref>\n      <synchronize>true</synchronize>\n      <imported>true</imported>\n      <auto-commit>false</auto-commit>\n      <jdbc-driver>oracle.jdbc.OracleDriver</jdbc-driver>\n      <jdbc-url>jdbc:oracle:thin:@//fspdb</jdbc-url>\n      <jdbc-additional-properties>\n        <property name=\"com.intellij.clouds.kubernetes.db.host.port\" />\n        <property name=\"com.intellij.clouds.kubernetes.db.enabled\" value=\"false\" />\n        <property name=\"com.intellij.clouds.kubernetes.db.container.port\" />\n      </jdbc-additional-properties>\n      <working-dir>$ProjectFileDir$</working-dir>\n    </data-source>\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/dataSources.xml b/.idea/dataSources.xml
+--- a/.idea/dataSources.xml	(revision 7537fc9e8527407b6a7be158ba8ca71cb975fd46)
++++ b/.idea/dataSources.xml	(date 1748312813013)
+@@ -1,16 +1,16 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+-    <data-source source="LOCAL" name="oracle-service" uuid="5816800d-23bb-4a73-a767-4381755489be">
++    <data-source source="LOCAL" name="Oracle" uuid="6c6a799f-a2f9-4faa-bf05-8df2771fd495">
+       <driver-ref>oracle.19</driver-ref>
+       <synchronize>true</synchronize>
+-      <imported>true</imported>
+       <auto-commit>false</auto-commit>
+       <jdbc-driver>oracle.jdbc.OracleDriver</jdbc-driver>
+-      <jdbc-url>jdbc:oracle:thin:@//fspdb</jdbc-url>
++      <jdbc-url>jdbc:oracle:thin:@fspdb_high?TNS_ADMIN=$PROJECT_DIR$/../Wallet_FSPDB</jdbc-url>
+       <jdbc-additional-properties>
+         <property name="com.intellij.clouds.kubernetes.db.host.port" />
+         <property name="com.intellij.clouds.kubernetes.db.enabled" value="false" />
++        <property name="TNSADMIN_DIR" value="FSPDB" />
+         <property name="com.intellij.clouds.kubernetes.db.container.port" />
+       </jdbc-additional-properties>
+       <working-dir>$ProjectFileDir$</working-dir>
+Index: .idea/dataSources.local.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"dataSourceStorageLocal\" created-in=\"IU-251.23774.435\">\n    <data-source name=\"oracle-service\" uuid=\"5816800d-23bb-4a73-a767-4381755489be\">\n      <database-info product=\"\" version=\"\" jdbc-version=\"\" driver-name=\"\" driver-version=\"\" dbms=\"ORACLE\" />\n      <user-name>ADMIN</user-name>\n      <schema-mapping />\n      <load-sources>user_and_system_sources</load-sources>\n    </data-source>\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/dataSources.local.xml b/.idea/dataSources.local.xml
+--- a/.idea/dataSources.local.xml	(revision 7537fc9e8527407b6a7be158ba8ca71cb975fd46)
++++ b/.idea/dataSources.local.xml	(date 1748291672813)
+@@ -1,10 +1,22 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="dataSourceStorageLocal" created-in="IU-251.23774.435">
+-    <data-source name="oracle-service" uuid="5816800d-23bb-4a73-a767-4381755489be">
+-      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="ORACLE" />
++    <data-source name="Oracle" uuid="6c6a799f-a2f9-4faa-bf05-8df2771fd495">
++      <database-info product="Oracle" version="Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production&#10;Version 19.27.0.1.0" jdbc-version="4.3" driver-name="Oracle JDBC driver" driver-version="23.5.0.24.07" dbms="ORACLE" exact-version="19.0.0.0.0" exact-driver-version="23.5">
++        <extra-name-characters>$#</extra-name-characters>
++        <identifier-quote-string>&quot;</identifier-quote-string>
++      </database-info>
++      <case-sensitivity plain-identifiers="upper" quoted-identifiers="exact" />
++      <secret-storage>master_key</secret-storage>
+       <user-name>ADMIN</user-name>
+-      <schema-mapping />
++      <schema-mapping>
++        <introspection-scope>
++          <node kind="schema">
++            <name qname="@" />
++            <name qname="PUBLIC" />
++          </node>
++        </introspection-scope>
++      </schema-mapping>
+       <load-sources>user_and_system_sources</load-sources>
+     </data-source>
+   </component>
+Index: proyect/target/classes/application.properties
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>spring.application.name=FSPDB\nspring.datasource.url=jdbc:oracle:thin:@fspdb_high?TNS_ADMIN=C:/Users/feder/Downloads/Wallet_FSPDB\nspring.datasource.driver-class-name=oracle.jdbc.OracleDriver\nspring.datasource.username=ADMIN\nspring.datasource.password=FullStack-001\n\n# Logs en DEBUG (opcional, para verificar que coge bien el wallet)\nlogging.level.org.hibernate=DEBUG\nlogging.level.com.zaxxer.hikari=DEBUG\nlogging.level.java.sql=DEBUG\n\nspring.jpa.hibernate.ddl-auto=update
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>ISO-8859-1
+===================================================================
+diff --git a/proyect/target/classes/application.properties b/proyect/target/classes/application.properties
+--- a/proyect/target/classes/application.properties	(revision 7537fc9e8527407b6a7be158ba8ca71cb975fd46)
++++ b/proyect/target/classes/application.properties	(date 1748290426952)
+@@ -1,5 +1,5 @@
+ spring.application.name=FSPDB
+-spring.datasource.url=jdbc:oracle:thin:@fspdb_high?TNS_ADMIN=C:/Users/feder/Downloads/Wallet_FSPDB
++spring.datasource.url=jdbc:oracle:thin:@fspdb_high?TNS_ADMIN=/Users/benyistar/Downloads/Wallet_FSPDB
+ spring.datasource.driver-class-name=oracle.jdbc.OracleDriver
+ spring.datasource.username=ADMIN
+ spring.datasource.password=FullStack-001
+@@ -9,4 +9,5 @@
+ logging.level.com.zaxxer.hikari=DEBUG
+ logging.level.java.sql=DEBUG
+ 
+-spring.jpa.hibernate.ddl-auto=update
+\ No newline at end of file
++spring.jpa.hibernate.ddl-auto=update
++
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"94816420-cdd8-4d1e-838a-645d2ae55f93\" name=\"Changes\" comment=\"cambio nombre carpeta repository\">\n      <change beforePath=\"$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/repositoy/AlumnoRepository.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/repository/AlumnoRepository.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/repositoy/ContenidoRepository.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/repository/ContenidoRepository.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/repositoy/CuponDescuentoRepository.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/repository/CuponDescuentoRepository.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/repositoy/CursoRepository.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/repository/CursoRepository.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/repositoy/EvaluacionRepository.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/repository/EvaluacionRepository.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/repositoy/MatriculaRepository.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/repository/MatriculaRepository.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/repositoy/ProfesorRepository.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/repository/ProfesorRepository.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/repositoy/SoporteRepository.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/repository/SoporteRepository.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/repositoy/TicketSoporteRepository.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/repository/TicketSoporteRepository.java\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"Interface\" />\n        <option value=\"Class\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\n      <map>\n        <entry key=\"$PROJECT_DIR$\" value=\"main\" />\n      </map>\n    </option>\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"GitHubPullRequestSearchHistory\">{\n  &quot;lastFilter&quot;: {\n    &quot;state&quot;: &quot;OPEN&quot;,\n    &quot;assignee&quot;: &quot;federico-pereira&quot;\n  }\n}</component>\n  <component name=\"GithubPullRequestsUISettings\">{\n  &quot;selectedUrlAndAccountId&quot;: {\n    &quot;url&quot;: &quot;https://github.com/federico-pereira/FullStack1.git&quot;,\n    &quot;accountId&quot;: &quot;f71cb643-2c65-4960-a6c4-8aeccdb6af53&quot;\n  }\n}</component>\n  <component name=\"ProjectColorInfo\">{\n  &quot;associatedIndex&quot;: 3\n}</component>\n  <component name=\"ProjectId\" id=\"2w93ji4q5D7w5QPC5oJoH67TiBc\" />\n  <component name=\"ProjectLevelVcsManager\">\n    <ConfirmationsSetting value=\"1\" id=\"Add\" />\n  </component>\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">{\n  &quot;keyToString&quot;: {\n    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,\n    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,\n    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,\n    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\n    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,\n    &quot;Spring Boot.ProyectApplication.executor&quot;: &quot;Run&quot;,\n    &quot;git-widget-placeholder&quot;: &quot;fede-branch&quot;,\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\n    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\n  },\n  &quot;keyToStringList&quot;: {\n    &quot;DatabaseDriversLRU&quot;: [\n      &quot;oracle&quot;\n    ]\n  }\n}</component>\n  <component name=\"RunManager\">\n    <configuration name=\"ProyectApplication\" type=\"SpringBootApplicationConfigurationType\" factoryName=\"Spring Boot\" nameIsGenerated=\"true\">\n      <module name=\"proyect\" />\n      <option name=\"SPRING_BOOT_MAIN_CLASS\" value=\"duoc.proyect.ProyectApplication\" />\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n  </component>\n  <component name=\"SharedIndexes\">\n    <attachedChunks>\n      <set>\n        <option value=\"bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.23774.435\" />\n        <option value=\"bundled-js-predefined-d6986cc7102b-f27c65a3e318-JavaScript-IU-251.23774.435\" />\n      </set>\n    </attachedChunks>\n  </component>\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"94816420-cdd8-4d1e-838a-645d2ae55f93\" name=\"Changes\" comment=\"\" />\n      <created>1745440098661</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1745440098661</updated>\n      <workItem from=\"1747248741857\" duration=\"1263000\" />\n      <workItem from=\"1747272547016\" duration=\"3781000\" />\n      <workItem from=\"1747319886387\" duration=\"3758000\" />\n      <workItem from=\"1747333845410\" duration=\"3973000\" />\n      <workItem from=\"1747342176887\" duration=\"11275000\" />\n      <workItem from=\"1747409274253\" duration=\"12123000\" />\n      <workItem from=\"1747491775385\" duration=\"4822000\" />\n      <workItem from=\"1747502000241\" duration=\"1417000\" />\n      <workItem from=\"1747516264428\" duration=\"4559000\" />\n      <workItem from=\"1747596850040\" duration=\"11572000\" />\n      <workItem from=\"1747691545069\" duration=\"3261000\" />\n      <workItem from=\"1747713389406\" duration=\"3685000\" />\n    </task>\n    <task id=\"LOCAL-00001\" summary=\"Clase alumno\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1747323437664</created>\n      <option name=\"number\" value=\"00001\" />\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1747323437664</updated>\n    </task>\n    <task id=\"LOCAL-00002\" summary=\"herencia de clase usuario mejorada con supertipo\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1747337655714</created>\n      <option name=\"number\" value=\"00002\" />\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1747337655714</updated>\n    </task>\n    <task id=\"LOCAL-00003\" summary=\"Correccion a las funciones, cambio de output a corrrespondiente, entre otros\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1747350474667</created>\n      <option name=\"number\" value=\"00003\" />\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1747350474667</updated>\n    </task>\n    <task id=\"LOCAL-00004\" summary=\"Nueva clase Evaluacion,&#10;falta corregir el post con listas de otros objetos&#10;en evaluacion, clases y creo q contenidos (revisar todos)\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1747419994292</created>\n      <option name=\"number\" value=\"00004\" />\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1747419994292</updated>\n    </task>\n    <task id=\"LOCAL-00005\" summary=\"Creacion clases ticket y soporte\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1747520478110</created>\n      <option name=\"number\" value=\"00005\" />\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1747520478110</updated>\n    </task>\n    <task id=\"LOCAL-00006\" summary=\"Matricula y cupon + mejoras a funciones de post y get\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1747623484438</created>\n      <option name=\"number\" value=\"00006\" />\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1747623484438</updated>\n    </task>\n    <task id=\"LOCAL-00007\" summary=\"Matricula y cupon + mejoras a funciones de post y get\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1747623653725</created>\n      <option name=\"number\" value=\"00007\" />\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1747623653725</updated>\n    </task>\n    <task id=\"LOCAL-00008\" summary=\"last comit, arreglo todas las funciones + testeo general&#10;&#10;- falta detalle evaluacion y ticketsoporte\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1747962523550</created>\n      <option name=\"number\" value=\"00008\" />\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1747962523550</updated>\n    </task>\n    <task id=\"LOCAL-00009\" summary=\"cambio nombre carpeta repository\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1747962644192</created>\n      <option name=\"number\" value=\"00009\" />\n      <option name=\"presentableId\" value=\"LOCAL-00009\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1747962644192</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"10\" />\n    <servers />\n  </component>\n  <component name=\"TypeScriptGeneratedFilesManager\">\n    <option name=\"version\" value=\"3\" />\n  </component>\n  <component name=\"Vcs.Log.Tabs.Properties\">\n    <option name=\"TAB_STATES\">\n      <map>\n        <entry key=\"MAIN\">\n          <value>\n            <State />\n          </value>\n        </entry>\n      </map>\n    </option>\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <MESSAGE value=\"conexion a la bd y creacion de tabla profesor\" />\n    <MESSAGE value=\"Clase alumno\" />\n    <MESSAGE value=\"herencia de clase usuario mejorada con supertipo\" />\n    <MESSAGE value=\"Correccion a las funciones, cambio de output a corrrespondiente, entre otros\" />\n    <MESSAGE value=\"Nueva clase Evaluacion,&#10;falta corregir el post con listas de otros objetos&#10;en evaluacion, clases y creo q contenidos (revisar todos)\" />\n    <MESSAGE value=\"Creacion clases ticket y soporte\" />\n    <MESSAGE value=\"Matricula y cupon + mejoras a funciones de post y get\" />\n    <MESSAGE value=\"last comit, arreglo todas las funciones + testeo general&#10;&#10;- falta detalle evaluacion y ticketsoporte\" />\n    <MESSAGE value=\"cambio nombre carpeta repository\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"cambio nombre carpeta repository\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 7537fc9e8527407b6a7be158ba8ca71cb975fd46)
++++ b/.idea/workspace.xml	(date 1748315130055)
+@@ -5,15 +5,41 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="94816420-cdd8-4d1e-838a-645d2ae55f93" name="Changes" comment="cambio nombre carpeta repository">
+-      <change beforePath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/repositoy/AlumnoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/repository/AlumnoRepository.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/repositoy/ContenidoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/repository/ContenidoRepository.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/repositoy/CuponDescuentoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/repository/CuponDescuentoRepository.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/repositoy/CursoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/repository/CursoRepository.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/repositoy/EvaluacionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/repository/EvaluacionRepository.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/repositoy/MatriculaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/repository/MatriculaRepository.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/repositoy/ProfesorRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/repository/ProfesorRepository.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/repositoy/SoporteRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/repository/SoporteRepository.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/repositoy/TicketSoporteRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/repository/TicketSoporteRepository.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]/shelved.patch" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/proyect/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/pom.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/proyect/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/src/main/resources/application.properties" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/proyect/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/target/classes/application.properties" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/controller/TicketSoporteController.class" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/controller/TicketSoporteController.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/model/Curso.class" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/model/Curso.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/model/DetalleEvaluacion.class" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/model/DetalleEvaluacion.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/model/Evaluacion.class" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/model/Evaluacion.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/model/Matricula.class" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/model/Matricula.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/model/Soporte.class" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/model/Soporte.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/model/TicketSoporte.class" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/model/TicketSoporte.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/repositoy/AlumnoRepository.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/repositoy/ContenidoRepository.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/repositoy/CuponDescuentoRepository.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/repositoy/CursoRepository.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/repositoy/DetalleEvaluacionRepository.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/repositoy/EvaluacionRepository.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/repositoy/MatriculaRepository.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/repositoy/ProfesorRepository.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/repositoy/SoporteRepository.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/repositoy/TicketSoporteRepository.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/service/AlumnoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/service/AlumnoService.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/service/ContenidoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/service/ContenidoService.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/service/CuponDescuentoSevice.class" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/service/CuponDescuentoSevice.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/service/CursoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/service/CursoService.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/service/DetalleEvaluacionService.class" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/service/DetalleEvaluacionService.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/service/EvaluacionService.class" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/service/EvaluacionService.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/service/MatriculaService.class" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/service/MatriculaService.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/service/ProfesorService.class" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/service/ProfesorService.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/service/SoporteService.class" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/service/SoporteService.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/service/TicketSoporteService.class" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/service/TicketSoporteService.class" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -45,7 +71,7 @@
+   <component name="GithubPullRequestsUISettings">{
+   &quot;selectedUrlAndAccountId&quot;: {
+     &quot;url&quot;: &quot;https://github.com/federico-pereira/FullStack1.git&quot;,
+-    &quot;accountId&quot;: &quot;f71cb643-2c65-4960-a6c4-8aeccdb6af53&quot;
++    &quot;accountId&quot;: &quot;a5728ffa-c531-4163-bc58-1de759cc780c&quot;
+   }
+ }</component>
+   <component name="ProjectColorInfo">{
+@@ -68,7 +94,8 @@
+     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+     &quot;Spring Boot.ProyectApplication.executor&quot;: &quot;Run&quot;,
+-    &quot;git-widget-placeholder&quot;: &quot;fede-branch&quot;,
++    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
++    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+@@ -98,6 +125,9 @@
+         <option value="bundled-js-predefined-d6986cc7102b-f27c65a3e318-JavaScript-IU-251.23774.435" />
+       </set>
+     </attachedChunks>
++  </component>
++  <component name="StructureViewState">
++    <option name="selectedTab" value="Logical" />
+   </component>
+   <component name="TaskManager">
+     <task active="true" id="Default" summary="Default task">
+@@ -118,6 +148,8 @@
+       <workItem from="1747596850040" duration="11572000" />
+       <workItem from="1747691545069" duration="3261000" />
+       <workItem from="1747713389406" duration="3685000" />
++      <workItem from="1748292402504" duration="1046000" />
++      <workItem from="1748312805681" duration="2051000" />
+     </task>
+     <task id="LOCAL-00001" summary="Clase alumno">
+       <option name="closed" value="true" />
+@@ -202,7 +234,19 @@
+       <map>
+         <entry key="MAIN">
+           <value>
+-            <State />
++            <State>
++              <option name="FILTERS">
++                <map>
++                  <entry key="branch">
++                    <value>
++                      <list>
++                        <option value="main" />
++                      </list>
++                    </value>
++                  </entry>
++                </map>
++              </option>
++            </State>
+           </value>
+         </entry>
+       </map>
