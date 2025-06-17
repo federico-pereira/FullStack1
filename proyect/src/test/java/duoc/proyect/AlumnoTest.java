@@ -1,35 +1,35 @@
-package duoc.proyect;
+package duoc.proyect.service;
 
 import duoc.proyect.model.Alumno;
 import duoc.proyect.repository.AlumnoRepository;
-import duoc.proyect.service.AlumnoService;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.bean.override.mockito.MockitoBean;
-import static  org.junit.jupiter.api.Assertions.*;
-
 import java.util.List;
+import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.*;
 
-@SpringBootTest
-public class AlumnoTest {
+public class AlumnoServiceTest {
 
-    @Autowired
-    AlumnoRepository alumnoRepository;
+    private AlumnoRepository alumnoRepository;
+    private AlumnoService alumnoService;
 
-    @MockitoBean
-    AlumnoService alumnoService;
+    @BeforeEach
+    void setUp() {
+        alumnoRepository = mock(AlumnoRepository.class);
+        alumnoService = new AlumnoService(alumnoRepository);
+    }
 
     @Test
-    void findAllTest(){
+    void testBuscarTodos() {
+        Alumno alumno = new Alumno();
+        alumno.setId(1);
+        alumno.setRut("12345678-9");
 
-        List<Alumno> alumnos = alumnoRepository.findAll();
+        when(alumnoRepository.findAll()).thenReturn(List.of(alumno));
 
-        assertNotNull(alumnos);
-        for(Alumno alumno:alumnos){
-            assertNotNull(alumno.getId());
-            assertNotNull(alumno.getRut());
-        }
+        List<Alumno> alumnos = alumnoService.buscarTodos();
+
         assertEquals(1, alumnos.size());
+        assertEquals("12345678-9", alumnos.get(0).getRut());
     }
 }

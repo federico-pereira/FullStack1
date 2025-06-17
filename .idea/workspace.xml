@@ -53,7 +53,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="martin-branch" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -64,25 +64,22 @@
     &quot;assignee&quot;: &quot;federico-pereira&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/federico-pereira/FullStack1.git&quot;,
-    &quot;accountId&quot;: &quot;3f41ac34-d00d-41d2-b706-c79cf8b608a5&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/federico-pereira/FullStack1.git",
+    "accountId": "c6e34e6f-d6ed-40d1-a557-184361fc05fb"
   },
-  &quot;recentNewPullRequestHead&quot;: {
-    &quot;server&quot;: {
-      &quot;useHttp&quot;: false,
-      &quot;host&quot;: &quot;github.com&quot;,
-      &quot;port&quot;: null,
-      &quot;suffix&quot;: null
+  "recentNewPullRequestHead": {
+    "server": {
+      "useHttp": false,
+      "host": "github.com",
+      "port": null,
+      "suffix": null
     },
-    &quot;owner&quot;: &quot;federico-pereira&quot;,
-    &quot;repository&quot;: &quot;FullStack1&quot;
+    "owner": "federico-pereira",
+    "repository": "FullStack1"
   }
-}</component>
-  <component name="MavenImportPreferences">
-    <option name="explicitlyEnabledProfiles" value="native,nativeTest" />
-  </component>
+}]]></component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="Security Analysis" />
   </component>
@@ -107,7 +104,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;Spring Boot.ProyectApplication.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;fede-branch&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;martin-branch&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/feder/IdeaProjects/FullStack1/proyect/src/main/resources&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -126,6 +123,9 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\feder\IdeaProjects\FullStack1\proyect\src\main\resources" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="duoc.proyect" />
     </key>
   </component>
   <component name="RunManager">
@@ -173,6 +173,7 @@
       <workItem from="1749595669154" duration="1521000" />
       <workItem from="1749744194187" duration="4700000" />
       <workItem from="1749771788710" duration="4803000" />
+      <workItem from="1750199328955" duration="980000" />
     </task>
     <task id="LOCAL-00001" summary="Clase alumno">
       <option name="closed" value="true" />
