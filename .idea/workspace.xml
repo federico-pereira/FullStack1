@@ -64,24 +64,24 @@
     &quot;assignee&quot;: &quot;federico-pereira&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/federico-pereira/FullStack1.git",
-    "accountId": "c6e34e6f-d6ed-40d1-a557-184361fc05fb"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/federico-pereira/FullStack1.git&quot;,
+    &quot;accountId&quot;: &quot;c6e34e6f-d6ed-40d1-a557-184361fc05fb&quot;
   },
-  "recentNewPullRequestHead": {
-    "server": {
-      "useHttp": false,
-      "host": "github.com",
-      "port": null,
-      "suffix": null
+  &quot;recentNewPullRequestHead&quot;: {
+    &quot;server&quot;: {
+      &quot;useHttp&quot;: false,
+      &quot;host&quot;: &quot;github.com&quot;,
+      &quot;port&quot;: null,
+      &quot;suffix&quot;: null
     },
-    "owner": "federico-pereira",
-    "repository": "FullStack1"
+    &quot;owner&quot;: &quot;federico-pereira&quot;,
+    &quot;repository&quot;: &quot;FullStack1&quot;
   }
-}]]></component>
+}</component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="Security Analysis" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
@@ -117,6 +117,11 @@
   &quot;keyToStringList&quot;: {
     &quot;DatabaseDriversLRU&quot;: [
       &quot;oracle&quot;
+    ],
+    &quot;GitStage.ChangesTree.GroupingKeys&quot;: [
+      &quot;directory&quot;,
+      &quot;module&quot;,
+      &quot;repository&quot;
     ]
   }
 }</component>
@@ -124,7 +129,13 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\feder\IdeaProjects\FullStack1\proyect\src\main\resources" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="duoc.proyect" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="duoc.proyect.TestPut" />
+      <recent name="duoc.proyect.TestPost" />
+      <recent name="duoc.proyect.TestDelete" />
       <recent name="duoc.proyect" />
     </key>
   </component>
@@ -174,6 +185,9 @@
       <workItem from="1749744194187" duration="4700000" />
       <workItem from="1749771788710" duration="4803000" />
       <workItem from="1750199328955" duration="980000" />
+      <workItem from="1750200329921" duration="721000" />
+      <workItem from="1750266715509" duration="5159000" />
+      <workItem from="1750271961625" duration="1107000" />
     </task>
     <task id="LOCAL-00001" summary="Clase alumno">
       <option name="closed" value="true" />
@@ -263,7 +277,15 @@
       <option name="project" value="LOCAL" />
       <updated>1749507923587</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="testeo de alumno, contenido, curso, profesor">
+      <option name="closed" value="true" />
+      <created>1750200665450</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1750200665450</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -291,6 +313,7 @@
     <MESSAGE value="last comit, arreglo todas las funciones + testeo general&#10;&#10;- falta detalle evaluacion y ticketsoporte" />
     <MESSAGE value="cambio nombre carpeta repository" />
     <MESSAGE value="Integracion de SwaggerUI&#10;Modificacion en Alumno controller&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;proyect/src/main/resources/application-dev.properties&#10;#&#9;proyect/src/main/resources/application-test.properties&#10;#&#9;proyect/src/main/resources/application.properties&#10;#&#9;proyect/src/test/java/duoc/proyect/AlumnoTest.java&#10;#&#9;proyect/target/classes/application-dev.properties&#10;#&#9;proyect/target/classes/application-test.properties&#10;#&#9;proyect/target/test-classes/duoc/proyect/AlumnoTest.class" />
-    <option name="LAST_COMMIT_MESSAGE" value="Integracion de SwaggerUI&#10;Modificacion en Alumno controller&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;proyect/src/main/resources/application-dev.properties&#10;#&#9;proyect/src/main/resources/application-test.properties&#10;#&#9;proyect/src/main/resources/application.properties&#10;#&#9;proyect/src/test/java/duoc/proyect/AlumnoTest.java&#10;#&#9;proyect/target/classes/application-dev.properties&#10;#&#9;proyect/target/classes/application-test.properties&#10;#&#9;proyect/target/test-classes/duoc/proyect/AlumnoTest.class" />
+    <MESSAGE value="testeo de alumno, contenido, curso, profesor" />
+    <option name="LAST_COMMIT_MESSAGE" value="testeo de alumno, contenido, curso, profesor" />
   </component>
 </project>
