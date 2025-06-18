@@ -10,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class MatriculaService {
@@ -73,23 +74,43 @@ public class MatriculaService {
         return new ResponseEntity<>(alumno, HttpStatus.OK);
     }
 
-    public ResponseEntity<Object> addAlumno(int id, int idAlumno) {
-        Alumno alumnoControl = matriculaRepository.findById(id).get().getAlumno();
-        if (alumnoControl == null) {
-            if (matriculaRepository.existsById(id)) {
-                Matricula matricula = matriculaRepository.findById(id).get();
-                ResponseEntity<Object> alumno = alumnoService.getAlumnoById(idAlumno);
-                if (alumno == null) {
-                    return new ResponseEntity<>("Alumno no encontrado", HttpStatus.NO_CONTENT);
-                }
-                matricula.setAlumno((Alumno) alumno.getBody());
-                matriculaRepository.save(matricula);
-                return new ResponseEntity<>(matricula, HttpStatus.OK);
-            }
-            return new ResponseEntity<>("Matricula no encontrada", HttpStatus.NO_CONTENT);
+    public ResponseEntity<Object> addAlumno(int matriculaId, int alumnoId) {
+        // 1. Busco la matrícula
+        Optional<Matricula> optMatricula = matriculaRepository.findById(matriculaId);
+        if (optMatricula.isEmpty()) {
+            return ResponseEntity
+                    .status(HttpStatus.NO_CONTENT)
+                    .body("Matrícula con id " + matriculaId + " no encontrada");
         }
-        return new ResponseEntity<>("Ya hay un alumno registrado "+alumnoControl, HttpStatus.CONFLICT);
+
+        Matricula matricula = optMatricula.get();
+
+        // 2. Compruebo si ya hay un alumno asignado
+        if (matricula.getAlumno() != null) {
+            return ResponseEntity
+                    .status(HttpStatus.CONFLICT)
+                    .body("Ya hay un alumno registrado: " + matricula.getAlumno());
+        }
+
+        // 3. Traigo el alumno desde el servicio
+        ResponseEntity<Alumno> respAlumno = alumnoService.getAlumnoById(alumnoId);
+        if (!respAlumno.getStatusCode().equals(HttpStatus.OK) || respAlumno.getBody() == null) {
+            return ResponseEntity
+                    .status(HttpStatus.NO_CONTENT)
+                    .body("Alumno con id " + alumnoId + " no encontrado");
+        }
+
+        Alumno alumno = respAlumno.getBody();
+
+        // 4. Asigno el alumno y guardo
+        matricula.setAlumno(alumno);
+        matriculaRepository.save(matricula);
+
+        // 5. Devuelvo la matrícula actualizada
+        return ResponseEntity
+                .ok(matricula);
     }
+
 
     public ResponseEntity<Object> deleteAlumno(int id) {
         if (matriculaRepository.existsById(id)) {

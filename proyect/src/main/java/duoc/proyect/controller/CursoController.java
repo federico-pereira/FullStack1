@@ -19,7 +19,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/cursos")
-@Tag(name="Crusos", description = "Operaciones relacionadas con cursos")
+@Tag(name="Cusos", description = "Operaciones relacionadas con cursos")
 public class CursoController {
 
     @Autowired
@@ -49,8 +49,9 @@ public class CursoController {
                     content = @Content(
                             examples = @ExampleObject(
                                     value = "{\n" +
-                                            "  \"name\": \"Historia\",\n" +
+                                            "  \"name\": \"Matemáticas avanzadas\",\n" +
                                             "  \"profesor\": {\n" +
+                                            "    \"id\": 1\n" +
                                             "  }\n" +
                                             "}"
                             )
