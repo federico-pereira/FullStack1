@@ -1,7 +1,8 @@
-package duoc.proyect.service;
+package duoc.proyect.Test;
 
 import duoc.proyect.model.Contenido;
 import duoc.proyect.repository.ContenidoRepository;
+import duoc.proyect.service.ContenidoService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
@@ -20,7 +21,7 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
-public class ContenidoServiceTest {
+public class ContenidoTest {
 
     @Mock
     private ContenidoRepository contenidoRepository;
@@ -87,7 +88,7 @@ public class ContenidoServiceTest {
         @Test
         void testAddContenido_conflict() {
             when(contenidoRepository.existsById(contenidoDemo.getId())).thenReturn(true);
-            ResponseEntity<Object> response = contenidoService.addContenido(contenidoDemo);
+            ResponseEntity<String> response = contenidoService.addContenido(contenidoDemo);
             assertEquals(HttpStatus.CONFLICT, response.getStatusCode());
             verify(contenidoRepository, never()).save(any(Contenido.class));
         }
@@ -96,13 +97,14 @@ public class ContenidoServiceTest {
         void testAddContenido_creado() {
             when(contenidoRepository.existsById(contenidoDemo.getId())).thenReturn(false);
             when(contenidoRepository.save(any(Contenido.class))).thenReturn(contenidoDemo);
-            ResponseEntity<Object> response = contenidoService.addContenido(contenidoDemo);
+            ResponseEntity<String> response = contenidoService.addContenido(contenidoDemo);
             assertEquals(HttpStatus.CREATED, response.getStatusCode());
-            Contenido contenidoGuardado = (Contenido) response.getBody();
-            assertEquals("Introducción a Spring", contenidoGuardado.getTitulo());
+            assertNotNull(response.getBody());
+            assertEquals("Contenido agregado", response.getBody());  // Verificar el mensaje correcto
             verify(contenidoRepository, times(1)).existsById(contenidoDemo.getId());
             verify(contenidoRepository, times(1)).save(contenidoDemo);
         }
+
     }
 
     @Nested
@@ -146,7 +148,7 @@ public class ContenidoServiceTest {
         @Test
         void testDeleteContenido_existente() {
             when(contenidoRepository.existsById(contenidoDemo.getId())).thenReturn(true);
-            ResponseEntity<Object> response = contenidoService.deleteContenido(contenidoDemo.getId());
+            ResponseEntity<String> response = contenidoService.deleteContenido(contenidoDemo.getId());
             assertEquals(HttpStatus.NO_CONTENT, response.getStatusCode());
             verify(contenidoRepository, times(1)).existsById(contenidoDemo.getId());
             verify(contenidoRepository, times(1)).deleteById(contenidoDemo.getId());
@@ -155,7 +157,7 @@ public class ContenidoServiceTest {
         @Test
         void testDeleteContenido_inexistente() {
             when(contenidoRepository.existsById(999)).thenReturn(false);
-            ResponseEntity<Object> response = contenidoService.deleteContenido(999);
+            ResponseEntity<String> response = contenidoService.deleteContenido(999);
             assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
             assertEquals("Contenido con id 999 no encontrado", response.getBody());
             verify(contenidoRepository, times(1)).existsById(999);

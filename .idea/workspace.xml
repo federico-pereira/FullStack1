@@ -187,7 +187,8 @@
       <workItem from="1750199328955" duration="980000" />
       <workItem from="1750200329921" duration="721000" />
       <workItem from="1750266715509" duration="5159000" />
-      <workItem from="1750271961625" duration="1107000" />
+      <workItem from="1750271961625" duration="1310000" />
+      <workItem from="1750273305140" duration="2059000" />
     </task>
     <task id="LOCAL-00001" summary="Clase alumno">
       <option name="closed" value="true" />
@@ -285,7 +286,23 @@
       <option name="project" value="LOCAL" />
       <updated>1750200665450</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="testeo crud de alumno, contenido, curso, profesor&#10;falta confirmar si esta funcionando al 100&#10;lo subo porque esta medio malo mi pc pa que no se borre">
+      <option name="closed" value="true" />
+      <created>1750273221657</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1750273221657</updated>
+    </task>
+    <task id="LOCAL-00014" summary="testeo crud de alumno, contenido, curso, profesor&#10;falta confirmar si esta funcionando al 100&#10;lo subo porque esta medio malo mi pc pa que no se borre">
+      <option name="closed" value="true" />
+      <created>1750273239984</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1750273239984</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -314,6 +331,7 @@
     <MESSAGE value="cambio nombre carpeta repository" />
     <MESSAGE value="Integracion de SwaggerUI&#10;Modificacion en Alumno controller&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;proyect/src/main/resources/application-dev.properties&#10;#&#9;proyect/src/main/resources/application-test.properties&#10;#&#9;proyect/src/main/resources/application.properties&#10;#&#9;proyect/src/test/java/duoc/proyect/AlumnoTest.java&#10;#&#9;proyect/target/classes/application-dev.properties&#10;#&#9;proyect/target/classes/application-test.properties&#10;#&#9;proyect/target/test-classes/duoc/proyect/AlumnoTest.class" />
     <MESSAGE value="testeo de alumno, contenido, curso, profesor" />
-    <option name="LAST_COMMIT_MESSAGE" value="testeo de alumno, contenido, curso, profesor" />
+    <MESSAGE value="testeo crud de alumno, contenido, curso, profesor&#10;falta confirmar si esta funcionando al 100&#10;lo subo porque esta medio malo mi pc pa que no se borre" />
+    <option name="LAST_COMMIT_MESSAGE" value="testeo crud de alumno, contenido, curso, profesor&#10;falta confirmar si esta funcionando al 100&#10;lo subo porque esta medio malo mi pc pa que no se borre" />
   </component>
 </project>

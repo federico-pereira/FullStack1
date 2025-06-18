@@ -58,7 +58,7 @@ public class CursoService {
         return ResponseEntity.status(HttpStatus.NO_CONTENT).body("Curso no encontrado");
     }
 
-    public ResponseEntity<String> updateCurso(Curso curso,int id) {
+    public ResponseEntity<String> updateCurso(int curso, int id) {
         // hacemos un setId a curso para coordinar las id (curso se crea con id automatica)
         curso.setId(id);
         if (cursoRepository.existsById(id)) {

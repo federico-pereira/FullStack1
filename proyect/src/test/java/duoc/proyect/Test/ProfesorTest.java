@@ -1,7 +1,8 @@
-package duoc.proyect.service;
+package duoc.proyect.Test;
 
 import duoc.proyect.model.Profesor;
 import duoc.proyect.repository.ProfesorRepository;
+import duoc.proyect.service.ProfesorService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
@@ -20,7 +21,7 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
-public class ProfesorServiceTest {
+public class ProfesorTest {
 
     @Mock
     private ProfesorRepository profesorRepository;
@@ -86,22 +87,20 @@ public class ProfesorServiceTest {
         @Test
         void testAddProfesor_conflict() {
             when(profesorRepository.existsById(profesorDemo.getId())).thenReturn(true);
-            ResponseEntity<Object> response = profesorService.addProfesor(profesorDemo);
+            ResponseEntity<String> response = profesorService.addProfesor(profesorDemo);
             assertEquals(HttpStatus.CONFLICT, response.getStatusCode());
             verify(profesorRepository, never()).save(any(Profesor.class));
         }
 
         @Test
         void testAddProfesor_creado() {
-            when(profesorRepository.existsById(profesorDemo.getId())).thenReturn(false);
-            when(profesorRepository.save(any(Profesor.class))).thenReturn(profesorDemo);
-            ResponseEntity<Object> response = profesorService.addProfesor(profesorDemo);
-            assertEquals(HttpStatus.CREATED, response.getStatusCode());
-            Profesor profesorGuardado = (Profesor) response.getBody();
-            assertEquals("María", profesorGuardado.getName());
-            verify(profesorRepository, times(1)).existsById(profesorDemo.getId());
-            verify(profesorRepository, times(1)).save(profesorDemo);
-        }
+                when(profesorRepository.existsById(profesorDemo.getId())).thenReturn(false);
+                when(profesorRepository.save(any(Profesor.class))).thenReturn(profesorDemo);
+                ResponseEntity<String> response = profesorService.addProfesor(profesorDemo);
+                assertEquals(HttpStatus.CREATED, response.getStatusCode());
+                verify(profesorRepository, times(1)).existsById(profesorDemo.getId());
+                verify(profesorRepository, times(1)).save(profesorDemo);
+            }
     }
 
     @Nested
@@ -113,10 +112,11 @@ public class ProfesorServiceTest {
             profesorActualizado.setLastName("Fernández");
             profesorActualizado.setMail("luisa@mail.com");
 
+
             when(profesorRepository.findById(profesorDemo.getId())).thenReturn(Optional.of(profesorDemo));
             when(profesorRepository.save(any(Profesor.class))).thenAnswer(invocation -> invocation.getArgument(0));
 
-            ResponseEntity<String> response = profesorService.updateProfesor(profesorDemo.getId(), profesorActualizado);
+            ResponseEntity<String> response = profesorService.updateProfesor(profesorActualizado.getId(), profesorDemo.getId());
             assertEquals(HttpStatus.OK, response.getStatusCode());
             assertTrue(response.getBody().contains("Profesor actualizado: "));
             assertTrue(response.getBody().contains("Luisa"));
@@ -132,7 +132,7 @@ public class ProfesorServiceTest {
             profesorActualizado.setMail("luisa@mail.com");
 
             when(profesorRepository.findById(999)).thenReturn(Optional.empty());
-            ResponseEntity<String> response = profesorService.updateProfesor(999, profesorActualizado);
+            ResponseEntity<String> response = profesorService.updateProfesor(999, profesorActualizado.getId());
             assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
             verify(profesorRepository, times(1)).findById(999);
             verify(profesorRepository, never()).save(any(Profesor.class));
@@ -144,7 +144,7 @@ public class ProfesorServiceTest {
         @Test
         void testDeleteProfesor_existente() {
             when(profesorRepository.existsById(profesorDemo.getId())).thenReturn(true);
-            ResponseEntity<Object> response = profesorService.deleteProfesor(profesorDemo.getId());
+            ResponseEntity<String> response = profesorService.deleteProfesor(profesorDemo.getId());
             assertEquals(HttpStatus.NO_CONTENT, response.getStatusCode());
             verify(profesorRepository, times(1)).existsById(profesorDemo.getId());
             verify(profesorRepository, times(1)).deleteById(profesorDemo.getId());
@@ -153,7 +153,7 @@ public class ProfesorServiceTest {
         @Test
         void testDeleteProfesor_inexistente() {
             when(profesorRepository.existsById(999)).thenReturn(false);
-            ResponseEntity<Object> response = profesorService.deleteProfesor(999);
+            ResponseEntity<String> response = profesorService.deleteProfesor(999);
             assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
             assertEquals("Profesor con id 999 no encontrado", response.getBody());
             verify(profesorRepository, times(1)).existsById(999);

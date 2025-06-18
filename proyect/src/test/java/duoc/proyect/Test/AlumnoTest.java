@@ -1,7 +1,8 @@
-package duoc.proyect.service;
+package duoc.proyect.Test;
 
 import duoc.proyect.model.Alumno;
 import duoc.proyect.repository.AlumnoRepository;
+import duoc.proyect.service.AlumnoService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
@@ -20,7 +21,7 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
-public class AlumnoServiceTest {
+public class AlumnoTest {
 
     @Mock
     private AlumnoRepository alumnoRepository;

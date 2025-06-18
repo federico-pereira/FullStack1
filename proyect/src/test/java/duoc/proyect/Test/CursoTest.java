@@ -1,7 +1,8 @@
-package duoc.proyect.service;
+package duoc.proyect.Test;
 
 import duoc.proyect.model.Curso;
 import duoc.proyect.repository.CursoRepository;
+import duoc.proyect.service.CursoService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
@@ -20,7 +21,7 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
-public class CursoServiceTest {
+public class CursoTest {
 
     @Mock
     private CursoRepository cursoRepository;
@@ -110,7 +111,7 @@ public class CursoServiceTest {
             when(cursoRepository.findById(cursoDemo.getId())).thenReturn(Optional.of(cursoDemo));
             when(cursoRepository.save(any(Curso.class))).thenAnswer(invocation -> invocation.getArgument(0));
 
-            ResponseEntity<String> response = cursoService.updateCurso(cursoDemo.getId(), cursoActualizado);
+            ResponseEntity<String> response = cursoService.updateCurso(cursoDemo.getId(), cursoActualizado.getId());
             assertEquals(HttpStatus.OK, response.getStatusCode());
             assertTrue(response.getBody().contains("Curso actualizado: "));
             assertTrue(response.getBody().contains("Programación Avanzada Java"));
@@ -124,7 +125,7 @@ public class CursoServiceTest {
             cursoActualizado.setName("Programación Avanzada Java");
 
             when(cursoRepository.findById(999)).thenReturn(Optional.empty());
-            ResponseEntity<String> response = cursoService.updateCurso(999, cursoActualizado);
+            ResponseEntity<String> response = cursoService.updateCurso(999, cursoActualizado.getId());
             assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
             verify(cursoRepository, times(1)).findById(999);
             verify(cursoRepository, never()).save(any(Curso.class));
@@ -136,7 +137,7 @@ public class CursoServiceTest {
         @Test
         void testDeleteCurso_existente() {
             when(cursoRepository.existsById(cursoDemo.getId())).thenReturn(true);
-            ResponseEntity<Object> response = cursoService.deleteCurso(cursoDemo.getId());
+            ResponseEntity<String> response = cursoService.deleteCurso(cursoDemo.getId());
             assertEquals(HttpStatus.NO_CONTENT, response.getStatusCode());
             verify(cursoRepository, times(1)).existsById(cursoDemo.getId());
             verify(cursoRepository, times(1)).deleteById(cursoDemo.getId());
@@ -145,7 +146,7 @@ public class CursoServiceTest {
         @Test
         void testDeleteCurso_inexistente() {
             when(cursoRepository.existsById(999)).thenReturn(false);
-            ResponseEntity<Object> response = cursoService.deleteCurso(999);
+            ResponseEntity<String> response = cursoService.deleteCurso(999);
             assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
             assertEquals("Curso con id 999 no encontrado", response.getBody());
             verify(cursoRepository, times(1)).existsById(999);

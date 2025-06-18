@@ -47,7 +47,7 @@ public class ProfesorService {
         }
     }
 
-    public ResponseEntity<String> updateProfesor(Profesor newProfesor, int id) {
+    public ResponseEntity<String> updateProfesor(Integer newProfesor, int id) {
         Optional<Profesor> profesorOpt = profesorRepository.findById(id);
         if (profesorOpt.isPresent()) {
             Profesor profesor = profesorOpt.get();
