@@ -51,9 +51,8 @@ public class ProfesorService {
         Optional<Profesor> profesorOpt = profesorRepository.findById(id);
         if (profesorOpt.isPresent()) {
             Profesor profesor = profesorOpt.get();
-            profesor.setName(newProfesor.getName());
-            profesor.setMail(newProfesor.getMail());
-            profesorRepository.save(profesor);
+            profesor.setName(String.valueOf(newProfesor.getClass()));
+            profesor.setMail(String.valueOf(newProfesor.getClass()));
             return ResponseEntity.ok("Profesor actualizado: " + profesor.toString());
         } else {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Profesor no encontrado");
