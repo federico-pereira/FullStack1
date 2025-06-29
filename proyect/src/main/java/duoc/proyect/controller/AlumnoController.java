@@ -37,7 +37,7 @@ public class AlumnoController {
             }
     )
     @Parameter(name ="id",description = "Id del alumno a buscar", required = true)
-    public ResponseEntity<Object> getAlumno(@PathVariable int id) {
+    public ResponseEntity<Alumno> getAlumno(@PathVariable int id) {
         return alumnoService.getAlumnoById(id);
     }
 
@@ -45,7 +45,7 @@ public class AlumnoController {
     @PostMapping
     @ApiResponses(
             value = {
-                    @ApiResponse(responseCode = "200", description = "Alumo creado"),
+                    @ApiResponse(responseCode = "201", description = "Alumo creado"),
                     @ApiResponse(responseCode = "409", description = "Alumno ya existe en sistema"),
                     @ApiResponse(responseCode = "404", description = "Mal formato")
             }
@@ -64,7 +64,7 @@ public class AlumnoController {
             }
     )
     @Parameter(name ="id",description = "Id del alumno a buscar", required = true)
-    public ResponseEntity<Object> deleteAlumno(@PathVariable int id) {
+    public ResponseEntity<Void> deleteAlumno(@PathVariable int id) {
         return alumnoService.deleteAlumno(id);
     }
 
@@ -78,7 +78,7 @@ public class AlumnoController {
     )
     @Parameter(name ="id",description = "Id del alumno a modificar", required = false)
     @Parameter(name = "rut", description = "Rut del alumno a modificar", required = true)
-    public ResponseEntity<String> updateAlumno(@RequestBody Alumno alumno, @PathVariable int id) {
+    public ResponseEntity<Alumno> updateAlumno(@RequestBody Alumno alumno, @PathVariable int id) {
         return alumnoService.updateAlumno(id,alumno);
     }
 }
