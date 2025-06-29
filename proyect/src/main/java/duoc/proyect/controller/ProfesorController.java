@@ -37,6 +37,6 @@ public class ProfesorController {
 
     @PutMapping("/{id}")
     public ResponseEntity<String> updateProfesor(@RequestBody Profesor profesor, @PathVariable int id) {
-        return profesorService.updateProfesor(profesor,id);
+        return profesorService.updateProfesor(profesor.getId(),id);
     }
 }
