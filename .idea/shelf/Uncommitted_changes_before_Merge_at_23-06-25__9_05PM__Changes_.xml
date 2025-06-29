@@ -1,0 +1,189 @@
+<changelist name="Uncommitted_changes_before_Merge_at_23-06-25,_9_05 PM_[Changes]" date="1750727149564" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_23-06-25,_9_05 PM_[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Merge at 23-06-25, 9:05 PM [Changes]" />
+  <binary>
+    <option name="AFTER_PATH" value=".idea/shelf/Uncommitted_changes_before_Update_at_26-05-25,_11_28 PM_[Changes]/DetalleEvaluacion.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_23-06-25,_9_05 PM_[Changes]/DetalleEvaluacion.class" />
+  </binary>
+  <binary>
+    <option name="AFTER_PATH" value=".idea/shelf/Uncommitted_changes_before_Update_at_26-05-25,_11_28 PM_[Changes]/DetalleEvaluacionService.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_23-06-25,_9_05 PM_[Changes]/DetalleEvaluacionService.class" />
+  </binary>
+  <binary>
+    <option name="AFTER_PATH" value=".idea/shelf/Uncommitted_changes_before_Update_at_26-05-25,_11_28 PM_[Changes]/AlumnoService.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_23-06-25,_9_05 PM_[Changes]/AlumnoService.class" />
+  </binary>
+  <binary>
+    <option name="AFTER_PATH" value=".idea/shelf/Uncommitted_changes_before_Update_at_29-05-25,_12_29 PM_[Changes]/TicketSoporte.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_23-06-25,_9_05 PM_[Changes]/TicketSoporte.class" />
+  </binary>
+  <binary>
+    <option name="AFTER_PATH" value=".idea/shelf/Uncommitted_changes_before_Update_at_29-05-25,_12_29 PM_[Changes]/CuponDescuentoSevice.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_23-06-25,_9_05 PM_[Changes]/CuponDescuentoSevice.class" />
+  </binary>
+  <binary>
+    <option name="AFTER_PATH" value=".idea/shelf/Uncommitted_changes_before_Update_at_26-05-25,_11_28 PM_[Changes]/EvaluacionService.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_23-06-25,_9_05 PM_[Changes]/EvaluacionService.class" />
+  </binary>
+  <binary>
+    <option name="AFTER_PATH" value=".idea/shelf/Uncommitted_changes_before_Update_at_29-05-25,_12_29 PM_[Changes]/DetalleEvaluacion.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_23-06-25,_9_05 PM_[Changes]/DetalleEvaluacion1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="proyect/target/classes/duoc/proyect/service/AlumnoService.class" />
+    <option name="AFTER_PATH" value="proyect/target/classes/duoc/proyect/service/AlumnoService.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_23-06-25,_9_05 PM_[Changes]/AlumnoService1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="proyect/target/classes/duoc/proyect/service/CursoService.class" />
+    <option name="AFTER_PATH" value="proyect/target/classes/duoc/proyect/service/CursoService.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_23-06-25,_9_05 PM_[Changes]/CursoService.class" />
+  </binary>
+  <binary>
+    <option name="AFTER_PATH" value=".idea/shelf/Uncommitted_changes_before_Update_at_29-05-25,_12_29 PM_[Changes]/EvaluacionService.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_23-06-25,_9_05 PM_[Changes]/EvaluacionService1.class" />
+  </binary>
+  <binary>
+    <option name="AFTER_PATH" value=".idea/shelf/Uncommitted_changes_before_Update_at_29-05-25,_12_29 PM_[Changes]/AlumnoService.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_23-06-25,_9_05 PM_[Changes]/AlumnoService2.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="proyect/target/classes/duoc/proyect/service/EvaluacionService.class" />
+    <option name="AFTER_PATH" value="proyect/target/classes/duoc/proyect/service/EvaluacionService.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_23-06-25,_9_05 PM_[Changes]/EvaluacionService2.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="proyect/target/classes/duoc/proyect/model/Soporte.class" />
+    <option name="AFTER_PATH" value="proyect/target/classes/duoc/proyect/model/Soporte.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_23-06-25,_9_05 PM_[Changes]/Soporte.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="proyect/target/classes/duoc/proyect/model/TicketSoporte.class" />
+    <option name="AFTER_PATH" value="proyect/target/classes/duoc/proyect/model/TicketSoporte.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_23-06-25,_9_05 PM_[Changes]/TicketSoporte1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="proyect/target/classes/duoc/proyect/service/SoporteService.class" />
+    <option name="AFTER_PATH" value="proyect/target/classes/duoc/proyect/service/SoporteService.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_23-06-25,_9_05 PM_[Changes]/SoporteService.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="proyect/target/classes/duoc/proyect/model/Matricula.class" />
+    <option name="AFTER_PATH" value="proyect/target/classes/duoc/proyect/model/Matricula.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_23-06-25,_9_05 PM_[Changes]/Matricula.class" />
+  </binary>
+  <binary>
+    <option name="AFTER_PATH" value=".idea/shelf/Uncommitted_changes_before_Update_at_26-05-25,_11_28 PM_[Changes]/Curso.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_23-06-25,_9_05 PM_[Changes]/Curso.class" />
+  </binary>
+  <binary>
+    <option name="AFTER_PATH" value=".idea/shelf/Uncommitted_changes_before_Update_at_26-05-25,_11_28 PM_[Changes]/CuponDescuentoSevice.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_23-06-25,_9_05 PM_[Changes]/CuponDescuentoSevice1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="proyect/target/classes/duoc/proyect/model/Evaluacion.class" />
+    <option name="AFTER_PATH" value="proyect/target/classes/duoc/proyect/model/Evaluacion.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_23-06-25,_9_05 PM_[Changes]/Evaluacion.class" />
+  </binary>
+  <binary>
+    <option name="AFTER_PATH" value=".idea/shelf/Uncommitted_changes_before_Update_at_26-05-25,_11_28 PM_[Changes]/TicketSoporte.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_23-06-25,_9_05 PM_[Changes]/TicketSoporte2.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="proyect/target/classes/duoc/proyect/model/Curso.class" />
+    <option name="AFTER_PATH" value="proyect/target/classes/duoc/proyect/model/Curso.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_23-06-25,_9_05 PM_[Changes]/Curso1.class" />
+  </binary>
+  <binary>
+    <option name="AFTER_PATH" value=".idea/shelf/Uncommitted_changes_before_Update_at_29-05-25,_12_29 PM_[Changes]/Curso.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_23-06-25,_9_05 PM_[Changes]/Curso2.class" />
+  </binary>
+  <binary>
+    <option name="AFTER_PATH" value="proyect/target/classes/duoc/proyect/Config/SwaggerConfig.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_23-06-25,_9_05 PM_[Changes]/SwaggerConfig.class" />
+  </binary>
+  <binary>
+    <option name="AFTER_PATH" value=".idea/shelf/Uncommitted_changes_before_Update_at_26-05-25,_11_28 PM_[Changes]/Matricula.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_23-06-25,_9_05 PM_[Changes]/Matricula1.class" />
+  </binary>
+  <binary>
+    <option name="AFTER_PATH" value=".idea/shelf/Uncommitted_changes_before_Update_at_29-05-25,_12_29 PM_[Changes]/CursoService.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_23-06-25,_9_05 PM_[Changes]/CursoService1.class" />
+  </binary>
+  <binary>
+    <option name="AFTER_PATH" value=".idea/shelf/Uncommitted_changes_before_Update_at_26-05-25,_11_28 PM_[Changes]/MatriculaService.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_23-06-25,_9_05 PM_[Changes]/MatriculaService.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="proyect/target/classes/duoc/proyect/model/DetalleEvaluacion.class" />
+    <option name="AFTER_PATH" value="proyect/target/classes/duoc/proyect/model/DetalleEvaluacion.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_23-06-25,_9_05 PM_[Changes]/DetalleEvaluacion2.class" />
+  </binary>
+  <binary>
+    <option name="AFTER_PATH" value=".idea/shelf/Uncommitted_changes_before_Update_at_26-05-25,_11_28 PM_[Changes]/ProfesorService.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_23-06-25,_9_05 PM_[Changes]/ProfesorService.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="proyect/target/classes/duoc/proyect/service/CuponDescuentoSevice.class" />
+    <option name="AFTER_PATH" value="proyect/target/classes/duoc/proyect/service/CuponDescuentoSevice.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_23-06-25,_9_05 PM_[Changes]/CuponDescuentoSevice2.class" />
+  </binary>
+  <binary>
+    <option name="AFTER_PATH" value=".idea/shelf/Uncommitted_changes_before_Update_at_26-05-25,_11_28 PM_[Changes]/CursoService.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_23-06-25,_9_05 PM_[Changes]/CursoService2.class" />
+  </binary>
+  <binary>
+    <option name="AFTER_PATH" value=".idea/shelf/Uncommitted_changes_before_Update_at_29-05-25,_12_29 PM_[Changes]/Matricula.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_23-06-25,_9_05 PM_[Changes]/Matricula2.class" />
+  </binary>
+  <binary>
+    <option name="AFTER_PATH" value=".idea/shelf/Uncommitted_changes_before_Update_at_26-05-25,_11_28 PM_[Changes]/TicketSoporteController.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_23-06-25,_9_05 PM_[Changes]/TicketSoporteController.class" />
+  </binary>
+  <binary>
+    <option name="AFTER_PATH" value=".idea/shelf/Uncommitted_changes_before_Update_at_29-05-25,_12_29 PM_[Changes]/MatriculaService.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_23-06-25,_9_05 PM_[Changes]/MatriculaService1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="proyect/target/test-classes/duoc/proyect/AlumnoTest.class" />
+    <option name="AFTER_PATH" value="proyect/target/test-classes/duoc/proyect/AlumnoTest.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_23-06-25,_9_05 PM_[Changes]/AlumnoTest.class" />
+  </binary>
+  <binary>
+    <option name="AFTER_PATH" value=".idea/shelf/Uncommitted_changes_before_Update_at_26-05-25,_11_28 PM_[Changes]/Soporte.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_23-06-25,_9_05 PM_[Changes]/Soporte1.class" />
+  </binary>
+  <binary>
+    <option name="AFTER_PATH" value=".idea/shelf/Uncommitted_changes_before_Update_at_29-05-25,_12_29 PM_[Changes]/SoporteService.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_23-06-25,_9_05 PM_[Changes]/SoporteService1.class" />
+  </binary>
+  <binary>
+    <option name="AFTER_PATH" value=".idea/shelf/Uncommitted_changes_before_Update_at_26-05-25,_11_28 PM_[Changes]/Evaluacion.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_23-06-25,_9_05 PM_[Changes]/Evaluacion1.class" />
+  </binary>
+  <binary>
+    <option name="AFTER_PATH" value=".idea/shelf/Uncommitted_changes_before_Update_at_26-05-25,_11_28 PM_[Changes]/TicketSoporteService.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_23-06-25,_9_05 PM_[Changes]/TicketSoporteService.class" />
+  </binary>
+  <binary>
+    <option name="AFTER_PATH" value=".idea/shelf/Uncommitted_changes_before_Update_at_26-05-25,_11_28 PM_[Changes]/SoporteService.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_23-06-25,_9_05 PM_[Changes]/SoporteService2.class" />
+  </binary>
+  <binary>
+    <option name="AFTER_PATH" value=".idea/shelf/Uncommitted_changes_before_Update_at_29-05-25,_12_29 PM_[Changes]/Evaluacion.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_23-06-25,_9_05 PM_[Changes]/Evaluacion2.class" />
+  </binary>
+  <binary>
+    <option name="AFTER_PATH" value=".idea/shelf/Uncommitted_changes_before_Update_at_29-05-25,_12_29 PM_[Changes]/Soporte.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_23-06-25,_9_05 PM_[Changes]/Soporte2.class" />
+  </binary>
+  <binary>
+    <option name="AFTER_PATH" value=".idea/shelf/Uncommitted_changes_before_Update_at_26-05-25,_11_28 PM_[Changes]/ContenidoService.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_23-06-25,_9_05 PM_[Changes]/ContenidoService.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="proyect/target/classes/duoc/proyect/service/MatriculaService.class" />
+    <option name="AFTER_PATH" value="proyect/target/classes/duoc/proyect/service/MatriculaService.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_23-06-25,_9_05 PM_[Changes]/MatriculaService2.class" />
+  </binary>
+</changelist>
