@@ -5,37 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="94816420-cdd8-4d1e-838a-645d2ae55f93" name="Changes" comment="Integracion de SwaggerUI&#10;Modificacion en Alumno controller&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;proyect/src/main/resources/application-dev.properties&#10;#&#9;proyect/src/main/resources/application-test.properties&#10;#&#9;proyect/src/main/resources/application.properties&#10;#&#9;proyect/src/test/java/duoc/proyect/AlumnoTest.java&#10;#&#9;proyect/target/classes/application-dev.properties&#10;#&#9;proyect/target/classes/application-test.properties&#10;#&#9;proyect/target/test-classes/duoc/proyect/AlumnoTest.class">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_02-06-2025_15_33_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_02-06-2025_15_33__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_02-06-2025_16_38_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_02-06-2025_16_38__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_02-06-25,_3_36 PM_[Changes]/AlumnoService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_02-06-25,_3_36 PM_[Changes]/CuponDescuentoSevice.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_02-06-25,_3_36 PM_[Changes]/Curso.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_02-06-25,_3_36 PM_[Changes]/CursoService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_02-06-25,_3_36 PM_[Changes]/DetalleEvaluacion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_02-06-25,_3_36 PM_[Changes]/Evaluacion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_02-06-25,_3_36 PM_[Changes]/EvaluacionService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_02-06-25,_3_36 PM_[Changes]/Matricula.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_02-06-25,_3_36 PM_[Changes]/MatriculaService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_02-06-25,_3_36 PM_[Changes]/Soporte.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_02-06-25,_3_36 PM_[Changes]/SoporteService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_02-06-25,_3_36 PM_[Changes]/TicketSoporte.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_02-06-25,_3_36 PM_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_02-06-25__3_36PM__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_17-06-2025_18_18.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_17-06-2025_18_18/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase3/shelved.patch" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/controller/AlumnoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/controller/AlumnoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/controller/CursoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/controller/CursoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/service/CursoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/src/main/java/duoc/proyect/service/CursoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proyect/src/main/resources/application-dev.properties" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/src/main/resources/application-dev.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proyect/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proyect/target/classes/application-dev.properties" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/target/classes/application-dev.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proyect/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/controller/AlumnoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/controller/AlumnoController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/controller/CursoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/controller/CursoController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/service/CursoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/proyect/target/classes/duoc/proyect/service/CursoService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,22 +38,25 @@
     &quot;assignee&quot;: &quot;federico-pereira&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/federico-pereira/FullStack1.git&quot;,
-    &quot;accountId&quot;: &quot;c6e34e6f-d6ed-40d1-a557-184361fc05fb&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/federico-pereira/FullStack1.git",
+    "accountId": "3f41ac34-d00d-41d2-b706-c79cf8b608a5"
   },
-  &quot;recentNewPullRequestHead&quot;: {
-    &quot;server&quot;: {
-      &quot;useHttp&quot;: false,
-      &quot;host&quot;: &quot;github.com&quot;,
-      &quot;port&quot;: null,
-      &quot;suffix&quot;: null
+  "recentNewPullRequestHead": {
+    "server": {
+      "useHttp": false,
+      "host": "github.com",
+      "port": null,
+      "suffix": null
     },
-    &quot;owner&quot;: &quot;federico-pereira&quot;,
-    &quot;repository&quot;: &quot;FullStack1&quot;
+    "owner": "federico-pereira",
+    "repository": "FullStack1"
   }
-}</component>
+}]]></component>
+  <component name="MavenImportPreferences">
+    <option name="explicitlyEnabledProfiles" value="native,nativeTest" />
+  </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -189,6 +166,7 @@
       <workItem from="1750266715509" duration="5159000" />
       <workItem from="1750271961625" duration="1310000" />
       <workItem from="1750273305140" duration="2059000" />
+      <workItem from="1751066605105" duration="752000" />
     </task>
     <task id="LOCAL-00001" summary="Clase alumno">
       <option name="closed" value="true" />
