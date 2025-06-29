@@ -3,3 +3,6 @@
 application.properties
 application-dev.properties
 application-test.properties
+
+# IntelliJ IDEA
+/.idea/workspace.xml
