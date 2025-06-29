@@ -1,19 +1,26 @@
 package duoc.proyect.Config;
 
-import io.swagger.v3.oas.models.OpenAPI;
+import io.swagger.v3.oas.annotations.OpenAPIDefinition;
+import io.swagger.v3.oas.annotations.info.Info;
+import org.springdoc.core.models.GroupedOpenApi;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
+@OpenAPIDefinition(
+        info = @Info(
+                title = "API de Gestión Académica",
+                version = "2.0",
+                description = "Documentación para la API con HATEOAS"
+        )
+)
 public class SwaggerConfig {
 
     @Bean
-    public OpenAPI customOpenAPI() {
-        return new OpenAPI()
-                .info(new io.swagger.v3.oas.models.info.Info()
-                        .title("API de Gestión de Alumnos")
-                        .version("1.0.0")
-                        .description("API para gestionar alumnos en el sistema educativo"));
-
+    public GroupedOpenApi v2Api() {
+        return GroupedOpenApi.builder()
+                .group("v2")
+                .pathsToMatch("/api/v2/**")
+                .build();
     }
 }

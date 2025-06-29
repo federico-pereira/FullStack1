@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.Optional;
 
@@ -42,7 +41,7 @@ public class SoporteService {
         return new ResponseEntity<>(soporte, HttpStatus.CREATED);
     }
 
-    public ResponseEntity<Object> updateSoporte(int id,Soporte soporte) {
+    public ResponseEntity<Object> updateSoporte(int id, Soporte soporte) {
         if (soporteRepository.existsById(id)) {
             soporte.setId(id);
             soporteRepository.save(soporte);
@@ -73,27 +72,25 @@ public class SoporteService {
         return new ResponseEntity<>(lista, HttpStatus.OK);
     }
 
-    public ResponseEntity<String> addTicketSoporte(int idSoporte ,int idTicket) {
+    public ResponseEntity<String> addTicketSoporte(int idSoporte, int idTicket) {
         if (!soporteRepository.existsById(idSoporte)) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Soporte no encontrado");
         }
-        if (ticketSoporteService.getTicketByID(idTicket) == null){
+        if (ticketSoporteService.getTicketByID(idTicket) == null) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Ticket no encontrado");
         }
         Soporte soporte = soporteRepository.findById(idSoporte).get();
-        // get.TicketByID retorna  ResponseEntity<Object> y necesitamos un TicketSoporte
-        // pero como sabemos que el curso = a la clase que necesitamos hacemos esta "trampa"
         TicketSoporte ticketSoporte = (TicketSoporte) ticketSoporteService.getTicketByID(idTicket).getBody();
         soporte.getTicketsAsignados().add(ticketSoporte);
         soporteRepository.save(soporte);
         return ResponseEntity.status(HttpStatus.CREATED).body("Ticket agregado con id: " + idTicket + " de Soporte: " + soporte);
     }
 
-    public ResponseEntity<String> deleteTicketSoporte(int idSoporte,int idTicket) {
+    public ResponseEntity<String> deleteTicketSoporte(int idSoporte, int idTicket) {
         if (!soporteRepository.existsById(idSoporte)) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Soporte no encontrado");
         }
-        if (ticketSoporteService.getTicketByID(idTicket) == null){
+        if (ticketSoporteService.getTicketByID(idTicket) == null) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Ticket no encontrado");
         }
         Soporte soporte = soporteRepository.findById(idSoporte).get();
