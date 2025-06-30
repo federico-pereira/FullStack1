@@ -17,7 +17,7 @@ import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.*;
 
 @RestController
 @RequestMapping("/api/v2/soportes")
-@Tag(name = "Soportes V2", description = "Controlador con HATEOAS")
+@Tag(name = "Soportes V2", description = "Controlador de soporte con HATEOAS")
 public class SoporteControllerV2 {
 
     @Autowired
