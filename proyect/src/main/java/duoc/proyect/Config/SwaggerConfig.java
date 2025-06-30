@@ -17,6 +17,14 @@ import org.springframework.context.annotation.Configuration;
 public class SwaggerConfig {
 
     @Bean
+    public GroupedOpenApi v1Api() {
+        return GroupedOpenApi.builder()
+                .group("v1")
+                .pathsToMatch("/api/v1/**")  // Ruta base para la versión 1
+                .build();
+    }
+
+    @Bean
     public GroupedOpenApi v2Api() {
         return GroupedOpenApi.builder()
                 .group("v2")

@@ -22,7 +22,7 @@ public class MatriculaService {
     AlumnoService alumnoService;
 
     @Autowired
-    CuponDescuentoSevice cuponDescuentoService;
+    CuponDescuentoService cuponDescuentoService;
 
     //Matricula
 
@@ -143,8 +143,8 @@ public class MatriculaService {
             CuponDescuento cuponControl = matriculaRepository.findById(id).get().getCuponDescuento();
             if (cuponControl == null) {
                 Matricula matricula = matriculaRepository.findById(id).get();
-                ResponseEntity<Object> cuponDescuento = cuponDescuentoService.getCuponDescuentoById(idCupon);
-                matricula.setCuponDescuento((CuponDescuento) cuponDescuento.getBody());
+                Optional<CuponDescuento> cuponDescuento = cuponDescuentoService.getCuponDescuentoById(idCupon);
+                matricula.setCuponDescuento((CuponDescuento) cuponDescuento.get());
                 matriculaRepository.save(matricula);
                 return new ResponseEntity<>(matricula, HttpStatus.OK);
             }
