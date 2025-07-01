@@ -1,6 +1,6 @@
 package duoc.proyect.controller;
 
-import duoc.proyect.assembler.SoporteModelAssembler;
+import duoc.proyect.assemblers.SoporteModelAssembler;
 import duoc.proyect.model.Soporte;
 import duoc.proyect.service.SoporteService;
 import io.swagger.v3.oas.annotations.tags.Tag;

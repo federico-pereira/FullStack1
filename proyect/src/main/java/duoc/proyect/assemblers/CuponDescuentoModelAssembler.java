@@ -1,4 +1,4 @@
-package duoc.proyect.assembler;
+package duoc.proyect.assemblers;
 
 import duoc.proyect.controller.CuponDescuentoControllerV2;
 import duoc.proyect.model.CuponDescuento;
@@ -17,8 +17,8 @@ public class CuponDescuentoModelAssembler implements RepresentationModelAssemble
         return EntityModel.of(cupon,
                 linkTo(methodOn(CuponDescuentoControllerV2.class).getCuponById(cupon.getId())).withSelfRel(),
                 linkTo(methodOn(CuponDescuentoControllerV2.class).getCupones()).withRel("todos-cupones"),
-                linkTo(methodOn(CuponDescuentoControllerV2.class)
-                        .getCuponesByDescuento(cupon.getDescuento())).withRel("mismo-descuento")
+                linkTo(methodOn(CuponDescuentoControllerV2.class).getCuponesByDescuento(cupon.getDescuento())).withRel("mismo-descuento"),
+                linkTo(methodOn(CuponDescuentoControllerV2.class).deleteCuponById(cupon.getId())).withRel("delete")
         );
     }
 }

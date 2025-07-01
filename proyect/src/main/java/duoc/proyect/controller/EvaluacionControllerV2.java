@@ -1,6 +1,6 @@
 package duoc.proyect.controller;
 
-import duoc.proyect.assembler.EvaluacionModelAssembler;
+import duoc.proyect.assemblers.EvaluacionModelAssembler;
 import duoc.proyect.model.Evaluacion;
 import duoc.proyect.service.EvaluacionService;
 import io.swagger.v3.oas.annotations.tags.Tag;

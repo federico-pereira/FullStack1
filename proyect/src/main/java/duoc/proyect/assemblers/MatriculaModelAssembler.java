@@ -1,4 +1,4 @@
-package duoc.proyect.assembler;
+package duoc.proyect.assemblers;
 
 import duoc.proyect.controller.MatriculaControllerV2;
 import duoc.proyect.model.Matricula;

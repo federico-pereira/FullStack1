@@ -1,5 +1,6 @@
 package duoc.proyect.service;
 
+import duoc.proyect.model.CuponDescuento;
 import duoc.proyect.model.TicketSoporte;
 import duoc.proyect.repository.TicketSoporteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -18,44 +20,50 @@ public class TicketSoporteService {
 
     public ResponseEntity<List<TicketSoporte>> getTickets() {
         List<TicketSoporte> tickets = ticketSoporteRepository.findAll();
-        if (tickets.isEmpty()) {
-            return ResponseEntity.status(HttpStatus.NO_CONTENT).body(null);
-        }
-        return ResponseEntity.ok(tickets);
+        return tickets.isEmpty() ?
+                ResponseEntity.noContent().build() :
+                ResponseEntity.ok(tickets);
     }
 
-    public ResponseEntity<String> addTicket(TicketSoporte ticket) {
+    public ResponseEntity<TicketSoporte> addTicket(TicketSoporte ticket) {
         if (ticketSoporteRepository.existsById(ticket.getId())) {
-            return ResponseEntity.status(HttpStatus.CONFLICT).body("Ticket ya existe");
+            return ResponseEntity.status(HttpStatus.CONFLICT).build();
         }
-        ticketSoporteRepository.save(ticket);
-        return ResponseEntity.status(HttpStatus.CREATED).body("Ticket agregado correctamente");
+        TicketSoporte savedTicket = ticketSoporteRepository.save(ticket);
+        return ResponseEntity.status(HttpStatus.CREATED).body(savedTicket);
     }
 
-    public ResponseEntity<Object> getTicketByID(int id) {
-        Optional<TicketSoporte> ticket = ticketSoporteRepository.findById(id);
-        if (ticket.isPresent()) {
-            return ResponseEntity.ok(ticket.get());
+    public ResponseEntity<TicketSoporte> getTicketSoporteById(int id) {
+        Optional<TicketSoporte> ticketSoporte = ticketSoporteRepository.findById(id);
+        if (ticketSoporte.isPresent()) {
+            return ResponseEntity.ok(ticketSoporte.get());
         }
-        return ResponseEntity.status(HttpStatus.NOT_FOUND)
-                .body("Ticket con id "+ id + " no encontrado");
+        return ResponseEntity.notFound().build();
     }
 
-    public ResponseEntity<String> deleteTicket(int id) {
+    public ResponseEntity<Void> deleteTicket(int id) {
         if (ticketSoporteRepository.existsById(id)) {
             ticketSoporteRepository.deleteById(id);
-            return ResponseEntity.status(HttpStatus.NO_CONTENT).body("Ticket con id "+ id + " eliminado");
+            return ResponseEntity.noContent().build();
         }
-        return ResponseEntity.status(HttpStatus.NOT_FOUND)
-                .body("Ticket con id "+ id + " no encontrado");
+        return ResponseEntity.notFound().build();
     }
 
-    public ResponseEntity<String> updateTicket(int id, TicketSoporte newTicket) {
+    public ResponseEntity<TicketSoporte> updateTicket(int id, TicketSoporte newTicket) {
         if (ticketSoporteRepository.existsById(id)) {
             newTicket.setId(id);
-            ticketSoporteRepository.save(newTicket);
-            return ResponseEntity.ok("Ticket actualizado correctamente");
+            TicketSoporte updatedTicket = ticketSoporteRepository.save(newTicket);
+            return ResponseEntity.ok(updatedTicket);
         }
-        return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Ticket con id "+ id + " no encontrado");
+        return ResponseEntity.notFound().build();
+    }
+
+    public ResponseEntity<List<TicketSoporte>> getTicketsByReclamante(String rut) {
+        List<TicketSoporte> tickets = ticketSoporteRepository.findByReclamanteRut(rut);
+
+        if (tickets.isEmpty()) {
+            return ResponseEntity.noContent().build();
+        }
+        return ResponseEntity.ok(tickets);
     }
 }
