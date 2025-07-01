@@ -16,6 +16,8 @@ import java.util.stream.Collectors;
 
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
+import static org.springframework.http.HttpStatus.*;
+import static org.springframework.http.ResponseEntity.*;
 
 @RestController
 @RequestMapping("/api/v2/cupones")
@@ -32,37 +34,55 @@ public class CuponDescuentoControllerV2 {
     }
 
     @GetMapping
-    public CollectionModel<EntityModel<CuponDescuento>> getCupones() {
-        List<EntityModel<CuponDescuento>> models = cuponService.getCuponesDescuento().stream()
+    public ResponseEntity<CollectionModel<EntityModel<CuponDescuento>>> getCupones() {
+        ResponseEntity<List<CuponDescuento>> response = cuponService.getCuponesDescuento();
+
+        if (response.getStatusCode() == HttpStatus.NO_CONTENT) {
+            return noContent().build();
+        }
+
+        List<EntityModel<CuponDescuento>> models = response.getBody().stream()
                 .map(assembler::toModel)
                 .collect(Collectors.toList());
 
-        return CollectionModel.of(models)
+        CollectionModel<EntityModel<CuponDescuento>> collection = CollectionModel.of(models)
                 .add(linkTo(methodOn(this.getClass()).getCupones()).withSelfRel());
+
+        return ok(collection);
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<EntityModel<CuponDescuento>> getCuponById(@PathVariable int id) {
-        return cuponService.getCuponDescuentoById(id)
-                .map(assembler::toModel)
-                .map(ResponseEntity::ok)
-                .orElseGet(() -> ResponseEntity.notFound().build());
+        ResponseEntity<CuponDescuento> response = cuponService.getCuponDescuentoById(id);
+
+        if (response.getStatusCode() == HttpStatus.NOT_FOUND) {
+            return notFound().build();
+        }
+
+        return ok(assembler.toModel(response.getBody()));
     }
 
     @PostMapping
-    @ResponseStatus(HttpStatus.CREATED)
-    public EntityModel<CuponDescuento> addCupon(@RequestBody CuponDescuento cupon) {
-        CuponDescuento nuevoCupon = cuponService.addCuponDescuento(cupon);
-        return assembler.toModel(nuevoCupon);
+    public ResponseEntity<EntityModel<CuponDescuento>> addCupon(@RequestBody CuponDescuento cupon) {
+        ResponseEntity<CuponDescuento> response = cuponService.addCuponDescuento(cupon);
+
+        if (response.getStatusCode() == HttpStatus.CONFLICT) {
+            throw new ResponseStatusException(CONFLICT, "Ya existe un cupón con este ID");
+        }
+
+        EntityModel<CuponDescuento> entityModel = assembler.toModel(response.getBody());
+        return status(CREATED).body(entityModel);
     }
 
     @DeleteMapping("/{id}")
-    @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void deleteCuponById(@PathVariable int id) {
-        cuponService.getCuponDescuentoById(id)
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Cupón no encontrado"));
+    public ResponseEntity<Void> deleteCuponById(@PathVariable int id) {
+        ResponseEntity<Void> response = cuponService.deleteCuponDescuento(id);
 
-        cuponService.deleteCuponDescuento(id);
+        if (response.getStatusCode() == HttpStatus.NOT_FOUND) {
+            throw new ResponseStatusException(NOT_FOUND, "Cupón no encontrado");
+        }
+
+        return noContent().build();
     }
 
     @PutMapping("/{id}")
@@ -70,31 +90,33 @@ public class CuponDescuentoControllerV2 {
             @PathVariable int id,
             @RequestBody CuponDescuento cupon) {
 
-        cuponService.getCuponDescuentoById(id)
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Cupón no encontrado"));
+        ResponseEntity<CuponDescuento> response = cuponService.updateCuponDescuento(id, cupon);
 
-        cupon.setId(id); // Asegurar que el ID coincida
-        CuponDescuento actualizado = cuponService.updateCuponDescuento(id, cupon);
-        return ResponseEntity.ok(assembler.toModel(actualizado));
+        if (response.getStatusCode() == HttpStatus.NOT_FOUND) {
+            throw new ResponseStatusException(NOT_FOUND, "Cupón no encontrado");
+        }
+
+        EntityModel<CuponDescuento> entityModel = assembler.toModel(response.getBody());
+        return ok(entityModel);
     }
 
-    @GetMapping("/por-descuento/{descuento}")
+    @GetMapping("/porDescuento/{descuento}")
     public ResponseEntity<CollectionModel<EntityModel<CuponDescuento>>> getCuponesByDescuento(
             @PathVariable int descuento) {
 
-        List<CuponDescuento> cupones = cuponService.findByDescuento(descuento);
+        ResponseEntity<List<CuponDescuento>> response = cuponService.findByDescuento(descuento);
 
-        if (cupones.isEmpty()) {
-            return ResponseEntity.noContent().build();
+        if (response.getStatusCode() == HttpStatus.NO_CONTENT) {
+            return noContent().build();
         }
 
-        List<EntityModel<CuponDescuento>> models = cupones.stream()
+        List<EntityModel<CuponDescuento>> models = response.getBody().stream()
                 .map(assembler::toModel)
                 .collect(Collectors.toList());
 
         CollectionModel<EntityModel<CuponDescuento>> collection = CollectionModel.of(models)
                 .add(linkTo(methodOn(this.getClass()).getCuponesByDescuento(descuento)).withSelfRel());
 
-        return ResponseEntity.ok(collection);
+        return ok(collection);
     }
 }

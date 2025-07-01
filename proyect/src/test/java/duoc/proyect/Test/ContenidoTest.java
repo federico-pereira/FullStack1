@@ -56,7 +56,7 @@ public class ContenidoTest {
             when(contenidoRepository.findAll()).thenReturn(List.of());
             ResponseEntity<List<Contenido>> response = contenidoService.getContenidos();
             // Se espera que si no hay contenido el service retorne 404 y body null.
-            assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
+            assertEquals(HttpStatus.NO_CONTENT, response.getStatusCode());
             assertNull(response.getBody());
             verify(contenidoRepository, times(1)).findAll();
         }
