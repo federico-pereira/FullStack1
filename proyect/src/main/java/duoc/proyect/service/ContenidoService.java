@@ -19,7 +19,7 @@ public class ContenidoService {
     public ResponseEntity<List<Contenido>> getContenidos() {
         List<Contenido> contenidos = contenidoRepository.findAll();
         if (contenidos.isEmpty()) {
-            return ResponseEntity.status(HttpStatus.NO_CONTENT).body(null);
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
         return ResponseEntity.ok(contenidos);
     }

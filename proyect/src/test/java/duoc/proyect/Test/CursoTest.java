@@ -53,7 +53,7 @@ public class CursoTest {
         void testGetCursos_sinContenido() {
             when(cursoRepository.findAll()).thenReturn(List.of());
             ResponseEntity<List<Curso>> response = cursoService.getCursos();
-            assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
+            assertEquals(HttpStatus.NO_CONTENT, response.getStatusCode());
             assertNull(response.getBody());
             verify(cursoRepository, times(1)).findAll();
         }

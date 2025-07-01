@@ -23,7 +23,12 @@ public class AlumnoController {
 
     @GetMapping
     @Operation(summary = "Obtener todos los alumnos", description = "Devuelve una lista de todos los alumnos registrados")
-    @ApiResponse(responseCode = "200", description = "Se obtuvieron los alumnos")
+    @ApiResponses(
+            value = {
+                    @ApiResponse(responseCode = "200", description = "Se obtuvo la lista"),
+                    @ApiResponse(responseCode = "204", description = "Se obtuvo la lista vacia")
+            }
+    )
     public ResponseEntity<List<Alumno>> getAlumnos() {
         return alumnoService.getAlumnos();
     }
