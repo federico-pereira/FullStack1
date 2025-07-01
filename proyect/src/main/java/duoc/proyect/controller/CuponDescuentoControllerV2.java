@@ -1,8 +1,9 @@
 package duoc.proyect.controller;
 
-import duoc.proyect.assembler.CuponDescuentoModelAssembler;
+import duoc.proyect.assemblers.CuponDescuentoModelAssembler;
 import duoc.proyect.model.CuponDescuento;
 import duoc.proyect.service.CuponDescuentoService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.CollectionModel;
 import org.springframework.hateoas.EntityModel;
@@ -21,6 +22,7 @@ import static org.springframework.http.ResponseEntity.*;
 
 @RestController
 @RequestMapping("/api/v2/cupones")
+@Tag(name = "cupones V2", description = "Controlador de cupones con HATEOAS")
 public class CuponDescuentoControllerV2 {
 
     private final CuponDescuentoService cuponService;

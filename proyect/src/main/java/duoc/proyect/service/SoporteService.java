@@ -76,11 +76,11 @@ public class SoporteService {
         if (!soporteRepository.existsById(idSoporte)) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Soporte no encontrado");
         }
-        if (ticketSoporteService.getTicketByID(idTicket) == null) {
+        if (ticketSoporteService.getTicketSoporteById(idTicket) == null) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Ticket no encontrado");
         }
         Soporte soporte = soporteRepository.findById(idSoporte).get();
-        TicketSoporte ticketSoporte = (TicketSoporte) ticketSoporteService.getTicketByID(idTicket).getBody();
+        TicketSoporte ticketSoporte = (TicketSoporte) ticketSoporteService.getTicketSoporteById(idTicket).getBody();
         soporte.getTicketsAsignados().add(ticketSoporte);
         soporteRepository.save(soporte);
         return ResponseEntity.status(HttpStatus.CREATED).body("Ticket agregado con id: " + idTicket + " de Soporte: " + soporte);
@@ -90,11 +90,11 @@ public class SoporteService {
         if (!soporteRepository.existsById(idSoporte)) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Soporte no encontrado");
         }
-        if (ticketSoporteService.getTicketByID(idTicket) == null) {
+        if (ticketSoporteService.getTicketSoporteById(idTicket) == null) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Ticket no encontrado");
         }
         Soporte soporte = soporteRepository.findById(idSoporte).get();
-        TicketSoporte ticketSoporte = (TicketSoporte) ticketSoporteService.getTicketByID(idTicket).getBody();
+        TicketSoporte ticketSoporte = (TicketSoporte) ticketSoporteService.getTicketSoporteById(idTicket).getBody();
         soporte.getTicketsAsignados().remove(ticketSoporte);
         soporteRepository.save(soporte);
         return ResponseEntity.status(HttpStatus.OK).body("Ticket eleminado con id: " + idTicket + " de Soporte: " + soporte);

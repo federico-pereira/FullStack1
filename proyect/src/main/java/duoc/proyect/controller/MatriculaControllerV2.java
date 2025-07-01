@@ -1,6 +1,6 @@
 package duoc.proyect.controller;
 
-import duoc.proyect.assembler.MatriculaModelAssembler;
+import duoc.proyect.assemblers.MatriculaModelAssembler;
 import duoc.proyect.model.Matricula;
 import duoc.proyect.service.MatriculaService;
 import io.swagger.v3.oas.annotations.tags.Tag;

@@ -31,4 +31,5 @@ public class SwaggerConfig {
                 .pathsToMatch("/api/v2/**")
                 .build();
     }
+
 }
