@@ -1,4 +1,4 @@
-package duoc.proyect.assembler;
+package duoc.proyect.Assembler;
 
 import duoc.proyect.controller.CuponDescuentoControllerV2;
 import duoc.proyect.model.CuponDescuento;

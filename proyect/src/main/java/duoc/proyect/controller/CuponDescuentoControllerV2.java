@@ -1,6 +1,6 @@
 package duoc.proyect.controller;
 
-import duoc.proyect.assembler.CuponDescuentoModelAssembler;
+import duoc.proyect.Assembler.CuponDescuentoModelAssembler;
 import duoc.proyect.model.CuponDescuento;
 import duoc.proyect.service.CuponDescuentoService;
 import org.springframework.beans.factory.annotation.Autowired;
