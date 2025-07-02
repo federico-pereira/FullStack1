@@ -26,7 +26,7 @@ public class ProfesorController {
     }
 
     @PostMapping
-    public ResponseEntity<String> createProfesor(@RequestBody Profesor Profesor) {
+    public ResponseEntity<Profesor> createProfesor(@RequestBody Profesor Profesor) {
         return profesorService.addProfesor(Profesor);
     }
 
@@ -36,7 +36,7 @@ public class ProfesorController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<String> updateProfesor(@RequestBody Profesor profesor, @PathVariable int id) {
-        return profesorService.updateProfesor(profesor.getId(),id);
+    public ResponseEntity<Profesor> updateProfesor(@RequestBody Profesor profesor, @PathVariable int id) {
+        return profesorService.updateProfesor(profesor, id);
     }
 }

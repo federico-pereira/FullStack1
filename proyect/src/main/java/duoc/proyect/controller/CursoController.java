@@ -65,7 +65,7 @@ public class CursoController {
                     @ApiResponse(responseCode = "404", description = "Mal formato")
             }
     )
-    public ResponseEntity<Object> addCurso(@RequestBody Curso curso) {
+    public Curso addCurso(@RequestBody Curso curso) {
         return cursoService.addCurso(curso);
     }
 

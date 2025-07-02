@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 import java.util.Optional;
@@ -34,13 +35,13 @@ public class CursoService {
         return ResponseEntity.ok(cursos);
     }
 
-    public ResponseEntity<Object> addCurso(Curso curso) {
-        if (cursoRepository.existsById(curso.getId())) {
-            return ResponseEntity.status(HttpStatus.CONFLICT).body(null);
+    public Curso addCurso(Curso curso) {
+        if (cursoRepository.existsByName(curso.getName())) {
+            throw new ResponseStatusException(HttpStatus.CONFLICT, "Curso ya existe");
         }
-        cursoRepository.save(curso);
-        return ResponseEntity.status(HttpStatus.CREATED).body(null);
+        return cursoRepository.save(curso);
     }
+
 
     public ResponseEntity<Object> getCursoById(int id) {
         if (cursoRepository.existsById(id)) {

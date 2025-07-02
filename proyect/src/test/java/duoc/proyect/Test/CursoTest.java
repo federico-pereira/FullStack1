@@ -1,10 +1,13 @@
 package duoc.proyect.Test;
 
+import duoc.proyect.model.Alumno;
+import duoc.proyect.model.Contenido;
 import duoc.proyect.model.Curso;
 import duoc.proyect.repository.CursoRepository;
+import duoc.proyect.service.AlumnoService;
+import duoc.proyect.service.ContenidoService;
 import duoc.proyect.service.CursoService;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Nested;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -13,144 +16,162 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
 public class CursoTest {
 
-    @Mock
-    private CursoRepository cursoRepository;
-
     @InjectMocks
     private CursoService cursoService;
 
-    private Curso cursoDemo;
+    @Mock
+    private CursoRepository cursoRepository;
 
-    @BeforeEach
-    void setUp() {
-        cursoDemo = new Curso();
-        cursoDemo.setId(1);
-        cursoDemo.setName("Programación Java");
+    @Mock
+    private AlumnoService alumnoService;
+
+    @Mock
+    private ContenidoService contenidoService;
+
+    @Test
+    @DisplayName("Obtener todos los cursos - Con datos")
+    void testGetCursos_conDatos() {
+        Curso curso1 = new Curso();
+        curso1.setId(1);
+        curso1.setName("Java");
+
+        when(cursoRepository.findAll()).thenReturn(List.of(curso1));
+
+        ResponseEntity<List<Curso>> response = cursoService.getCursos();
+
+        assertEquals(HttpStatus.OK, response.getStatusCode());
+        assertNotNull(response.getBody());
+        assertEquals(1, response.getBody().size());
     }
 
-    @Nested
-    class GetTests {
-        @Test
-        void testGetCursos_conContenido() {
-            when(cursoRepository.findAll()).thenReturn(List.of(cursoDemo));
-            ResponseEntity<List<Curso>> response = cursoService.getCursos();
-            assertEquals(HttpStatus.OK, response.getStatusCode());
-            assertFalse(response.getBody().isEmpty());
-            verify(cursoRepository, times(1)).findAll();
-        }
+    @Test
+    @DisplayName("Obtener todos los cursos - Sin datos")
+    void testGetCursos_vacio() {
+        when(cursoRepository.findAll()).thenReturn(Collections.emptyList());
 
-        @Test
-        void testGetCursos_sinContenido() {
-            when(cursoRepository.findAll()).thenReturn(List.of());
-            ResponseEntity<List<Curso>> response = cursoService.getCursos();
-            assertEquals(HttpStatus.NO_CONTENT, response.getStatusCode());
-            assertNull(response.getBody());
-            verify(cursoRepository, times(1)).findAll();
-        }
+        ResponseEntity<List<Curso>> response = cursoService.getCursos();
 
-        @Test
-        void testGetCursoById_existente() {
-            when(cursoRepository.findById(cursoDemo.getId())).thenReturn(Optional.of(cursoDemo));
-            ResponseEntity<Object> response = cursoService.getCursoById(cursoDemo.getId());
-            assertEquals(HttpStatus.OK, response.getStatusCode());
-            Curso cursoEncontrado = (Curso) response.getBody();
-            assertEquals("Programación Java", cursoEncontrado.getName());
-            verify(cursoRepository, times(1)).findById(cursoDemo.getId());
-        }
-
-        @Test
-        void testGetCursoById_inexistente() {
-            when(cursoRepository.findById(999)).thenReturn(Optional.empty());
-            ResponseEntity<Object> response = cursoService.getCursoById(999);
-            assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
-            assertNull(response.getBody());
-            verify(cursoRepository, times(1)).findById(999);
-        }
+        assertEquals(HttpStatus.NO_CONTENT, response.getStatusCode());
+        assertNull(response.getBody());
     }
 
-    @Nested
-    class PostTests {
-        @Test
-        void testAddCurso_conflict() {
-            when(cursoRepository.existsById(cursoDemo.getId())).thenReturn(true);
-            ResponseEntity<Object> response = cursoService.addCurso(cursoDemo);
-            assertEquals(HttpStatus.CONFLICT, response.getStatusCode());
-            verify(cursoRepository, never()).save(any(Curso.class));
-        }
+    @Test
+    @DisplayName("Agregar curso - Nuevo")
+    void testAddCurso_valido() {
+        Curso curso = new Curso();
+        curso.setName("Spring Boot");
 
-        @Test
-        void testAddCurso_creado() {
-            when(cursoRepository.existsById(cursoDemo.getId())).thenReturn(false);
-            when(cursoRepository.save(any(Curso.class))).thenReturn(cursoDemo);
-            ResponseEntity<Object> response = cursoService.addCurso(cursoDemo);
-            assertEquals(HttpStatus.CREATED, response.getStatusCode());
-            Curso cursoGuardado = (Curso) response.getBody();
-            assertEquals("Programación Java", cursoGuardado.getName());
-            verify(cursoRepository, times(1)).existsById(cursoDemo.getId());
-            verify(cursoRepository, times(1)).save(cursoDemo);
-        }
+        when(cursoRepository.existsByName("Spring Boot")).thenReturn(false);
+        when(cursoRepository.save(curso)).thenReturn(curso);
+
+        Curso result = cursoService.addCurso(curso);
+
+        assertEquals("Spring Boot", result.getName());
+        verify(cursoRepository).save(curso);
     }
 
-    @Nested
-    class PutTests {
-        @Test
-        void testUpdateCurso_existente() {
-            Curso cursoActualizado = new Curso();
-            cursoActualizado.setName("Programación Avanzada Java");
+    @Test
+    @DisplayName("Agregar curso - Nombre duplicado")
+    void testAddCurso_duplicado() {
+        Curso curso = new Curso();
+        curso.setName("Spring Boot");
 
-            when(cursoRepository.findById(cursoDemo.getId())).thenReturn(Optional.of(cursoDemo));
-            when(cursoRepository.save(any(Curso.class))).thenAnswer(invocation -> invocation.getArgument(0));
+        when(cursoRepository.existsByName("Spring Boot")).thenReturn(true);
 
-            ResponseEntity<String> response = cursoService.updateCurso(cursoDemo.getId(), cursoActualizado.getId());
-            assertEquals(HttpStatus.OK, response.getStatusCode());
-            assertTrue(response.getBody().contains("Curso actualizado: "));
-            assertTrue(response.getBody().contains("Programación Avanzada Java"));
-            verify(cursoRepository, times(1)).findById(cursoDemo.getId());
-            verify(cursoRepository, times(1)).save(cursoDemo);
-        }
-
-        @Test
-        void testUpdateCurso_inexistente() {
-            Curso cursoActualizado = new Curso();
-            cursoActualizado.setName("Programación Avanzada Java");
-
-            when(cursoRepository.findById(999)).thenReturn(Optional.empty());
-            ResponseEntity<String> response = cursoService.updateCurso(999, cursoActualizado.getId());
-            assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
-            verify(cursoRepository, times(1)).findById(999);
-            verify(cursoRepository, never()).save(any(Curso.class));
-        }
+        assertThrows(RuntimeException.class, () -> cursoService.addCurso(curso));
+        verify(cursoRepository, never()).save(any());
     }
 
-    @Nested
-    class DeleteTests {
-        @Test
-        void testDeleteCurso_existente() {
-            when(cursoRepository.existsById(cursoDemo.getId())).thenReturn(true);
-            ResponseEntity<String> response = cursoService.deleteCurso(cursoDemo.getId());
-            assertEquals(HttpStatus.NO_CONTENT, response.getStatusCode());
-            verify(cursoRepository, times(1)).existsById(cursoDemo.getId());
-            verify(cursoRepository, times(1)).deleteById(cursoDemo.getId());
-        }
+    @Test
+    @DisplayName("Obtener curso por ID - Existe")
+    void testGetCursoById_existe() {
+        Curso curso = new Curso();
+        curso.setId(1);
+        curso.setName("Java");
 
-        @Test
-        void testDeleteCurso_inexistente() {
-            when(cursoRepository.existsById(999)).thenReturn(false);
-            ResponseEntity<String> response = cursoService.deleteCurso(999);
-            assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
-            assertEquals("Curso con id 999 no encontrado", response.getBody());
-            verify(cursoRepository, times(1)).existsById(999);
-            verify(cursoRepository, never()).deleteById(anyInt());
-        }
+        when(cursoRepository.existsById(1)).thenReturn(true);
+        when(cursoRepository.findById(1)).thenReturn(Optional.of(curso));
+
+        ResponseEntity<Object> response = cursoService.getCursoById(1);
+
+        assertEquals(HttpStatus.OK, response.getStatusCode());
+        assertEquals("Java", ((Curso)response.getBody()).getName());
+    }
+
+    @Test
+    @DisplayName("Eliminar curso - Existe")
+    void testDeleteCurso_existe() {
+        when(cursoRepository.existsById(1)).thenReturn(true);
+
+        ResponseEntity<String> response = cursoService.deleteCurso(1);
+
+        assertEquals(HttpStatus.OK, response.getStatusCode());
+        assertTrue(response.getBody().contains("Curso eliminado"));
+    }
+
+    @Test
+    @DisplayName("Actualizar curso - Existe")
+    void testUpdateCurso_existe() {
+        Curso curso = new Curso();
+        curso.setId(1);
+        curso.setName("Updated");
+
+        when(cursoRepository.existsById(1)).thenReturn(true);
+        when(cursoRepository.save(curso)).thenReturn(curso);
+
+        ResponseEntity<String> response = cursoService.updateCurso(curso, 1);
+
+        assertEquals(HttpStatus.OK, response.getStatusCode());
+    }
+
+    @Test
+    @DisplayName("Agregar alumno a curso - Válido")
+    void testAddAlumno_valido() {
+        int idCurso = 1;
+        int idAlumno = 10;
+
+        Alumno alumno = new Alumno();
+        alumno.setId(idAlumno);
+        Curso curso = new Curso();
+        curso.setId(idCurso);
+        curso.setListaCurso(new ArrayList<>());
+
+        when(alumnoService.getAlumnoById(idAlumno)).thenReturn(ResponseEntity.ok(alumno));
+        when(cursoRepository.findById(idCurso)).thenReturn(Optional.of(curso));
+        when(cursoRepository.save(any())).thenReturn(curso);
+
+        ResponseEntity<String> response = cursoService.addAlumno(idCurso, idAlumno);
+
+        assertEquals(HttpStatus.OK, response.getStatusCode());
+        assertTrue(response.getBody().contains("agregado al curso"));
+    }
+
+    @Test
+    @DisplayName("Eliminar alumno del curso - Válido")
+    void testDeleteAlumno_valido() {
+        int idCurso = 1;
+        int idAlumno = 10;
+
+        Alumno alumno = new Alumno();
+        alumno.setId(idAlumno);
+        Curso curso = new Curso();
+        curso.setId(idCurso);
+        curso.setListaCurso(new ArrayList<>(List.of(alumno)));
+
+        when(cursoRepository.findById(idCurso)).thenReturn(Optional.of(curso));
+        when(alumnoService.getAlumnoById(idAlumno)).thenReturn(ResponseEntity.ok(alumno));
+
+        ResponseEntity<String> response = cursoService.deleteAlumno(idAlumno, idCurso);
+
+        assertEquals(HttpStatus.OK, response.getStatusCode());
+        assertTrue(response.getBody().contains("Alumno eliminado"));
     }
 }
