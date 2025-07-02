@@ -14,51 +14,61 @@ import java.util.Optional;
 public class DetalleEvaluacionService {
 
     @Autowired
-    DetalleEvaluacionRepository detalleEvaluacionRepository;
+    private DetalleEvaluacionRepository detalleRepository;
 
-    EvaluacionService evaluacionService;
-
-    AlumnoService alumnoService;
-
-    public ResponseEntity<List<DetalleEvaluacion>> getDetalleEvaluaciones() {
-        List<DetalleEvaluacion> detalleEvaluaciones = detalleEvaluacionRepository.findAll();
-        if (detalleEvaluaciones.isEmpty()) {
-            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    public ResponseEntity<List<DetalleEvaluacion>> getAllDetalles() {
+        List<DetalleEvaluacion> detalles = detalleRepository.findAll();
+        if (detalles.isEmpty()) {
+            return ResponseEntity.noContent().build();
         }
-        return new ResponseEntity<>(detalleEvaluaciones, HttpStatus.OK);
+        return ResponseEntity.ok(detalles);
     }
 
-    public ResponseEntity<Object> getDetalleEvaluacionById(Integer id) {
-        Optional<DetalleEvaluacion> detalleEvaluacion = detalleEvaluacionRepository.findById(id);
-        if (detalleEvaluacion.isPresent()) {
-            return new ResponseEntity<>(detalleEvaluacion.get(), HttpStatus.OK);
-        }
-        return ResponseEntity.status(HttpStatus.NO_CONTENT).body("Detalle Evaluacion no encontrada");
+    public ResponseEntity<DetalleEvaluacion> getDetalleById(int id) {
+        Optional<DetalleEvaluacion> detalle = detalleRepository.findById(id);
+        return detalle.map(ResponseEntity::ok)
+                .orElseGet(() -> ResponseEntity.notFound().build());
     }
 
-    public ResponseEntity<Object> addDetalleEvaluacion(DetalleEvaluacion detalleEvaluacion) {
-        if (detalleEvaluacionRepository.existsById(detalleEvaluacion.getId())) {
-            return new ResponseEntity<>("Detalle evaluacion ya existe en el sistema",HttpStatus.CONFLICT);
+    public ResponseEntity<DetalleEvaluacion> addDetalle(DetalleEvaluacion detalle) {
+        if (detalleRepository.existsById(detalle.getId())) {
+            return ResponseEntity.status(HttpStatus.CONFLICT).build();
         }
-        detalleEvaluacionRepository.save(detalleEvaluacion);
-        return new ResponseEntity<>("Detalle evaluacion creado",HttpStatus.CREATED);
+        DetalleEvaluacion savedDetalle = detalleRepository.save(detalle);
+        return ResponseEntity.status(HttpStatus.CREATED).body(savedDetalle);
     }
 
-    public ResponseEntity<Object> deleteDetalleEvaluacion(Integer id) {
-        Optional<DetalleEvaluacion> detalleEvaluacion = detalleEvaluacionRepository.findById(id);
-        if (detalleEvaluacion.isPresent()) {
-            detalleEvaluacionRepository.deleteById(id);
-            return new ResponseEntity<>("Detalle evaluacion eliminado",HttpStatus.OK);
+    public ResponseEntity<DetalleEvaluacion> updateDetalle(int id, DetalleEvaluacion detalle) {
+        if (!detalleRepository.existsById(id)) {
+            return ResponseEntity.notFound().build();
         }
-        return new ResponseEntity<>("Detalle evaluacion no se encuentra en el sistema",HttpStatus.NO_CONTENT);
+        detalle.setId(id);
+        DetalleEvaluacion updatedDetalle = detalleRepository.save(detalle);
+        return ResponseEntity.ok(updatedDetalle);
     }
 
-    public ResponseEntity<Object> updateDetalleEvaluacion(int id,DetalleEvaluacion detalleEvaluacion) {
-        if (detalleEvaluacionRepository.existsById(id)) {
-            detalleEvaluacion.setId(id);
-            detalleEvaluacionRepository.save(detalleEvaluacion);
-            return new ResponseEntity<>("Detalle evaluacion actualizado",HttpStatus.OK);
+    public ResponseEntity<Void> deleteDetalle(int id) {
+        if (!detalleRepository.existsById(id)) {
+            return ResponseEntity.notFound().build();
         }
-        return new ResponseEntity<>("Detalle evaluacion no se encuentra en el sistema",HttpStatus.NO_CONTENT);
+        detalleRepository.deleteById(id);
+        return ResponseEntity.noContent().build();
+    }
+
+
+    public ResponseEntity<List<DetalleEvaluacion>> getDetallesByAlumno(int alumnoId) {
+        List<DetalleEvaluacion> detalles = detalleRepository.findByAlumnoId(alumnoId);
+        if (detalles.isEmpty()) {
+            return ResponseEntity.noContent().build();
+        }
+        return ResponseEntity.ok(detalles);
+    }
+
+    public ResponseEntity<List<DetalleEvaluacion>> getDetallesByEvaluacion(int evaluacionId) {
+        List<DetalleEvaluacion> detalles = detalleRepository.findByEvaluacionId(evaluacionId);
+        if (detalles.isEmpty()) {
+            return ResponseEntity.noContent().build();
+        }
+        return ResponseEntity.ok(detalles);
     }
 }
