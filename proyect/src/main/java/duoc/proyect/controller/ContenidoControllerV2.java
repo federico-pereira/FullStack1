@@ -1,6 +1,6 @@
 package duoc.proyect.controller;
 
-import duoc.proyect.assembler.ContenidoModelAssembler;
+import duoc.proyect.assemblers.ContenidoModelAssembler;
 import duoc.proyect.model.Contenido;
 import duoc.proyect.service.ContenidoService;
 import org.springframework.beans.factory.annotation.Autowired;

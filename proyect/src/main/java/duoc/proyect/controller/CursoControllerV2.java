@@ -1,6 +1,6 @@
 package duoc.proyect.controller;
 
-import duoc.proyect.assembler.CursoModelAssembler;
+import duoc.proyect.assemblers.CursoModelAssembler;
 import duoc.proyect.model.Curso;
 import duoc.proyect.service.CursoService;
 import org.springframework.beans.factory.annotation.Autowired;

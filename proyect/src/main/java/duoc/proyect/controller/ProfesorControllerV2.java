@@ -1,6 +1,6 @@
 package duoc.proyect.controller;
 
-import duoc.proyect.assembler.ProfesorModelAssembler;
+import duoc.proyect.assemblers.ProfesorModelAssembler;
 import duoc.proyect.model.Profesor;
 import duoc.proyect.service.ProfesorService;
 import org.springframework.beans.factory.annotation.Autowired;
