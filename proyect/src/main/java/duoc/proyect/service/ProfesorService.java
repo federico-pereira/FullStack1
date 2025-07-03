@@ -24,17 +24,17 @@ public class ProfesorService {
         return ResponseEntity.ok(profesores);
     }
 
-    public ResponseEntity<String> addProfesor(Profesor profesor) {
-        profesorRepository.save(profesor);
-        return ResponseEntity.status(HttpStatus.CREATED).body("Profesor agregado");
+    public ResponseEntity<Profesor> addProfesor(Profesor profesor) {
+        Profesor saved = profesorRepository.save(profesor);
+        return ResponseEntity.status(HttpStatus.CREATED).body(saved);
     }
 
     public ResponseEntity<Object> getProfesorById(int id) {
         Optional<Profesor> profesor = profesorRepository.findById(id);
         if (profesor.isPresent()) {
-            return ResponseEntity.ok(profesor);
+            return ResponseEntity.ok(profesor.get());
         } else {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Profesor no encontrado");
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         }
     }
 
@@ -47,15 +47,16 @@ public class ProfesorService {
         }
     }
 
-    public ResponseEntity<String> updateProfesor(Integer newProfesor, int id) {
+    public ResponseEntity<Profesor> updateProfesor(Profesor newProfesor, int id) {
         Optional<Profesor> profesorOpt = profesorRepository.findById(id);
         if (profesorOpt.isPresent()) {
             Profesor profesor = profesorOpt.get();
-            profesor.setName(String.valueOf(newProfesor.getClass()));
-            profesor.setMail(String.valueOf(newProfesor.getClass()));
-            return ResponseEntity.ok("Profesor actualizado: " + profesor.toString());
+            profesor.setName(newProfesor.getName());
+            profesor.setMail(newProfesor.getMail());
+            Profesor updated = profesorRepository.save(profesor);
+            return ResponseEntity.ok(updated);
         } else {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Profesor no encontrado");
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         }
     }
 }

@@ -15,7 +15,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/contenidos")
-@Tag(name = "Contenido", description = "Operanciones relacionadas con contenidos")
+@Tag(name = "Contenido", description = "Operaciones relacionadas con contenidos")
 public class ContenidoController {
 
     @Autowired
@@ -30,23 +30,8 @@ public class ContenidoController {
             @ApiResponse(responseCode = "204", description = "No hay contenidos registrados")
     })
     @GetMapping
-    public ResponseEntity<List<Contenido>> getContenido() {
+    public ResponseEntity<List<Contenido>> getContenidos() {
         return contenidoService.getContenidos();
-    }
-
-    @Operation(
-            summary = "Crear un contenido",
-            description = "Agrega un nuevo contenido al sistema"
-    )
-    @ApiResponses(value = {
-            @ApiResponse(responseCode = "201", description = "Contenido creado correctamente"),
-            @ApiResponse(responseCode = "400", description = "Payload inválido")
-    })
-    @PostMapping
-    public ResponseEntity<String> addContenido(
-            @RequestBody Contenido contenido
-    ) {
-        return contenidoService.addContenido(contenido);
     }
 
     @Operation(
@@ -55,14 +40,25 @@ public class ContenidoController {
     )
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Se encontró el contenido"),
-            @ApiResponse(responseCode = "404", description = "Contenido no existe en el sistema")
+            @ApiResponse(responseCode = "404", description = "Contenido no encontrado")
     })
     @GetMapping("/{id}")
-    public ResponseEntity<Object> getContenidoId(
-            @Parameter(description = "ID del contenido a buscar")
-            @PathVariable int id
-    ) {
+    public ResponseEntity<Contenido> getContenidoById(
+            @Parameter(description = "ID del contenido a buscar") @PathVariable int id) {
         return contenidoService.getContenidoById(id);
+    }
+
+    @Operation(
+            summary = "Crear un contenido",
+            description = "Agrega un nuevo contenido al sistema"
+    )
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "201", description = "Contenido creado correctamente"),
+            @ApiResponse(responseCode = "400", description = "Datos inválidos")
+    })
+    @PostMapping
+    public ResponseEntity<Contenido> addContenido(@RequestBody Contenido contenido) {
+        return contenidoService.addContenido(contenido);
     }
 
     @Operation(
@@ -71,15 +67,13 @@ public class ContenidoController {
     )
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Contenido actualizado correctamente"),
-            @ApiResponse(responseCode = "404", description = "Contenido no existe en el sistema"),
-            @ApiResponse(responseCode = "400", description = "Payload inválido")
+            @ApiResponse(responseCode = "404", description = "Contenido no encontrado"),
+            @ApiResponse(responseCode = "400", description = "Datos inválidos")
     })
     @PutMapping("/{id}")
-    public ResponseEntity<String> updateContenido(
-            @Parameter(description = "ID del contenido a actualizar")
-            @PathVariable int id,
-            @RequestBody Contenido contenido
-    ) {
+    public ResponseEntity<Contenido> updateContenido(
+            @Parameter(description = "ID del contenido a actualizar") @PathVariable int id,
+            @RequestBody Contenido contenido) {
         return contenidoService.updateContenido(id, contenido);
     }
 
@@ -89,13 +83,11 @@ public class ContenidoController {
     )
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Contenido eliminado correctamente"),
-            @ApiResponse(responseCode = "404", description = "Contenido no existe en el sistema")
+            @ApiResponse(responseCode = "404", description = "Contenido no encontrado")
     })
     @DeleteMapping("/{id}")
     public ResponseEntity<String> deleteContenido(
-            @Parameter(description = "ID del contenido a eliminar")
-            @PathVariable int id
-    ) {
+            @Parameter(description = "ID del contenido a eliminar") @PathVariable int id) {
         return contenidoService.deleteContenido(id);
     }
 }

@@ -19,34 +19,32 @@ public class ContenidoService {
     public ResponseEntity<List<Contenido>> getContenidos() {
         List<Contenido> contenidos = contenidoRepository.findAll();
         if (contenidos.isEmpty()) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+            return ResponseEntity.status(HttpStatus.NO_CONTENT).body(null);
         }
         return ResponseEntity.ok(contenidos);
     }
 
-    public ResponseEntity<Object> getContenidoById(int id) {
+    public ResponseEntity<Contenido> addContenido(Contenido contenido) {
+        Contenido saved = contenidoRepository.save(contenido);
+        return ResponseEntity.status(HttpStatus.CREATED).body(saved);
+    }
+
+    public ResponseEntity<Contenido> getContenidoById(int id) {
         Optional<Contenido> contenidoOpt = contenidoRepository.findById(id);
         if (contenidoOpt.isPresent()) {
             return ResponseEntity.ok(contenidoOpt.get());
         }
-        return ResponseEntity.status(HttpStatus.NOT_FOUND)
-                .body("Contenido con id " + id + " no encontrado");
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
     }
 
-    public ResponseEntity<String> addContenido(Contenido contenido) {
-        contenidoRepository.save(contenido);
-        return ResponseEntity.status(HttpStatus.CREATED).body("Contenido agregado");
-    }
-
-    public ResponseEntity<String> updateContenido(int id, Contenido contenido) {
+    public ResponseEntity<Contenido> updateContenido(int id, Contenido contenido) {
         Optional<Contenido> contenidoOpt = contenidoRepository.findById(id);
         if (contenidoOpt.isPresent()) {
-            contenido.setId(id); // asegurar que el ID se mantiene
-            contenidoRepository.save(contenido);
-            return ResponseEntity.ok("Contenido actualizado");
+            contenido.setId(id);
+            Contenido updated = contenidoRepository.save(contenido);
+            return ResponseEntity.ok(updated);
         }
-        return ResponseEntity.status(HttpStatus.NOT_FOUND)
-                .body("Contenido con id " + id + " no encontrado");
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
     }
 
     public ResponseEntity<String> deleteContenido(int id) {
@@ -54,7 +52,6 @@ public class ContenidoService {
             contenidoRepository.deleteById(id);
             return ResponseEntity.ok("Contenido eliminado");
         }
-        return ResponseEntity.status(HttpStatus.NOT_FOUND)
-                .body("Contenido con id " + id + " no encontrado");
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Contenido no encontrado");
     }
 }
