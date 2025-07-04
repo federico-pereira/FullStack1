@@ -66,6 +66,9 @@ public class EvaluacionService {
 
     public ResponseEntity<List<Curso>> getCursos(int idEvaluacion) {
         if (evaluacionRepository.existsById(idEvaluacion)) {
+            if (evaluacionRepository.findById(idEvaluacion).get().getCursos().isEmpty()){
+                return ResponseEntity.status(HttpStatus.NO_CONTENT).body(null);
+            }
             return ResponseEntity.ok(evaluacionRepository.findById(idEvaluacion).get().getCursos());
         }
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
